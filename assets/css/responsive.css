@@ -1,0 +1,647 @@
+/* =========================================================
+   DROPTECH MANGUEIRAS
+   Responsividade
+========================================================= */
+
+/* =========================================================
+   NOTEBOOKS E TELAS MENORES
+========================================================= */
+
+@media (max-width: 1100px) {
+  .menu-desktop {
+    gap: 20px;
+  }
+
+  .menu-desktop a {
+    font-size: 0.82rem;
+  }
+
+  .botao-cabecalho {
+    display: none;
+  }
+
+  .sobre-grid {
+    gap: 55px;
+  }
+
+  .sobre-destaque {
+    right: -15px;
+  }
+
+  .processo-grid,
+  .diferenciais-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contato-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 0.9fr);
+    gap: 50px;
+  }
+
+  .rodape-grid {
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 35px;
+  }
+}
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 900px) {
+  .secao {
+    padding: 85px 0;
+  }
+
+  .cabecalho-conteudo {
+    min-height: 76px;
+  }
+
+  .logo-link {
+    width: 155px;
+  }
+
+  .menu-desktop {
+    display: none;
+  }
+
+  .botao-menu {
+    display: flex;
+  }
+
+  .menu-mobile {
+    position: fixed;
+    top: 76px;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-height: 0;
+
+    overflow: hidden;
+
+    background: rgba(11, 19, 11, 0.98);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      max-height 0.4s ease,
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  .menu-mobile.aberto {
+    max-height: calc(100vh - 76px);
+
+    padding: 18px 20px 24px;
+
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-mobile a {
+    display: flex;
+    align-items: center;
+
+    min-height: 52px;
+    padding: 0 15px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    transition:
+      color var(--transicao),
+      padding-left var(--transicao),
+      background var(--transicao);
+  }
+
+  .menu-mobile a:hover {
+    padding-left: 22px;
+
+    color: var(--branco);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .hero {
+    min-height: 820px;
+    padding-top: 135px;
+
+    background-position: 62% center;
+  }
+
+  .hero h1 {
+    max-width: 700px;
+  }
+
+  .hero p {
+    max-width: 570px;
+  }
+
+  .secao-cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  .sobre-imagem {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .sobre-imagem > img {
+    min-height: 480px;
+  }
+
+  .sobre-destaque {
+    right: 25px;
+    bottom: -30px;
+  }
+
+  .sobre-conteudo {
+    max-width: 720px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 250px;
+  }
+
+  .galeria-item,
+  .galeria-item:nth-child(1),
+  .galeria-item:nth-child(2),
+  .galeria-item:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .galeria-item:first-child {
+    grid-column: span 2;
+  }
+
+  .galeria-overlay {
+    opacity: 1;
+  }
+
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .contato-conteudo {
+    max-width: 720px;
+  }
+
+  .formulario-contato {
+    max-width: 720px;
+  }
+
+  .rodape-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   CELULARES
+========================================================= */
+
+@media (max-width: 650px) {
+  :root {
+    --borda-radius-medio: 17px;
+    --borda-radius-grande: 24px;
+  }
+
+  .container {
+    width: min(100% - 30px, var(--container));
+  }
+
+  .secao {
+    padding: 70px 0;
+  }
+
+  .secao h2 {
+    font-size: clamp(1.85rem, 9vw, 2.55rem);
+  }
+
+  .secao-etiqueta {
+    margin-bottom: 14px;
+
+    font-size: 0.72rem;
+  }
+
+  .secao-cabecalho {
+    margin-bottom: 38px;
+  }
+
+  .secao-cabecalho.centralizado {
+    align-items: flex-start;
+
+    margin-bottom: 42px;
+
+    text-align: left;
+  }
+
+  .secao-cabecalho.centralizado .secao-etiqueta {
+    justify-content: flex-start;
+  }
+
+  .secao-cabecalho.centralizado h2,
+  .secao-cabecalho.centralizado p {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .cabecalho-conteudo {
+    min-height: 70px;
+  }
+
+  .logo-link {
+    width: 140px;
+  }
+
+  .logo {
+    max-height: 50px;
+  }
+
+  .botao-menu {
+    width: 43px;
+    height: 43px;
+  }
+
+  .menu-mobile {
+    top: 70px;
+  }
+
+  .menu-mobile.aberto {
+    max-height: calc(100vh - 70px);
+  }
+
+  .hero {
+    align-items: flex-end;
+
+    min-height: 760px;
+    padding: 125px 0 95px;
+
+    background-position: 67% center;
+  }
+
+  .hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6, 13, 6, 0.18) 0%,
+        rgba(6, 13, 6, 0.55) 45%,
+        rgba(6, 13, 6, 0.96) 100%
+      );
+  }
+
+  .hero-conteudo {
+    z-index: 3;
+  }
+
+  .hero-etiqueta {
+    margin-bottom: 18px;
+    padding: 8px 13px;
+
+    font-size: 0.7rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.75rem, 14vw, 4.2rem);
+    line-height: 1;
+  }
+
+  .hero p {
+    margin-top: 20px;
+
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .hero-botoes {
+    flex-direction: column;
+
+    margin-top: 30px;
+  }
+
+  .hero-botoes .botao {
+    width: 100%;
+  }
+
+  .hero-rolagem {
+    display: none;
+  }
+
+  .botao {
+    min-height: 50px;
+    padding: 0 20px;
+  }
+
+  .sobre-grid {
+    gap: 58px;
+  }
+
+  .sobre-imagem > img {
+    min-height: 390px;
+  }
+
+  .sobre-imagem::before {
+    display: none;
+  }
+
+  .sobre-destaque {
+    right: 15px;
+    bottom: -28px;
+
+    width: calc(100% - 30px);
+    padding: 20px;
+  }
+
+  .sobre-conteudo > p {
+    margin-top: 17px;
+
+    font-size: 0.95rem;
+  }
+
+  .sobre-itens {
+    margin-top: 28px;
+  }
+
+  .sobre-item > i {
+    width: 48px;
+    height: 48px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .produto-conteudo {
+    padding: 22px;
+  }
+
+  .processo-grid,
+  .diferenciais-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .processo-card {
+    min-height: auto;
+    padding: 25px;
+  }
+
+  .processo-icone {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 23px;
+  }
+
+  .diferencial-card {
+    padding: 25px;
+  }
+
+  .galeria-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .galeria-item,
+  .galeria-item:first-child {
+    width: 100%;
+    min-height: 280px;
+  }
+
+  .galeria-overlay {
+    padding: 20px;
+  }
+
+  .contato-grid {
+    gap: 42px;
+  }
+
+  .contato-conteudo > p {
+    margin-top: 18px;
+
+    font-size: 0.95rem;
+  }
+
+  .contato-lista {
+    margin-top: 30px;
+  }
+
+  .contato-item {
+    padding: 15px;
+  }
+
+  .contato-item > i {
+    width: 44px;
+    height: 44px;
+  }
+
+  .formulario-contato {
+    padding: 26px 20px;
+  }
+
+  .formulario-cabecalho h3 {
+    font-size: 1.35rem;
+  }
+
+  .localizacao {
+    height: 350px;
+  }
+
+  .rodape-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
+
+  .rodape-marca img {
+    width: 175px;
+  }
+
+  .rodape-base .container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+
+    min-height: 95px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .whatsapp-flutuante {
+    right: 17px;
+    bottom: 17px;
+
+    width: 55px;
+    height: 55px;
+
+    border-width: 3px;
+
+    font-size: 1.45rem;
+  }
+}
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 390px) {
+  .container {
+    width: min(100% - 24px, var(--container));
+  }
+
+  .hero h1 {
+    font-size: 2.65rem;
+  }
+
+  .hero-etiqueta {
+    font-size: 0.64rem;
+  }
+
+  .sobre-destaque {
+    right: 10px;
+
+    width: calc(100% - 20px);
+  }
+
+  .formulario-contato {
+    padding: 24px 17px;
+  }
+}
+
+/* =========================================================
+   DISPOSITIVOS SEM HOVER
+========================================================= */
+
+@media (hover: none) {
+  .produto-card:hover,
+  .processo-card:hover,
+  .diferencial-card:hover,
+  .botao:hover,
+  .whatsapp-flutuante:hover {
+    transform: none;
+  }
+
+  .galeria-overlay {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   PÁGINAS INTERNAS
+========================================================= */
+
+@media (max-width: 900px) {
+  .pagina-hero {
+    min-height: 480px;
+    padding-top: 145px;
+  }
+
+  .catalogo-topo {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .catalogo-busca {
+    max-width: 600px;
+  }
+
+  .catalogo-chamada-conteudo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 650px) {
+  .pagina-hero {
+    min-height: 520px;
+    padding: 130px 0 60px;
+
+    background-position: 65% center;
+  }
+
+  .pagina-hero h1 {
+    font-size: clamp(2.35rem, 12vw, 3.4rem);
+  }
+
+  .pagina-hero p {
+    font-size: 0.95rem;
+  }
+
+  .breadcrumb {
+    margin-top: 28px;
+  }
+
+  .catalogo-topo {
+    margin-bottom: 30px;
+  }
+
+  .filtros-produtos {
+    flex-wrap: nowrap;
+
+    margin-right: -15px;
+    padding-right: 15px;
+    padding-bottom: 8px;
+
+    overflow-x: auto;
+  }
+
+  .filtro-produto {
+    flex-shrink: 0;
+  }
+
+  .catalogo-chamada {
+    padding: 65px 0;
+  }
+
+  .catalogo-chamada .botao {
+    width: 100%;
+  }
+}

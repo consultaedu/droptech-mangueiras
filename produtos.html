@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Conheça as mangueiras fabricadas pela DropTech para irrigação, jardinagem e uso geral."
+  >
+
+  <title>Produtos | DropTech Mangueiras</title>
+
+  <link rel="icon" href="favicon/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <header class="cabecalho cabecalho-interno">
+    <div class="container cabecalho-conteudo">
+
+      <a
+        href="index.html"
+        class="logo-link"
+        aria-label="Página inicial"
+      >
+        <img
+          src="assets/images/logo/logo-droptech.png"
+          alt="DropTech Mangueiras"
+          class="logo"
+        >
+      </a>
+
+      <nav
+        class="menu-desktop"
+        aria-label="Navegação principal"
+      >
+        <a href="index.html">Início</a>
+        <a href="sobre.html">A empresa</a>
+        <a href="produtos.html" class="ativo">Produtos</a>
+        <a href="index.html#processo">Produção</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <a
+        href="contato.html"
+        class="botao botao-cabecalho"
+      >
+        Solicitar orçamento
+      </a>
+
+      <button
+        type="button"
+        class="botao-menu"
+        id="botaoMenu"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+
+    <nav
+      class="menu-mobile"
+      id="menuMobile"
+      aria-label="Navegação para dispositivos móveis"
+    >
+      <a href="index.html">Início</a>
+      <a href="sobre.html">A empresa</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="index.html#processo">Produção</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="pagina-hero pagina-hero-produtos">
+      <div class="container pagina-hero-conteudo">
+
+        <span class="pagina-etiqueta">
+          Catálogo DropTech
+        </span>
+
+        <h1>
+          Produtos desenvolvidos para diferentes aplicações
+        </h1>
+
+        <p>
+          Conheça nossas soluções para irrigação, jardinagem e uso geral,
+          fabricadas com foco em resistência, flexibilidade e durabilidade.
+        </p>
+
+        <nav
+          class="breadcrumb"
+          aria-label="Navegação estrutural"
+        >
+          <a href="index.html">Início</a>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <span>Produtos</span>
+        </nav>
+
+      </div>
+    </section>
+
+    <section class="secao pagina-produtos">
+      <div class="container">
+
+        <div class="catalogo-topo">
+
+          <div class="catalogo-titulo">
+            <span class="secao-etiqueta">
+              Nosso catálogo
+            </span>
+
+            <h2>
+              Encontre a mangueira ideal
+            </h2>
+
+            <p>
+              Utilize a busca ou selecione uma categoria para encontrar
+              os produtos disponíveis.
+            </p>
+          </div>
+
+          <div class="catalogo-busca">
+            <label for="buscaProduto">
+              Buscar produto
+            </label>
+
+            <div class="campo-busca">
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <input
+                type="search"
+                id="buscaProduto"
+                placeholder="Digite o nome ou aplicação"
+                autocomplete="off"
+              >
+
+              <button
+                type="button"
+                id="limparBusca"
+                aria-label="Limpar pesquisa"
+                hidden
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div
+          class="filtros-produtos"
+          id="filtrosProdutos"
+          aria-label="Categorias dos produtos"
+        ></div>
+
+        <div class="catalogo-informacoes">
+          <p id="quantidadeProdutos">
+            Carregando produtos...
+          </p>
+        </div>
+
+        <div
+          class="produtos-grid catalogo-grid"
+          id="catalogoProdutos"
+        ></div>
+
+      </div>
+    </section>
+
+    <section class="catalogo-chamada">
+      <div class="container catalogo-chamada-conteudo">
+
+        <div>
+          <span class="pagina-etiqueta">
+            Atendimento comercial
+          </span>
+
+          <h2>
+            Não encontrou exatamente o que precisa?
+          </h2>
+
+          <p>
+            Fale com nossa equipe para consultar modelos, medidas,
+            cores, disponibilidade e condições comerciais.
+          </p>
+        </div>
+
+        <a
+          href="contato.html"
+          class="botao botao-principal"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          Solicitar atendimento
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grid">
+
+      <div class="rodape-marca">
+        <img
+          src="assets/images/logo/logo-droptech.png"
+          alt="DropTech Mangueiras"
+        >
+
+        <p>
+          Mangueiras para irrigação, jardinagem e uso geral,
+          desenvolvidas com qualidade e resistência.
+        </p>
+      </div>
+
+      <div class="rodape-coluna">
+        <h3>Navegação</h3>
+
+        <a href="index.html">Início</a>
+        <a href="sobre.html">A empresa</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="index.html#processo">Produção</a>
+      </div>
+
+      <div class="rodape-coluna">
+        <h3>Atendimento</h3>
+
+        <a href="contato.html">Solicitar orçamento</a>
+
+        <a
+          href="#"
+          id="rodapeInstagram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <span id="rodapeHorario">
+          Segunda a sexta, das 8h às 18h
+        </span>
+      </div>
+
+      <div class="rodape-coluna">
+        <h3>Localização</h3>
+
+        <span id="rodapeEndereco">
+          Santo Antônio do Canaã, Santa Teresa - ES
+        </span>
+      </div>
+
+    </div>
+
+    <div class="rodape-base">
+      <div class="container">
+        <p>
+          © <span id="anoAtual"></span> DropTech Mangueiras.
+          Todos os direitos reservados.
+        </p>
+
+        <p>
+          Desenvolvido por Marcos Daleprane
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    href="#"
+    class="whatsapp-flutuante"
+    id="whatsappFlutuante"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar com a DropTech pelo WhatsApp"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/produtos.js"></script>
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>
