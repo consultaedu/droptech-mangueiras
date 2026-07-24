@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre em contato com a DropTech Mangueiras para consultar produtos, disponibilidade e solicitar orçamento.">
+  <title>Contato | DropTech Mangueiras</title>
+  <link rel="icon" href="favicon/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+<header class="cabecalho cabecalho-interno" id="inicio">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo-link" aria-label="Página inicial">
+        <img src="assets/images/logo/logo-droptech.png" alt="DropTech Mangueiras" class="logo">
+      </a>
+      <nav class="menu-desktop" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">A empresa</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="contato.html" class="ativo">Contato</a>
+      </nav>
+      <a href="contato.html" class="botao botao-cabecalho">Solicitar orçamento</a>
+      <button type="button" class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    <nav class="menu-mobile" id="menuMobile" aria-label="Navegação para dispositivos móveis">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">A empresa</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html" class="ativo">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="pagina-hero">
+      <div class="container pagina-hero-conteudo">
+        <a href="index.html" class="pagina-voltar">
+          <i class="fa-solid fa-arrow-left"></i>
+          Voltar para a página inicial
+        </a>
+        <span class="pagina-etiqueta">Contato</span>
+        <h1>Vamos encontrar a solução certa para você.</h1>
+        <p>Fale com a DropTech para consultar produtos, disponibilidade, aplicações e condições comerciais.</p>
+        <div class="breadcrumb">
+          <a href="index.html">Início</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Contato</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao contato-pagina">
+      <div class="container contato-pagina-grid">
+        <div class="contato-pagina-intro" data-animar="esquerda">
+          <span class="secao-etiqueta">Fale conosco</span>
+          <h2>Atendimento direto e próximo</h2>
+          <p>Escolha o canal mais conveniente ou preencha o formulário. Sua solicitação será preparada e enviada diretamente pelo WhatsApp.</p>
+
+          <div class="contato-canais">
+            <a href="#" class="contato-canal" id="linkWhatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div><span>WhatsApp</span><strong id="textoWhatsapp">Solicitar orçamento</strong></div>
+            </a>
+            <a href="#" class="contato-canal" id="linkInstagram" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-instagram"></i>
+              <div><span>Instagram</span><strong>@droptechmangueiras</strong></div>
+            </a>
+            <div class="contato-canal">
+              <i class="fa-solid fa-location-dot"></i>
+              <div><span>Localização</span><strong id="textoEndereco">Santo Antônio do Canaã, Santa Teresa - ES</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <form class="formulario-contato" id="formularioContato" data-animar="direita">
+          <div class="formulario-cabecalho">
+            <h3>Solicite um orçamento</h3>
+            <p>Preencha os dados abaixo para montar sua mensagem.</p>
+          </div>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+          </div>
+          <div class="campo">
+            <label for="empresa">Empresa ou propriedade</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa ou propriedade">
+          </div>
+          <div class="campo">
+            <label for="produto">Produto de interesse</label>
+            <select id="produto" name="produto" required>
+              <option value="">Selecione um produto</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte brevemente o que você precisa"></textarea>
+          </div>
+          <button type="submit" class="botao botao-principal botao-formulario">
+            <i class="fa-brands fa-whatsapp"></i> Enviar pelo WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <div class="secao-cabecalho centralizado" data-animar>
+          <span class="secao-etiqueta">Informações úteis</span>
+          <h2>Antes de entrar em contato</h2>
+        </div>
+        <div class="atendimento-detalhes">
+          <article class="atendimento-card" data-animar data-atraso="1">
+            <i class="fa-regular fa-clock"></i>
+            <h3>Horário de atendimento</h3>
+            <p id="horarioAtendimento">Segunda a sexta, das 8h às 18h.</p>
+          </article>
+          <article class="atendimento-card" data-animar data-atraso="2">
+            <i class="fa-solid fa-boxes-stacked"></i>
+            <h3>Consulte disponibilidade</h3>
+            <p>Os produtos e condições podem variar conforme a necessidade e a quantidade.</p>
+          </article>
+          <article class="atendimento-card" data-animar data-atraso="3">
+            <i class="fa-solid fa-comments"></i>
+            <h3>Atendimento personalizado</h3>
+            <p>Informe a aplicação desejada para receber uma orientação mais precisa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="localizacao">
+      <iframe id="mapaEmpresa" title="Localização da DropTech Mangueiras" src="https://www.google.com/maps?q=Santo%20Antonio%20do%20Canaa%20Santa%20Teresa%20ES&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="secao faq">
+      <div class="container faq-grid">
+        <div class="faq-intro" data-animar="esquerda">
+          <span class="secao-etiqueta">Dúvidas frequentes</span>
+          <h2>Informações rápidas</h2>
+          <p>Algumas respostas para facilitar seu primeiro contato com a DropTech.</p>
+        </div>
+        <div class="faq-lista" data-animar="direita">
+          <details class="faq-item">
+            <summary>A DropTech atende lojas e revendedores?</summary>
+            <p>Entre em contato informando sua cidade, necessidade e quantidade estimada para consultar as condições comerciais disponíveis.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Como saber qual mangueira escolher?</summary>
+            <p>Informe o tipo de aplicação, uso esperado e características necessárias. A equipe poderá orientar a opção mais adequada.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Posso solicitar orçamento pelo WhatsApp?</summary>
+            <p>Sim. O formulário desta página monta automaticamente uma mensagem com seus dados e abre a conversa no WhatsApp.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Onde fica a DropTech Mangueiras?</summary>
+            <p>A empresa está localizada em Santo Antônio do Canaã, Santa Teresa, Espírito Santo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer class="rodape">
+    <div class="container rodape-grid">
+      <div class="rodape-marca">
+        <img src="assets/images/logo/logo-droptech.png" alt="DropTech Mangueiras">
+        <p>Mangueiras para irrigação, jardinagem e uso geral, desenvolvidas com qualidade e resistência.</p>
+      </div>
+      <div class="rodape-coluna">
+        <h3>Navegação</h3>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">A empresa</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <div class="rodape-coluna">
+        <h3>Atendimento</h3>
+        <a href="contato.html">Solicitar orçamento</a>
+        <a href="#" id="rodapeInstagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <span id="rodapeHorario">Segunda a sexta, das 8h às 18h</span>
+      </div>
+      <div class="rodape-coluna">
+        <h3>Localização</h3>
+        <span id="rodapeEndereco">Santo Antônio do Canaã</span>
+        <span>Santa Teresa - Espírito Santo</span>
+      </div>
+    </div>
+    <div class="rodape-base">
+      <div class="container">
+        <p>© <span id="anoAtual"></span> DropTech Mangueiras. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Marcos Daleprane</p>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="whatsapp-flutuante" id="whatsappFlutuante" target="_blank" rel="noopener noreferrer" aria-label="Falar com a DropTech pelo WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/produtos.js"></script>
+  <script src="assets/js/galeria.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
