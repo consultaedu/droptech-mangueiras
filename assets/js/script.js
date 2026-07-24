@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   carregarInformacoesEmpresa();
   iniciarFormularioWhatsapp();
   iniciarCatalogoProdutos();
+  iniciarAnimacoesScroll();
   atualizarAnoRodape();
   
 });
@@ -894,4 +895,49 @@ function normalizarTexto(valor) {
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .trim();
+}
+
+/* =========================================================
+   ANIMAÇÕES SUAVES AO ROLAR
+========================================================= */
+
+function iniciarAnimacoesScroll() {
+  const elementos = document.querySelectorAll("[data-animar]");
+
+  if (elementos.length === 0) {
+    return;
+  }
+
+  const reduzirMovimento = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (reduzirMovimento || !("IntersectionObserver" in window)) {
+    elementos.forEach(elemento => {
+      elemento.classList.add("animado");
+    });
+
+    return;
+  }
+
+  const observador = new IntersectionObserver(
+    entradas => {
+      entradas.forEach(entrada => {
+        if (!entrada.isIntersecting) {
+          return;
+        }
+
+        entrada.target.classList.add("animado");
+        observador.unobserve(entrada.target);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -40px 0px"
+    }
+  );
+
+  elementos.forEach(elemento => {
+    observador.observe(elemento);
+  });
 }

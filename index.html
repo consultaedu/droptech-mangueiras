@@ -128,6 +128,33 @@
 
       </div>
 
+
+      <div class="hero-faixa" aria-label="Diferenciais da DropTech">
+        <div class="hero-faixa-item">
+          <i class="fa-solid fa-industry" aria-hidden="true"></i>
+          <div>
+            <strong>Fabricação própria</strong>
+            <span>Controle em todas as etapas</span>
+          </div>
+        </div>
+
+        <div class="hero-faixa-item">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <div>
+            <strong>Qualidade e resistência</strong>
+            <span>Produtos feitos para durar</span>
+          </div>
+        </div>
+
+        <div class="hero-faixa-item">
+          <i class="fa-solid fa-headset" aria-hidden="true"></i>
+          <div>
+            <strong>Atendimento próximo</strong>
+            <span>Suporte para cada necessidade</span>
+          </div>
+        </div>
+      </div>
+
       <a
         href="#sobre"
         class="hero-rolagem"
@@ -140,7 +167,7 @@
     <section class="secao sobre" id="sobre">
       <div class="container sobre-grid">
 
-        <div class="sobre-imagem">
+        <div class="sobre-imagem" data-animar="esquerda">
           <img
             src="assets/images/fabrica/fabrica-01.webp"
             alt="Estrutura de produção da DropTech Mangueiras"
@@ -152,7 +179,7 @@
           </div>
         </div>
 
-        <div class="sobre-conteudo">
+        <div class="sobre-conteudo" data-animar="direita">
 
           <span class="secao-etiqueta">
             Sobre a DropTech
@@ -212,7 +239,7 @@
     <section class="secao produtos" id="produtos">
       <div class="container">
 
-        <div class="secao-cabecalho">
+        <div class="secao-cabecalho" data-animar>
           <div>
             <span class="secao-etiqueta">
               Nossos produtos
@@ -232,7 +259,9 @@
         <div
           class="produtos-grid"
           id="produtosDestaque"
-        ></div>
+          data-animar
+        >
+        </div>
 
         <div class="secao-acao">
           <a
@@ -249,7 +278,7 @@
     <section class="secao processo" id="processo">
       <div class="container">
 
-        <div class="secao-cabecalho centralizado">
+        <div class="secao-cabecalho centralizado" data-animar>
           <span class="secao-etiqueta">
             Nosso processo
           </span>
@@ -266,7 +295,7 @@
 
         <div class="processo-grid">
 
-          <article class="processo-card">
+          <article class="processo-card" data-animar data-atraso="1">
             <span class="processo-numero">01</span>
 
             <div class="processo-icone">
@@ -280,7 +309,7 @@
             </p>
           </article>
 
-          <article class="processo-card">
+          <article class="processo-card" data-animar data-atraso="2">
             <span class="processo-numero">02</span>
 
             <div class="processo-icone">
@@ -294,7 +323,7 @@
             </p>
           </article>
 
-          <article class="processo-card">
+          <article class="processo-card" data-animar data-atraso="3">
             <span class="processo-numero">03</span>
 
             <div class="processo-icone">
@@ -308,7 +337,7 @@
             </p>
           </article>
 
-          <article class="processo-card">
+          <article class="processo-card" data-animar data-atraso="4">
             <span class="processo-numero">04</span>
 
             <div class="processo-icone">
@@ -330,7 +359,7 @@
     <section class="secao diferenciais">
       <div class="container">
 
-        <div class="secao-cabecalho centralizado">
+        <div class="secao-cabecalho centralizado" data-animar>
           <span class="secao-etiqueta">
             Por que escolher a DropTech?
           </span>
@@ -342,7 +371,7 @@
 
         <div class="diferenciais-grid">
 
-          <article class="diferencial-card">
+          <article class="diferencial-card" data-animar data-atraso="1">
             <i class="fa-solid fa-shield-halved"></i>
             <h3>Alta resistência</h3>
             <p>
@@ -350,7 +379,7 @@
             </p>
           </article>
 
-          <article class="diferencial-card">
+          <article class="diferencial-card" data-animar data-atraso="2">
             <i class="fa-solid fa-arrows-left-right"></i>
             <h3>Flexibilidade</h3>
             <p>
@@ -358,7 +387,7 @@
             </p>
           </article>
 
-          <article class="diferencial-card">
+          <article class="diferencial-card" data-animar data-atraso="3">
             <i class="fa-solid fa-industry"></i>
             <h3>Fabricação própria</h3>
             <p>
@@ -366,7 +395,7 @@
             </p>
           </article>
 
-          <article class="diferencial-card">
+          <article class="diferencial-card" data-animar data-atraso="4">
             <i class="fa-solid fa-handshake"></i>
             <h3>Atendimento próximo</h3>
             <p>
@@ -382,7 +411,7 @@
     <section class="secao galeria" id="galeria">
       <div class="container">
 
-        <div class="secao-cabecalho">
+        <div class="secao-cabecalho" data-animar>
           <div>
             <span class="secao-etiqueta">
               Por dentro da DropTech
@@ -402,6 +431,7 @@
         <div
           class="galeria-grid"
           id="galeriaDestaque"
+          data-animar
         ></div>
 
       </div>
@@ -410,7 +440,7 @@
     <section class="secao contato" id="contato">
       <div class="container contato-grid">
 
-        <div class="contato-conteudo">
+        <div class="contato-conteudo" data-animar="esquerda">
 
           <span class="secao-etiqueta">
             Fale conosco
@@ -472,7 +502,7 @@
 
         </div>
 
-        <form class="formulario-contato" id="formularioContato">
+        <form class="formulario-contato" id="formularioContato" data-animar="direita">
 
           <div class="formulario-cabecalho">
             <h3>Solicite um orçamento</h3>
