@@ -82,16 +82,13 @@
     "horario": "Segunda a sexta, das 8h às 18h"
   },
   "endereco": {
-    "linha1": "Santo Antônio do Canaã",
+    "linha1": "Rodovia Armando Martinelli 09 GALPAOEDIF WG - Santo Antônio do Canaã",
     "cidade": "Santa Teresa",
     "estado": "Espírito Santo",
-    "cep": "29654-000",
-    "mapa": ""
+    "cep": "29654-000"
   },
   "redes": {
     "instagram": "https://instagram.com/droptechmangueiras",
-    "facebook": "",
-    "linkedin": "",
     "linktree": "https://linktr.ee/droptechmangueiras"
   }
 }
