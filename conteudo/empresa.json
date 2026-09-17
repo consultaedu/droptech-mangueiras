@@ -2,32 +2,79 @@
   "nome": "DropTech Mangueiras",
   "slogan": "Resistência e qualidade em cada metro.",
   "descricao": "Desenvolvemos mangueiras para irrigação, jardinagem e uso geral, aliando resistência, flexibilidade, sustentabilidade e inovação.",
-  "hero": {
-    "etiqueta": "Fabricação própria",
-    "titulo": "Resistência e qualidade em cada metro.",
-    "texto": "Soluções em mangueiras para irrigação, jardinagem e diferentes aplicações, com produção acompanhada de perto e atendimento direto.",
-    "imagem": "assets/images/banners/banner-principal.webp"
-  },
+  "slides": [
+    {
+      "ativo": true,
+      "etiqueta": "DropTech Mangueiras",
+      "titulo": "Resistência e qualidade em cada metro.",
+      "texto": "Soluções em mangueiras para irrigação, jardinagem e diferentes aplicações.",
+      "imagem": "assets/images/banners/banner-principal.webp",
+      "botao": "Conheça nossos produtos",
+      "link": "produtos.html",
+      "ordem": 1
+    },
+    {
+      "ativo": true,
+      "etiqueta": "Fabricação própria",
+      "titulo": "Produção acompanhada de perto.",
+      "texto": "Do processo produtivo à preparação final, atenção aos detalhes para entregar produtos confiáveis.",
+      "imagem": "assets/images/fabrica/fabrica-01.webp",
+      "botao": "Conheça a DropTech",
+      "link": "quem-somos.html",
+      "ordem": 2
+    },
+    {
+      "ativo": true,
+      "etiqueta": "Soluções para diferentes aplicações",
+      "titulo": "Flexibilidade para o dia a dia.",
+      "texto": "Linhas desenvolvidas para jardinagem, irrigação e outras necessidades.",
+      "imagem": "assets/images/galeria/produtos-01.webp",
+      "botao": "Ver produtos",
+      "link": "produtos.html",
+      "ordem": 3
+    }
+  ],
   "sobre": {
     "titulo": "Soluções desenvolvidas para durar",
     "resumo": "A DropTech Mangueiras desenvolve produtos para irrigação, jardinagem e uso geral, combinando resistência, flexibilidade e eficiência.",
     "historia": "Com fabricação própria, acompanhamos o processo produtivo desde a seleção da matéria-prima até a preparação do produto para entrega. Essa proximidade ajuda a manter o padrão, aprimorar processos e atender cada necessidade com mais segurança.",
+    "historia2": "Nosso trabalho é guiado pela busca constante por soluções funcionais, produção responsável e um relacionamento próximo com quem utiliza nossos produtos.",
+    "imagem": "assets/images/fabrica/fabrica-01.webp",
     "missao": "Desenvolver mangueiras resistentes e funcionais, oferecendo soluções confiáveis para diferentes aplicações e necessidades.",
     "visao": "Ser reconhecida pela qualidade dos produtos, pela proximidade no atendimento e pela evolução constante da produção.",
-    "valores": ["Qualidade", "Responsabilidade", "Respeito", "Transparência", "Evolução contínua"]
+    "valores": [
+      "Qualidade",
+      "Responsabilidade",
+      "Respeito",
+      "Transparência",
+      "Evolução contínua"
+    ]
   },
-  "diferenciais": [
-    {"icone": "fa-industry", "titulo": "Fabricação própria", "texto": "Controle e acompanhamento direto do processo produtivo."},
-    {"icone": "fa-shield-halved", "titulo": "Qualidade e resistência", "texto": "Produtos desenvolvidos para desempenho consistente no uso diário."},
-    {"icone": "fa-leaf", "titulo": "Produção responsável", "texto": "Aproveitamento eficiente de materiais e atenção ao processo."},
-    {"icone": "fa-headset", "titulo": "Atendimento próximo", "texto": "Contato direto para entender aplicações, medidas e necessidades."}
+  "destaques": [
+    {
+      "valor": "Fabricação",
+      "texto": "própria e acompanhamento do processo."
+    },
+    {
+      "valor": "Qualidade",
+      "texto": "foco em resistência e funcionalidade."
+    },
+    {
+      "valor": "Atendimento",
+      "texto": "próximo para entender cada aplicação."
+    }
   ],
-  "processo": [
-    {"numero": "01", "titulo": "Matéria-prima", "texto": "Seleção dos materiais de acordo com a aplicação e o padrão esperado."},
-    {"numero": "02", "titulo": "Produção", "texto": "Fabricação acompanhada pela equipe, com atenção às etapas do processo."},
-    {"numero": "03", "titulo": "Conferência", "texto": "Verificação visual e dimensional antes da preparação do produto."},
-    {"numero": "04", "titulo": "Expedição", "texto": "Organização e preparação dos produtos para comercialização e entrega."}
-  ],
+  "produtos": {
+    "titulo": "Conheça nossa linha de produtos",
+    "texto": "Mangueiras desenvolvidas para diferentes rotinas, com foco em resistência, flexibilidade e praticidade.",
+    "imagem": "assets/images/galeria/producao-01.webp"
+  },
+  "contatoPagina": {
+    "etiqueta": "Contato",
+    "titulo": "Fale conosco e encontre a solução ideal.",
+    "texto": "Use o formulário para falar com a equipe DropTech. Retornaremos assim que possível.",
+    "imagem": "assets/images/fabrica/fabrica-02.webp"
+  },
   "contato": {
     "telefone": "(27) 99999-9999",
     "whatsapp": "5527999999999",
@@ -44,11 +91,7 @@
   "redes": {
     "instagram": "https://instagram.com/droptechmangueiras",
     "facebook": "",
+    "linkedin": "",
     "linktree": "https://linktr.ee/droptechmangueiras"
-  },
-  "representantes": {
-    "titulo": "Cresça com a DropTech",
-    "texto": "Quer levar nossas soluções para seus clientes? Cadastre seu interesse para conversar com a equipe comercial sobre representação e oportunidades de parceria.",
-    "beneficios": ["Contato direto com a fábrica", "Suporte comercial", "Portfólio em expansão", "Relacionamento próximo"]
   }
 }

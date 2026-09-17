@@ -1,103 +1,20 @@
-DROPTECH MANGUEIRAS — SITE + PAINEL DE CONTEÚDO
-================================================
+DROPTECH MANGUEIRAS — SITE INSTITUCIONAL + PAGES CMS
 
-O projeto foi reorganizado para ficar mais clean, comercial e profissional,
-mantendo a identidade verde/escura e as imagens existentes da DropTech.
-A organização de conteúdo usa como referência boas práticas de sites industriais:
-empresa, linha de produtos, produto individual, catálogos, galeria, contato e
-representação comercial.
+Versão visual inspirada na organização de sites industriais minimalistas, mantendo a identidade DropTech.
 
-COMO PUBLICAR
--------------
-1. Faça um backup do repositório atual.
-2. Copie TODO o conteúdo da pasta "droptech-mangueiras" deste pacote para a
-   raiz do repositório GitHub consultaedu/droptech-mangueiras.
-3. Confirme que o arquivo oculto ".pages.yml" foi enviado para a raiz.
-4. Faça o commit na branch usada pelo GitHub Pages (normalmente main).
-5. Aguarde o GitHub Pages publicar a nova versão.
-
-COMO ATIVAR O PAINEL
---------------------
-1. Acesse https://app.pagescms.org
-2. Entre com a conta GitHub que possui acesso ao repositório.
-3. Autorize o Pages CMS para o repositório "droptech-mangueiras".
-4. Abra o repositório e a branch main.
-5. O Pages CMS lerá automaticamente o arquivo .pages.yml.
-
-O PAINEL TERÁ
--------------
-- Empresa / Site
-- Categorias de produtos
+MENU PÚBLICO
+- Home
+- Quem somos
 - Produtos
-- Galeria de fotos
-- Catálogos e downloads
-- Clientes / parceiros
-- Certificações
+- Contato
 
-PRODUTOS
---------
-Você pode cadastrar pelo painel:
-- nome
-- categoria
-- resumo e descrição
-- foto principal
-- várias fotos adicionais
-- aplicações
-- características
-- especificações técnicas
-- destaque na Home
-- visível/oculto
+PAGES CMS
+1. Envie todos os arquivos deste diretório para a raiz do repositório GitHub.
+2. Confirme que .pages.yml está na raiz.
+3. Entre em https://app.pagescms.org e autorize o repositório.
+4. Pelo painel você pode editar slides, textos, fotos, produtos, galeria, clientes, catálogos e certificações.
 
-Cada produto abre automaticamente em:
-produto.html?id=IDENTIFICADOR
-
-Não é necessário criar uma nova página HTML para cada produto.
-
-CATÁLOGOS PDF
--------------
-Em "Catálogos e downloads", crie um item, envie uma capa (opcional) e o PDF.
-O CMS faz o upload e o site passa a mostrar o botão para abrir o catálogo.
-
-GALERIA
--------
-Basta criar um item, enviar a imagem, informar título/categoria e deixar
-"Exibir no site" ativado.
-
-CLIENTES E CERTIFICAÇÕES
-------------------------
-Essas seções começam vazias para não inventar informações da DropTech.
-Quando você cadastrar logos/certificados no CMS, o site poderá exibi-los.
-
-CONTATO E REPRESENTANTES
-------------------------
-Os formulários montam uma mensagem e abrem o WhatsApp. Não há backend ou banco
-de dados envolvido.
-
-IMPORTANTE — DADOS DE CONTATO
------------------------------
-O projeto original usava dados de exemplo:
-(27) 99999-9999 / 5527999999999 / contato@droptech.com.br
-
-ANTES DE DIVULGAR O SITE, abra:
-Empresa / Site > Contato
-
-e coloque os dados reais.
-
-ARQUIVOS PRINCIPAIS
--------------------
-.pages.yml
-conteudo/empresa.json
-conteudo/categorias.json
-conteudo/produtos.json
-conteudo/galeria.json
-conteudo/catalogos.json
-conteudo/clientes.json
-conteudo/certificacoes.json
-assets/js/app.js
-assets/css/style.css
-
-OBSERVAÇÃO
-----------
-O site precisa ser servido por HTTP/HTTPS para carregar os arquivos JSON.
-No GitHub Pages isso funciona normalmente. Ao abrir index.html diretamente pelo
-Explorador do Windows (file://), alguns navegadores bloqueiam fetch de JSON.
+IMPORTANTE
+- Revise telefone, WhatsApp e e-mail em Empresa / Site > Contato.
+- Clientes, catálogos e certificações ficam ocultos automaticamente enquanto não houver itens cadastrados.
+- Não altere os arquivos JS/CSS para trocar conteúdo comum: use o CMS.

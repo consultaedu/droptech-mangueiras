@@ -1,35 +1,26 @@
-# DropTech Mangueiras — site institucional + Pages CMS
+# DropTech Mangueiras
 
-Site estático da DropTech Mangueiras, preparado para GitHub Pages e edição de conteúdo pelo Pages CMS.
+Site institucional estático da DropTech, preparado para GitHub Pages e edição de conteúdo pelo Pages CMS.
 
-## Páginas
+## Páginas públicas
+- `index.html` — Home com slider institucional
+- `quem-somos.html` — Quem Somos
+- `produtos.html` — Produtos, categorias, catálogos e certificações
+- `produto.html?id=...` — detalhe dinâmico de produto
+- `contato.html` — Contato
+- `politica-privacidade.html` — Política de Privacidade
 
-- `index.html` — Home
-- `sobre.html` — Quem somos
-- `produtos.html` — Catálogo pesquisável e filtros
-- `produto.html?id=...` — Página individual de produto
-- `catalogos.html` — Catálogos/PDFs
-- `galeria.html` — Galeria de fotos
-- `representantes.html` — Cadastro de interesse para representação
-- `contato.html` — Contato/orçamento
-- `politica-privacidade.html` — Privacidade
+Os arquivos `sobre.html`, `galeria.html`, `catalogos.html` e `representantes.html` foram mantidos como redirecionamentos para não quebrar links antigos.
 
 ## Conteúdo editável
+O conteúdo é carregado de `conteudo/*.json` e pode ser gerenciado pelo Pages CMS através do arquivo `.pages.yml`.
 
-O site lê os dados da pasta `/conteudo`:
+- Empresa, slides, páginas e contatos: `conteudo/empresa.json`
+- Categorias: `conteudo/categorias.json`
+- Produtos: `conteudo/produtos.json`
+- Galeria: `conteudo/galeria.json`
+- Clientes/parceiros: `conteudo/clientes.json`
+- Catálogos: `conteudo/catalogos.json`
+- Certificações: `conteudo/certificacoes.json`
 
-- `empresa.json`
-- `categorias.json`
-- `produtos.json`
-- `galeria.json`
-- `catalogos.json`
-- `clientes.json`
-- `certificacoes.json`
-
-O arquivo `.pages.yml` configura o painel do Pages CMS.
-
-## Atenção antes de publicar
-
-Os dados de telefone/WhatsApp/e-mail vieram do projeto original e ainda usam valores de exemplo. Atualize em **Empresa / Site > Contato** no Pages CMS antes de divulgar o site.
-
-Os formulários de contato e representação não dependem de servidor: eles montam a mensagem e abrem o WhatsApp para o visitante confirmar o envio.
+Se clientes, catálogos ou certificações estiverem vazios, as respectivas seções são ocultadas automaticamente.
