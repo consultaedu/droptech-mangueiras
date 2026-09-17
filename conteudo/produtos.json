@@ -1,16 +1,54 @@
 [
   {
-    "id":"mangueira-jardim","nome":"Mangueira para Jardim","categoria":"jardinagem","categoriaNome":"Jardinagem",
-    "resumo":"Mangueira desenvolvida para irrigação de jardins e uso doméstico, com resistência, flexibilidade e praticidade.",
-    "descricao":"Uma solução versátil para tarefas de jardinagem e uso doméstico. Consulte a equipe DropTech para confirmar medidas, composição, cores e disponibilidade adequadas à sua aplicação.",
-    "imagem":"assets/images/produtos/mangueira-jardim.webp","galeria":["assets/images/produtos/mangueira-jardim.webp","assets/images/galeria/fabrica-01.webp"],
-    "aplicacoes":["Jardins","Quintais","Uso doméstico"],"caracteristicas":["Alta flexibilidade","Boa resistência","Fácil manuseio"],"especificacoes":[],"destaque":true,"disponivel":true,"ordem":1
+    "disponivel": false,
+    "destaque": true,
+    "id": "mangueira-jardim",
+    "nome": "Mangueira para Jardim",
+    "categoria": "jardinagem",
+    "categoriaNome": "Jardinagem",
+    "resumo": "Mangueira desenvolvida para irrigação de jardins e uso doméstico, com resistência, flexibilidade e praticidade.",
+    "descricao": "Uma solução versátil para tarefas de jardinagem e uso doméstico. Consulte a equipe DropTech para confirmar medidas, composição, cores e disponibilidade adequadas à sua aplicação.",
+    "imagem": "assets/images/produtos/mangueira-jardim.webp",
+    "galeria": [
+      "assets/images/produtos/mangueira-jardim.webp",
+      "assets/images/galeria/fabrica-01.webp"
+    ],
+    "aplicacoes": [
+      "Jardins",
+      "Quintais",
+      "Uso doméstico"
+    ],
+    "caracteristicas": [
+      "Alta flexibilidade",
+      "Boa resistência",
+      "Fácil manuseio"
+    ],
+    "ordem": 1
   },
   {
-    "id":"mangueira-irrigacao","nome":"Mangueira de Irrigação","categoria":"irrigacao","categoriaNome":"Irrigação",
-    "resumo":"Solução resistente e eficiente para diferentes aplicações de irrigação.",
-    "descricao":"Mangueira indicada para rotinas de irrigação que exigem praticidade e durabilidade. Consulte a equipe comercial para especificações, medidas e condições disponíveis.",
-    "imagem":"assets/images/produtos/mangueira-irrigacao.webp","galeria":["assets/images/produtos/mangueira-irrigacao.webp","assets/images/galeria/producao-01.webp"],
-    "aplicacoes":["Irrigação","Uso rural","Condução de água"],"caracteristicas":["Indicada para irrigação","Alta durabilidade","Fabricação própria"],"especificacoes":[],"destaque":true,"disponivel":true,"ordem":2
+    "disponivel": true,
+    "destaque": true,
+    "id": "mangueira-irrigacao",
+    "nome": "Mangueira de Irrigação",
+    "categoria": "irrigacao",
+    "categoriaNome": "Irrigação",
+    "resumo": "Solução resistente e eficiente para diferentes aplicações de irrigação.",
+    "descricao": "Mangueira indicada para rotinas de irrigação que exigem praticidade e durabilidade. Consulte a equipe comercial para especificações, medidas e condições disponíveis.",
+    "imagem": "assets/images/produtos/mangueira-irrigacao.webp",
+    "galeria": [
+      "assets/images/produtos/mangueira-irrigacao.webp",
+      "assets/images/galeria/producao-01.webp"
+    ],
+    "aplicacoes": [
+      "Irrigação",
+      "Uso rural",
+      "Condução de água"
+    ],
+    "caracteristicas": [
+      "Indicada para irrigação",
+      "Alta durabilidade",
+      "Fabricação própria"
+    ],
+    "ordem": 2
   }
 ]
