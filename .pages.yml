@@ -1,46 +1,16 @@
 media:
-  - name: geral
-    label: Imagens do site
-    input: assets/uploads/geral
-    output: /assets/uploads/geral
-    categories: [image]
-    rename: safe
-  - name: produtos
-    label: Fotos de produtos
-    input: assets/uploads/produtos
-    output: /assets/uploads/produtos
-    categories: [image]
-    rename: safe
-  - name: galeria
-    label: Fotos da empresa
-    input: assets/uploads/galeria
-    output: /assets/uploads/galeria
-    categories: [image]
-    rename: safe
-  - name: catalogos
-    label: Catálogos
-    input: assets/uploads/catalogos
-    output: /assets/uploads/catalogos
-    categories: [document, image]
-    rename: safe
-  - name: certificacoes
-    label: Certificações
-    input: assets/uploads/certificacoes
-    output: /assets/uploads/certificacoes
+  - name: arquivos
+    label: Arquivos do site
+    input: assets/uploads
+    output: /assets/uploads
     categories: [image, document]
-    rename: safe
-  - name: clientes
-    label: Logos de clientes
-    input: assets/uploads/clientes
-    output: /assets/uploads/clientes
-    categories: [image]
     rename: safe
 settings:
   content:
     merge: true
 content:
   - name: empresa
-    label: Empresa / Site
+    label: Site / informações gerais
     type: file
     path: conteudo/empresa.json
     format: json
@@ -59,7 +29,7 @@ content:
           - {name: etiqueta, label: Etiqueta, type: string}
           - {name: titulo, label: Título, type: string, required: true}
           - {name: texto, label: Texto, type: text}
-          - {name: imagem, label: Imagem, type: image, options: {media: geral}}
+          - {name: imagem, label: Imagem, type: image, options: {media: arquivos}}
           - {name: botao, label: Texto do botão, type: string}
           - {name: link, label: Link do botão, type: string}
           - {name: ordem, label: Ordem, type: number, default: 1}
@@ -71,7 +41,7 @@ content:
           - {name: resumo, label: Resumo da Home, type: text}
           - {name: historia, label: História - parágrafo 1, type: text}
           - {name: historia2, label: História - parágrafo 2, type: text}
-          - {name: imagem, label: Imagem principal, type: image, options: {media: geral}}
+          - {name: imagem, label: Imagem principal, type: image, options: {media: arquivos}}
           - {name: missao, label: Missão, type: text}
           - {name: visao, label: Visão, type: text}
           - {name: valores, label: Valores, type: string, list: true}
@@ -89,7 +59,7 @@ content:
         fields:
           - {name: titulo, label: Título, type: string}
           - {name: texto, label: Texto, type: text}
-          - {name: imagem, label: Imagem, type: image, options: {media: geral}}
+          - {name: imagem, label: Imagem, type: image, options: {media: arquivos}}
       - name: contatoPagina
         label: Página Contato
         type: object
@@ -97,7 +67,7 @@ content:
           - {name: etiqueta, label: Etiqueta, type: string}
           - {name: titulo, label: Título, type: string}
           - {name: texto, label: Texto, type: text}
-          - {name: imagem, label: Imagem, type: image, options: {media: geral}}
+          - {name: imagem, label: Imagem, type: image, options: {media: arquivos}}
       - name: contato
         label: Contato
         type: object
@@ -124,7 +94,7 @@ content:
           - {name: linkedin, label: LinkedIn, type: string}
           - {name: linktree, label: Linktree, type: string}
   - name: categorias
-    label: Categorias de produtos
+    label: Categorias
     type: file
     path: conteudo/categorias.json
     format: json
@@ -135,7 +105,7 @@ content:
       - {name: slug, label: Identificador, type: string, required: true}
       - {name: nome, label: Nome, type: string, required: true}
       - {name: descricao, label: Descrição, type: text}
-      - {name: imagem, label: Imagem, type: image, options: {media: produtos}}
+      - {name: imagem, label: Imagem, type: image, options: {media: arquivos}}
       - {name: ordem, label: Ordem, type: number, default: 1}
   - name: produtos
     label: Produtos
@@ -153,8 +123,8 @@ content:
       - {name: categoriaNome, label: Nome da categoria, type: string}
       - {name: resumo, label: Resumo, type: text}
       - {name: descricao, label: Descrição completa, type: text}
-      - {name: imagem, label: Foto principal, type: image, options: {media: produtos}}
-      - {name: galeria, label: Fotos adicionais, type: image, list: true, options: {media: produtos}}
+      - {name: imagem, label: Foto principal, type: image, options: {media: arquivos}}
+      - {name: galeria, label: Fotos adicionais, type: image, list: true, options: {media: arquivos}}
       - {name: aplicacoes, label: Aplicações, type: string, list: true}
       - {name: caracteristicas, label: Características, type: string, list: true}
       - name: especificacoes
@@ -167,7 +137,7 @@ content:
           - {name: valor, label: Valor, type: string}
       - {name: ordem, label: Ordem, type: number, default: 1}
   - name: galeria
-    label: Fotos da empresa
+    label: Galeria / fotos da empresa
     type: file
     path: conteudo/galeria.json
     format: json
@@ -176,7 +146,7 @@ content:
     fields:
       - {name: publicado, label: Exibir, type: boolean, default: true}
       - {name: titulo, label: Título, type: string, required: true}
-      - {name: imagem, label: Imagem, type: image, required: true, options: {media: galeria}}
+      - {name: imagem, label: Imagem, type: image, required: true, options: {media: arquivos}}
       - {name: ordem, label: Ordem, type: number, default: 1}
   - name: clientes
     label: Clientes / parceiros
@@ -188,7 +158,7 @@ content:
     fields:
       - {name: ativo, label: Exibir, type: boolean, default: true}
       - {name: nome, label: Nome, type: string, required: true}
-      - {name: logo, label: Logo, type: image, required: true, options: {media: clientes}}
+      - {name: logo, label: Logo, type: image, required: true, options: {media: arquivos}}
       - {name: link, label: Site / link, type: string}
       - {name: ordem, label: Ordem, type: number, default: 1}
   - name: catalogos
@@ -202,12 +172,12 @@ content:
       - {name: ativo, label: Exibir, type: boolean, default: true}
       - {name: titulo, label: Título, type: string, required: true}
       - {name: descricao, label: Descrição, type: text}
-      - {name: capa, label: Capa, type: image, options: {media: catalogos}}
+      - {name: capa, label: Capa, type: image, options: {media: arquivos}}
       - name: arquivo
         label: Arquivo PDF
         type: file
         required: true
-        options: {media: catalogos, extensions: [pdf]}
+        options: {media: arquivos, extensions: [pdf]}
       - {name: ordem, label: Ordem, type: number, default: 1}
   - name: certificacoes
     label: Certificações
@@ -219,6 +189,6 @@ content:
     fields:
       - {name: ativo, label: Exibir, type: boolean, default: true}
       - {name: nome, label: Nome, type: string, required: true}
-      - {name: imagem, label: Selo / imagem, type: image, options: {media: certificacoes}}
+      - {name: imagem, label: Selo / imagem, type: image, options: {media: arquivos}}
       - {name: link, label: Link do certificado, type: string}
       - {name: ordem, label: Ordem, type: number, default: 1}

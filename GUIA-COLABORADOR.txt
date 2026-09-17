@@ -1,0 +1,26 @@
+GUIA RÁPIDO — PAINEL DROPTECH
+
+Para alimentar o site, use somente a seção CONTENT.
+
+QUERO...
+- cadastrar ou editar um produto -> Produtos
+- criar/editar uma categoria -> Categorias
+- trocar slide, texto, telefone ou endereço -> Site / informações gerais
+- adicionar foto da empresa -> Galeria / fotos da empresa
+- adicionar cliente/parceiro -> Clientes / parceiros
+- publicar catálogo PDF -> Catálogos
+- adicionar certificado -> Certificações
+
+UPLOADS
+Não precisa organizar arquivos manualmente.
+Ao editar um produto, galeria, catálogo etc., use o botão de upload do próprio campo.
+A seção "Arquivos do site" serve apenas como biblioteca geral.
+
+DICA
+Antes de salvar um produto, confira:
+- Exibir no site
+- Nome
+- Categoria
+- Foto principal
+- Resumo/descrição
+- Aplicações e especificações, quando houver

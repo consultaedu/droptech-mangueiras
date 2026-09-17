@@ -1,20 +1,35 @@
 DROPTECH MANGUEIRAS — SITE INSTITUCIONAL + PAGES CMS
 
-Versão visual inspirada na organização de sites industriais minimalistas, mantendo a identidade DropTech.
-
 MENU PÚBLICO
 - Home
 - Quem somos
 - Produtos
 - Contato
 
-PAGES CMS
-1. Envie todos os arquivos deste diretório para a raiz do repositório GitHub.
-2. Confirme que .pages.yml está na raiz.
-3. Entre em https://app.pagescms.org e autorize o repositório.
-4. Pelo painel você pode editar slides, textos, fotos, produtos, galeria, clientes, catálogos e certificações.
+PAGES CMS — PAINEL SIMPLIFICADO
+O painel foi organizado para que o conteúdo seja alterado sem mexer no código.
+
+CONTENT
+- Site / informações gerais: slides, textos institucionais, contato, endereço e redes sociais.
+- Categorias: grupos/linhas de produtos.
+- Produtos: cadastro, fotos, aplicações, características e especificações.
+- Galeria / fotos da empresa: fotos institucionais e da estrutura.
+- Clientes / parceiros: logos e links.
+- Catálogos: capa e arquivo PDF.
+- Certificações: selo/imagem e link.
+
+MEDIA
+- Arquivos do site: única biblioteca de imagens e documentos.
+Normalmente não é necessário entrar nela: os próprios campos de Produto, Galeria, Catálogo etc. já permitem fazer upload.
+
+COMO USAR
+1. Entre em https://app.pagescms.org e abra o repositório da DropTech.
+2. Escolha a área em Content.
+3. Edite ou adicione o item.
+4. Faça o upload da imagem/PDF dentro do próprio campo.
+5. Salve/publice a alteração.
 
 IMPORTANTE
-- Revise telefone, WhatsApp e e-mail em Empresa / Site > Contato.
+- Revise telefone, WhatsApp e e-mail em Site / informações gerais > Contato.
 - Clientes, catálogos e certificações ficam ocultos automaticamente enquanto não houver itens cadastrados.
-- Não altere os arquivos JS/CSS para trocar conteúdo comum: use o CMS.
+- Não altere arquivos JS/CSS/HTML para trocar conteúdo comum: use o CMS.
