@@ -1,0 +1,54 @@
+{
+  "nome": "DropTech Mangueiras",
+  "slogan": "Resistência e qualidade em cada metro.",
+  "descricao": "Desenvolvemos mangueiras para irrigação, jardinagem e uso geral, aliando resistência, flexibilidade, sustentabilidade e inovação.",
+  "hero": {
+    "etiqueta": "Fabricação própria",
+    "titulo": "Resistência e qualidade em cada metro.",
+    "texto": "Soluções em mangueiras para irrigação, jardinagem e diferentes aplicações, com produção acompanhada de perto e atendimento direto.",
+    "imagem": "assets/images/banners/banner-principal.webp"
+  },
+  "sobre": {
+    "titulo": "Soluções desenvolvidas para durar",
+    "resumo": "A DropTech Mangueiras desenvolve produtos para irrigação, jardinagem e uso geral, combinando resistência, flexibilidade e eficiência.",
+    "historia": "Com fabricação própria, acompanhamos o processo produtivo desde a seleção da matéria-prima até a preparação do produto para entrega. Essa proximidade ajuda a manter o padrão, aprimorar processos e atender cada necessidade com mais segurança.",
+    "missao": "Desenvolver mangueiras resistentes e funcionais, oferecendo soluções confiáveis para diferentes aplicações e necessidades.",
+    "visao": "Ser reconhecida pela qualidade dos produtos, pela proximidade no atendimento e pela evolução constante da produção.",
+    "valores": ["Qualidade", "Responsabilidade", "Respeito", "Transparência", "Evolução contínua"]
+  },
+  "diferenciais": [
+    {"icone": "fa-industry", "titulo": "Fabricação própria", "texto": "Controle e acompanhamento direto do processo produtivo."},
+    {"icone": "fa-shield-halved", "titulo": "Qualidade e resistência", "texto": "Produtos desenvolvidos para desempenho consistente no uso diário."},
+    {"icone": "fa-leaf", "titulo": "Produção responsável", "texto": "Aproveitamento eficiente de materiais e atenção ao processo."},
+    {"icone": "fa-headset", "titulo": "Atendimento próximo", "texto": "Contato direto para entender aplicações, medidas e necessidades."}
+  ],
+  "processo": [
+    {"numero": "01", "titulo": "Matéria-prima", "texto": "Seleção dos materiais de acordo com a aplicação e o padrão esperado."},
+    {"numero": "02", "titulo": "Produção", "texto": "Fabricação acompanhada pela equipe, com atenção às etapas do processo."},
+    {"numero": "03", "titulo": "Conferência", "texto": "Verificação visual e dimensional antes da preparação do produto."},
+    {"numero": "04", "titulo": "Expedição", "texto": "Organização e preparação dos produtos para comercialização e entrega."}
+  ],
+  "contato": {
+    "telefone": "(27) 99999-9999",
+    "whatsapp": "5527999999999",
+    "email": "contato@droptech.com.br",
+    "horario": "Segunda a sexta, das 8h às 18h"
+  },
+  "endereco": {
+    "linha1": "Santo Antônio do Canaã",
+    "cidade": "Santa Teresa",
+    "estado": "Espírito Santo",
+    "cep": "29654-000",
+    "mapa": ""
+  },
+  "redes": {
+    "instagram": "https://instagram.com/droptechmangueiras",
+    "facebook": "",
+    "linktree": "https://linktr.ee/droptechmangueiras"
+  },
+  "representantes": {
+    "titulo": "Cresça com a DropTech",
+    "texto": "Quer levar nossas soluções para seus clientes? Cadastre seu interesse para conversar com a equipe comercial sobre representação e oportunidades de parceria.",
+    "beneficios": ["Contato direto com a fábrica", "Suporte comercial", "Portfólio em expansão", "Relacionamento próximo"]
+  }
+}

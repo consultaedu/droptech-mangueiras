@@ -1,0 +1,5 @@
+[
+  {"titulo":"Produção DropTech","categoria":"Produção","imagem":"assets/images/galeria/fabrica-01.webp","descricao":"Processo de fabricação das mangueiras DropTech.","publicado":true,"ordem":1},
+  {"titulo":"Produtos finalizados","categoria":"Produtos","imagem":"assets/images/galeria/producao-01.webp","descricao":"Mangueiras preparadas para comercialização.","publicado":true,"ordem":2},
+  {"titulo":"Estrutura da fábrica","categoria":"Fábrica","imagem":"assets/images/galeria/produtos-01.webp","descricao":"Estrutura utilizada no processo produtivo.","publicado":true,"ordem":3}
+]

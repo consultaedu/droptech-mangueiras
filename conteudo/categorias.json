@@ -1,0 +1,4 @@
+[
+  {"slug":"jardinagem","nome":"Jardinagem","descricao":"Mangueiras flexíveis e práticas para jardins, quintais e uso doméstico.","imagem":"assets/images/produtos/mangueira-jardim.webp","ordem":1,"ativo":true},
+  {"slug":"irrigacao","nome":"Irrigação","descricao":"Soluções resistentes para condução de água em diferentes rotinas de irrigação.","imagem":"assets/images/produtos/mangueira-irrigacao.webp","ordem":2,"ativo":true}
+]

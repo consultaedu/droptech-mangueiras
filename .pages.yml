@@ -1,0 +1,260 @@
+media:
+  - name: geral
+    label: Imagens gerais
+    input: assets/uploads/geral
+    output: /assets/uploads/geral
+    categories: [image]
+    rename: safe
+  - name: produtos
+    label: Fotos de produtos
+    input: assets/uploads/produtos
+    output: /assets/uploads/produtos
+    categories: [image]
+    rename: safe
+  - name: galeria
+    label: Galeria
+    input: assets/uploads/galeria
+    output: /assets/uploads/galeria
+    categories: [image]
+    rename: safe
+  - name: catalogos
+    label: Catálogos
+    input: assets/uploads/catalogos
+    output: /assets/uploads/catalogos
+    categories: [document, image]
+    rename: safe
+  - name: clientes
+    label: Logos de clientes
+    input: assets/uploads/clientes
+    output: /assets/uploads/clientes
+    categories: [image]
+    rename: safe
+  - name: certificacoes
+    label: Certificações
+    input: assets/uploads/certificacoes
+    output: /assets/uploads/certificacoes
+    categories: [image, document]
+    rename: safe
+settings:
+  content:
+    merge: true
+content:
+  - name: empresa
+    label: Empresa / Site
+    type: file
+    path: conteudo/empresa.json
+    format: json
+    operations: {delete: false}
+    fields:
+      - {name: nome, label: Nome da empresa, type: string, required: true}
+      - {name: slogan, label: Slogan, type: string}
+      - {name: descricao, label: Descrição institucional, type: text}
+      - name: hero
+        label: Capa da página inicial
+        type: object
+        fields:
+          - {name: etiqueta, label: Etiqueta, type: string}
+          - {name: titulo, label: Título principal, type: string, required: true}
+          - {name: texto, label: Texto, type: text}
+          - name: imagem
+            label: Imagem de fundo
+            type: image
+            options: {media: geral}
+      - name: sobre
+        label: Sobre a empresa
+        type: object
+        fields:
+          - {name: titulo, label: Título, type: string}
+          - {name: resumo, label: Resumo, type: text}
+          - {name: historia, label: História / apresentação, type: text}
+          - {name: missao, label: Missão, type: text}
+          - {name: visao, label: Visão, type: text}
+          - name: valores
+            label: Valores
+            type: string
+            list: true
+      - name: diferenciais
+        label: Diferenciais
+        type: object
+        list:
+          collapsible: {collapsed: true, summary: "{titulo}"}
+        fields:
+          - {name: icone, label: Ícone Font Awesome, type: string, description: "Ex.: fa-industry"}
+          - {name: titulo, label: Título, type: string, required: true}
+          - {name: texto, label: Texto, type: text}
+      - name: processo
+        label: Etapas do processo
+        type: object
+        list:
+          collapsible: {collapsed: true, summary: "{numero} — {titulo}"}
+        fields:
+          - {name: numero, label: Número, type: string}
+          - {name: titulo, label: Título, type: string}
+          - {name: texto, label: Texto, type: text}
+      - name: contato
+        label: Contato
+        type: object
+        fields:
+          - {name: telefone, label: Telefone, type: string}
+          - {name: whatsapp, label: WhatsApp com DDI e DDD, type: string, description: "Somente números. Ex.: 5527999999999"}
+          - {name: email, label: E-mail, type: string}
+          - {name: horario, label: Horário, type: string}
+      - name: endereco
+        label: Endereço
+        type: object
+        fields:
+          - {name: linha1, label: Endereço / bairro, type: string}
+          - {name: cidade, label: Cidade, type: string}
+          - {name: estado, label: Estado, type: string}
+          - {name: cep, label: CEP, type: string}
+          - {name: mapa, label: Link do mapa, type: string}
+      - name: redes
+        label: Redes sociais
+        type: object
+        fields:
+          - {name: instagram, label: Instagram, type: string}
+          - {name: facebook, label: Facebook, type: string}
+          - {name: linktree, label: Linktree, type: string}
+      - name: representantes
+        label: Página de representantes
+        type: object
+        fields:
+          - {name: titulo, label: Título, type: string}
+          - {name: texto, label: Texto, type: text}
+          - name: beneficios
+            label: Benefícios
+            type: string
+            list: true
+  - name: categorias
+    label: Categorias de produtos
+    type: file
+    path: conteudo/categorias.json
+    format: json
+    list: true
+    operations: {delete: false}
+    fields:
+      - {name: ativo, label: Exibir, type: boolean, default: true}
+      - {name: slug, label: Identificador, type: string, required: true, description: "Sem espaços. Ex.: irrigacao"}
+      - {name: nome, label: Nome, type: string, required: true}
+      - {name: descricao, label: Descrição, type: text}
+      - name: imagem
+        label: Imagem
+        type: image
+        options: {media: produtos}
+      - {name: ordem, label: Ordem, type: number, default: 1}
+  - name: produtos
+    label: Produtos
+    type: file
+    path: conteudo/produtos.json
+    format: json
+    list: true
+    operations: {delete: false}
+    fields:
+      - {name: disponivel, label: Exibir no site, type: boolean, default: true}
+      - {name: destaque, label: Produto em destaque, type: boolean, default: false}
+      - {name: id, label: Identificador / slug, type: string, required: true, description: "Sem espaços. Ex.: mangueira-jardim"}
+      - {name: nome, label: Nome, type: string, required: true}
+      - {name: categoria, label: Slug da categoria, type: string, required: true}
+      - {name: categoriaNome, label: Nome da categoria, type: string}
+      - {name: resumo, label: Resumo, type: text}
+      - {name: descricao, label: Descrição completa, type: text}
+      - name: imagem
+        label: Foto principal
+        type: image
+        options: {media: produtos}
+      - name: galeria
+        label: Fotos adicionais
+        type: image
+        list: true
+        options: {media: produtos}
+      - name: aplicacoes
+        label: Aplicações
+        type: string
+        list: true
+      - name: caracteristicas
+        label: Características
+        type: string
+        list: true
+      - name: especificacoes
+        label: Especificações técnicas
+        type: object
+        list:
+          collapsible: {collapsed: true, summary: "{rotulo}: {valor}"}
+        fields:
+          - {name: rotulo, label: Item, type: string}
+          - {name: valor, label: Valor, type: string}
+      - {name: ordem, label: Ordem, type: number, default: 1}
+  - name: galeria
+    label: Galeria de fotos
+    type: file
+    path: conteudo/galeria.json
+    format: json
+    list: true
+    operations: {delete: false}
+    fields:
+      - {name: publicado, label: Exibir no site, type: boolean, default: true}
+      - {name: titulo, label: Título, type: string, required: true}
+      - {name: categoria, label: Categoria, type: string}
+      - name: imagem
+        label: Imagem
+        type: image
+        required: true
+        options: {media: galeria}
+      - {name: descricao, label: Descrição, type: text}
+      - {name: ordem, label: Ordem, type: number, default: 1}
+  - name: catalogos
+    label: Catálogos e downloads
+    type: file
+    path: conteudo/catalogos.json
+    format: json
+    list: true
+    operations: {delete: false}
+    fields:
+      - {name: ativo, label: Exibir, type: boolean, default: true}
+      - {name: titulo, label: Título, type: string, required: true}
+      - {name: descricao, label: Descrição, type: text}
+      - name: capa
+        label: Capa
+        type: image
+        options: {media: catalogos}
+      - name: arquivo
+        label: Arquivo PDF
+        type: file
+        required: true
+        options:
+          media: catalogos
+          extensions: [pdf]
+      - {name: ordem, label: Ordem, type: number, default: 1}
+  - name: clientes
+    label: Clientes / parceiros
+    type: file
+    path: conteudo/clientes.json
+    format: json
+    list: true
+    operations: {delete: false}
+    fields:
+      - {name: ativo, label: Exibir, type: boolean, default: true}
+      - {name: nome, label: Nome, type: string, required: true}
+      - name: logo
+        label: Logo
+        type: image
+        options: {media: clientes}
+      - {name: site, label: Site, type: string}
+      - {name: ordem, label: Ordem, type: number, default: 1}
+  - name: certificacoes
+    label: Certificações
+    type: file
+    path: conteudo/certificacoes.json
+    format: json
+    list: true
+    operations: {delete: false}
+    fields:
+      - {name: ativo, label: Exibir, type: boolean, default: true}
+      - {name: nome, label: Nome, type: string, required: true}
+      - {name: descricao, label: Descrição, type: text}
+      - name: imagem
+        label: Selo / imagem
+        type: image
+        options: {media: certificacoes}
+      - {name: link, label: Link do certificado, type: string}
+      - {name: ordem, label: Ordem, type: number, default: 1}
