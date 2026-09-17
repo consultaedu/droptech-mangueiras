@@ -33,3 +33,16 @@ IMPORTANTE
 - Revise telefone, WhatsApp e e-mail em Site / informações gerais > Contato.
 - Clientes, catálogos e certificações ficam ocultos automaticamente enquanto não houver itens cadastrados.
 - Não altere arquivos JS/CSS/HTML para trocar conteúdo comum: use o CMS.
+
+FICHA TÉCNICA DOS PRODUTOS
+---------------------------
+Em Produtos > escolha o produto > Ficha técnica, preencha apenas os dados que souber.
+- Material / composição
+- Pressão de trabalho
+- Temperatura de trabalho
+- Títulos das 3 colunas da tabela
+- Linhas da tabela (uma medida/variação por linha)
+- Observações técnicas, se necessário
+
+Os títulos das colunas podem ser alterados em cada produto. Assim, produtos futuros podem usar outros dados sem alterar o código do site. Campos vazios não aparecem para o visitante.
+

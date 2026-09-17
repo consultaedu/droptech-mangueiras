@@ -24,3 +24,16 @@ Antes de salvar um produto, confira:
 - Foto principal
 - Resumo/descrição
 - Aplicações e especificações, quando houver
+
+FICHA TÉCNICA DOS PRODUTOS
+---------------------------
+Em Produtos > escolha o produto > Ficha técnica, preencha apenas os dados que souber.
+- Material / composição
+- Pressão de trabalho
+- Temperatura de trabalho
+- Títulos das 3 colunas da tabela
+- Linhas da tabela (uma medida/variação por linha)
+- Observações técnicas, se necessário
+
+Os títulos das colunas podem ser alterados em cada produto. Assim, produtos futuros podem usar outros dados sem alterar o código do site. Campos vazios não aparecem para o visitante.
+

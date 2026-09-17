@@ -127,14 +127,26 @@ content:
       - {name: galeria, label: Fotos adicionais, type: image, list: true, options: {media: arquivos}}
       - {name: aplicacoes, label: Aplicações, type: string, list: true}
       - {name: caracteristicas, label: Características, type: string, list: true}
-      - name: especificacoes
-        label: Especificações técnicas
+      - name: fichaTecnica
+        label: Ficha técnica
         type: object
-        list:
-          collapsible: {collapsed: true, summary: "{rotulo}: {valor}"}
         fields:
-          - {name: rotulo, label: Item, type: string}
-          - {name: valor, label: Valor, type: string}
+          - {name: composicao, label: Material / composição, type: string, description: "Ex.: PVC flexível reforçado com trama de poliéster"}
+          - {name: pressaoTrabalho, label: Pressão de trabalho, type: string, description: "Ex.: 250 PSI"}
+          - {name: temperaturaTrabalho, label: Temperatura de trabalho, type: string, description: "Ex.: 5 °C a 50 °C"}
+          - {name: coluna1Titulo, label: Título da coluna 1, type: string, default: "Medida / diâmetro"}
+          - {name: coluna2Titulo, label: Título da coluna 2, type: string, default: "Espessura / parede"}
+          - {name: coluna3Titulo, label: Título da coluna 3, type: string, default: "Comprimento / rolo"}
+          - name: linhas
+            label: Linhas da tabela
+            type: object
+            list:
+              collapsible: {collapsed: true, summary: "{valor1} | {valor2} | {valor3}"}
+            fields:
+              - {name: valor1, label: Coluna 1, type: string}
+              - {name: valor2, label: Coluna 2, type: string}
+              - {name: valor3, label: Coluna 3, type: string}
+          - {name: observacoes, label: Observações técnicas, type: text}
       - {name: ordem, label: Ordem, type: number, default: 1}
   - name: galeria
     label: Galeria / fotos da empresa
