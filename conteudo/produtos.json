@@ -1,5 +1,7 @@
 [
   {
+    "disponivel": true,
+    "destaque": true,
     "id": "mangueira-jardim",
     "nome": "Mangueira para Jardim",
     "categoria": "jardinagem",
@@ -21,21 +23,19 @@
       "Boa resistência",
       "Fácil manuseio"
     ],
-    "destaque": true,
-    "disponivel": true,
-    "ordem": 1,
     "fichaTecnica": {
-      "composicao": "",
-      "pressaoTrabalho": "",
-      "temperaturaTrabalho": "",
+      "composicao": "pvc",
+      "pressaoTrabalho": "230",
+      "temperaturaTrabalho": "55",
       "coluna1Titulo": "Medida / diâmetro",
       "coluna2Titulo": "Espessura / parede",
-      "coluna3Titulo": "Comprimento / rolo",
-      "linhas": [],
-      "observacoes": ""
-    }
+      "coluna3Titulo": "Comprimento / rolo"
+    },
+    "ordem": 1
   },
   {
+    "disponivel": true,
+    "destaque": true,
     "id": "mangueira-irrigacao",
     "nome": "Mangueira de Irrigação",
     "categoria": "irrigacao",
@@ -57,18 +57,14 @@
       "Alta durabilidade",
       "Fabricação própria"
     ],
-    "destaque": true,
-    "disponivel": true,
-    "ordem": 2,
     "fichaTecnica": {
-      "composicao": "",
-      "pressaoTrabalho": "",
-      "temperaturaTrabalho": "",
+      "composicao": "ABS",
+      "pressaoTrabalho": "121",
+      "temperaturaTrabalho": "32",
       "coluna1Titulo": "Medida / diâmetro",
       "coluna2Titulo": "Espessura / parede",
-      "coluna3Titulo": "Comprimento / rolo",
-      "linhas": [],
-      "observacoes": ""
-    }
+      "coluna3Titulo": "Comprimento / rolo"
+    },
+    "ordem": 2
   }
 ]
