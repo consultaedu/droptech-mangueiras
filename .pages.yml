@@ -84,7 +84,8 @@ content:
           - {name: cidade, label: Cidade, type: string}
           - {name: estado, label: Estado, type: string}
           - {name: cep, label: CEP, type: string}
-          - {name: mapa, label: Link do Google Maps (opcional), type: string, description: "Se deixar vazio, o mapa usa o endereço acima automaticamente."}
+          - {name: mapa, label: Link para abrir no Google Maps (opcional), type: string, description: "Cole o link de Compartilhar do Google Maps (inclusive maps.app.goo.gl). Este link é usado no botão Como chegar."}
+          - {name: mapaEmbed, label: Mapa incorporado / iframe (recomendado), type: text, description: "No Google Maps: Compartilhar > Incorporar um mapa > Copiar HTML. Cole aqui o código iframe inteiro ou apenas o endereço src. É este campo que fixa exatamente o ponto exibido no rodapé."}
       - name: redes
         label: Redes sociais
         type: object
