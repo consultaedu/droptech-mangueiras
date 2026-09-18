@@ -86,7 +86,8 @@
     "cidade": "Santa Teresa",
     "estado": "Espírito Santo",
     "cep": "29654-000",
-    "mapa": "https://maps.app.goo.gl/jonxmpdXFuWp1pCQ8"
+    "mapa": "https://maps.app.goo.gl/jonxmpdXFuWp1pCQ8",
+    "mapaEmbed": "<iframe\n  src=\"https://www.google.com/maps?q=-19.82344897110082,-40.64794540958863&z=17&output=embed\"\n  width=\"600\"\n  height=\"450\"\n  style=\"border:0;\"\n  allowfullscreen=\"\"\n  loading=\"lazy\"\n  referrerpolicy=\"no-referrer-when-downgrade\">\n</iframe>"
   },
   "redes": {
     "instagram": "https://instagram.com/droptechmangueiras",

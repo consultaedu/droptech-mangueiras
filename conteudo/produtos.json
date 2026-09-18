@@ -2,20 +2,16 @@
   {
     "disponivel": true,
     "destaque": true,
-    "id": "mangueira-jardim",
-    "nome": "Mangueira para Jardim",
-    "categoria": "jardinagem",
-    "categoriaNome": "Jardinagem",
-    "resumo": "Mangueira desenvolvida para irrigação de jardins e uso doméstico, com resistência, flexibilidade e praticidade.",
-    "descricao": "Uma solução versátil para tarefas de jardinagem e uso doméstico. Consulte a equipe DropTech para confirmar medidas, composição, cores e disponibilidade adequadas à sua aplicação.",
-    "imagem": "assets/images/produtos/mangueira-jardim.webp",
-    "galeria": [
-      "assets/images/produtos/mangueira-jardim.webp",
-      "assets/images/galeria/fabrica-01.webp"
-    ],
+    "id": "mangueira-ducha",
+    "nome": "Mangueira para chuveiro",
+    "categoria": "chuveiro_duchas",
+    "categoriaNome": "Chuveiros e duchas",
+    "resumo": "Mangueira Flexível 5/16\" para Chuveiros e Duchas\n\nMangueira flexível de 5/16\", desenvolvida especialmente para reposição em chuveiros e duchas manuais. Com parede de 1,00 mm, oferece excelente leveza, flexibilidade e maleabilidade, proporcionando fácil manuseio e instalação.\n\nSeu formato garante encaixe preciso e praticidade no uso doméstico, sendo uma solução funcional e resistente para substituição de mangueiras em sistemas de banho.\n",
+    "descricao": "Mangueira flexível de 5/16\", desenvolvida especialmente para reposição em chuveiros e duchas manuais. Com parede de 1,00 mm, oferece a leveza e a maleabilidade ideais para o uso doméstico, proporcionando fácil manuseio e encaixe preciso.\n\nAplicações:\nIndicada para reposição em chuveiros elétricos, duchas manuais e acessórios sanitários.\n\nDiferenciais:\n• Parede de 1,00 mm, proporcionando alta flexibilidade;\n• Espessura adequada para encaixe em bicos de chuveiro padrão;\n• Superfície lisa, facilitando a limpeza e a higienização;\n• Leve, prática e de fácil instalação.\n",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-213358-1.jpeg",
     "aplicacoes": [
-      "Jardins",
-      "Quintais",
+      "Chuveiros",
+      "Duchas",
       "Uso doméstico"
     ],
     "caracteristicas": [
@@ -24,12 +20,17 @@
       "Fácil manuseio"
     ],
     "fichaTecnica": {
-      "composicao": "pvc",
-      "pressaoTrabalho": "230",
+      "composicao": "PVC Flexível de alta resistência",
+      "pressaoTrabalho": "Passagem de água em baixa pressão",
       "temperaturaTrabalho": "55",
       "coluna1Titulo": "Medida / diâmetro",
       "coluna2Titulo": "Espessura / parede",
-      "coluna3Titulo": "Comprimento / rolo"
+      "coluna3Titulo": "Comprimento / rolo",
+      "linhas": [
+        {
+          "valor2": "5/16\" - 1,00mm"
+        }
+      ]
     },
     "ordem": 1
   },
@@ -37,20 +38,16 @@
     "disponivel": true,
     "destaque": true,
     "id": "mangueira-irrigacao",
-    "nome": "Mangueira de Irrigação",
+    "nome": "Mangueira Flex Lisa Cores 3/4",
     "categoria": "irrigacao",
     "categoriaNome": "Irrigação",
-    "resumo": "Solução resistente e eficiente para diferentes aplicações de irrigação.",
-    "descricao": "Mangueira indicada para rotinas de irrigação que exigem praticidade e durabilidade. Consulte a equipe comercial para especificações, medidas e condições disponíveis.",
-    "imagem": "assets/images/produtos/mangueira-irrigacao.webp",
-    "galeria": [
-      "assets/images/produtos/mangueira-irrigacao.webp",
-      "assets/images/galeria/producao-01.webp"
-    ],
+    "resumo": "Mangueira de 3/4\", desenvolvida para aplicações que exigem maior vazão de água, resistência e praticidade. Com parede de 2,5 mm, oferece maior robustez para irrigação de áreas amplas, mantendo a flexibilidade necessária para um manuseio eficiente.\n\nProduzida em PVC de alta qualidade, proporciona resistência e durabilidade para o uso diário.",
+    "descricao": "Mangueira de 3/4\", desenvolvida para aplicações que exigem maior vazão de água, resistência e praticidade. Com parede de 2,5 mm, oferece maior robustez para irrigação de áreas amplas, mantendo a flexibilidade necessária para um manuseio eficiente.\n\nProduzida em PVC de alta qualidade, proporciona resistência e durabilidade para o uso diário.\n\nAplicações:\nIndicada para irrigação de grandes gramados, jardins, hortas, pomares e enchimento de reservatórios.\n\nDiferenciais:\n• Diâmetro de 3/4\", proporcionando maior vazão de água;\n• Parede reforçada de 2,5 mm, oferecendo maior resistência e durabilidade;\n• Alta flexibilidade para facilitar o manuseio;\n• Superfície lisa, facilitando o arraste e o deslocamento pelo terreno.",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-220849-1.jpeg",
     "aplicacoes": [
       "Irrigação",
-      "Uso rural",
-      "Condução de água"
+      "Áreas maiores",
+      "grandes gramados, pomares e reservatórios"
     ],
     "caracteristicas": [
       "Indicada para irrigação",
@@ -58,13 +55,79 @@
       "Fabricação própria"
     ],
     "fichaTecnica": {
-      "composicao": "ABS",
-      "pressaoTrabalho": "121",
-      "temperaturaTrabalho": "32",
-      "coluna1Titulo": "Medida / diâmetro",
+      "composicao": "PVC Flexível de alta resistência",
+      "pressaoTrabalho": "Baixa Pressão / Irrigação",
+      "coluna1Titulo": "Cores",
       "coluna2Titulo": "Espessura / parede",
-      "coluna3Titulo": "Comprimento / rolo"
+      "coluna3Titulo": "Comprimento / rolo",
+      "linhas": [
+        {
+          "valor1": "Preto, Azul e Laranja",
+          "valor2": "3/4\" | 2,5mm"
+        }
+      ]
     },
     "ordem": 2
+  },
+  {
+    "disponivel": true,
+    "destaque": false,
+    "id": "mangueira-irrigacao",
+    "nome": "Mangueira Flex Lisa Cores 1/2",
+    "categoria": "irrigacao",
+    "categoriaNome": "Irrigação",
+    "resumo": "Mangueira de 1/2\", desenvolvida para irrigação doméstica e manutenção de jardins. Combina leveza, facilidade de manuseio e alta flexibilidade, sendo ideal para o uso diário em redes de baixa pressão.\n\nProduzida em PVC de alta qualidade, oferece boa resistência e durabilidade, além de facilitar o uso em diferentes ambientes.\n",
+    "descricao": "Mangueira de 1/2\", desenvolvida para irrigação doméstica e manutenção de jardins. Combina leveza, facilidade de manuseio e alta flexibilidade, sendo ideal para o uso diário em redes de baixa pressão.\n\nProduzida em PVC de alta qualidade, oferece boa resistência e durabilidade, além de facilitar o uso em diferentes ambientes.\n\nAplicações:\nIndicada para irrigação de jardins e hortas, lavagem de áreas externas e usos domésticos em geral.\n\nDiferenciais:\n• Parede de 2,00 mm, proporcionando maior durabilidade;\n• Superfície lisa, facilitando a limpeza;\n• Alta flexibilidade para contornar obstáculos;\n• Leve, prática e de fácil manuseio.\n",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-220226-4.jpeg",
+    "fichaTecnica": {
+      "composicao": "PVC Flexível de alta resistência",
+      "pressaoTrabalho": "Baixa Pressão / Irrigação",
+      "coluna1Titulo": "Cores",
+      "coluna2Titulo": "Espessura / parede",
+      "coluna3Titulo": "Comprimento / rolo",
+      "linhas": [
+        {
+          "valor1": "Preto, Azul e Laranja",
+          "valor2": "1/2\" | 2mm"
+        }
+      ]
+    },
+    "ordem": 3
+  },
+  {
+    "disponivel": true,
+    "destaque": true,
+    "id": "nivel",
+    "nome": "Mangueira Cristal 5/16 x 1,50mm - Linha Multiuso e Nível",
+    "categoria": "nivel_agua",
+    "categoriaNome": "Mangueira de nivel",
+    "resumo": "Mangueira cristal transparente de alta qualidade, ideal para aplicações que exigem a visualização do fluxo ou do nível de líquidos. Produzida em PVC cristal 100% virgem, oferece excelente flexibilidade, resistência e durabilidade, atendendo desde o setor da construção civil até instalações residenciais, comerciais e industriais.\n\nAplicações:\nIndicada para nível de água em obras, drenagem de ar-condicionado, condução de líquidos de baixa pressão e usos domésticos em geral.",
+    "descricao": "Mangueira cristal transparente de alta qualidade, ideal para aplicações que exigem a visualização do fluxo ou do nível de líquidos. Produzida em PVC cristal 100% virgem, oferece excelente flexibilidade, resistência e durabilidade, atendendo desde o setor da construção civil até instalações residenciais, comerciais e industriais.\n\nAplicações:\nIndicada para nível de água em obras, drenagem de ar-condicionado, condução de líquidos de baixa pressão e usos domésticos em geral.\n\nDiferenciais:\n• Transparência cristalina, facilitando a visualização e o monitoramento do líquido;\n• Alta flexibilidade, proporcionando fácil manuseio e adaptação em curvas;\n• Boa resistência às intempéries;\n• Superfície lisa e de fácil limpeza;\n• Produzida com PVC cristal 100% virgem.\n\nFicha Técnica:\nMaterial: PVC Cristal 100% virgem\nAcabamento: Liso e transparente\nIndicação: Construção civil, refrigeração e uso geral",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-213712-1.jpeg",
+    "fichaTecnica": {
+      "composicao": "PVC Cristal 100% virgem",
+      "pressaoTrabalho": "Construção civil, refrigeração e uso geral",
+      "coluna1Titulo": "Medida / diâmetro",
+      "coluna2Titulo": "Espessura / parede",
+      "coluna3Titulo": "Comprimento / rolo",
+      "linhas": [
+        {
+          "valor2": "5/16\" x 1,50mm"
+        },
+        {
+          "valor2": "3/8\" x 1,50mm"
+        },
+        {
+          "valor2": "1/2\" x 1,80mm"
+        },
+        {
+          "valor2": "5/8\" x 1,80mm"
+        },
+        {
+          "valor2": "3/4\" x 1,80mm"
+        }
+      ]
+    },
+    "ordem": 4
   }
 ]

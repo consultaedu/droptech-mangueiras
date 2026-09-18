@@ -1,4 +1,26 @@
 [
-  {"slug":"jardinagem","nome":"Jardinagem","descricao":"Mangueiras flexíveis e práticas para jardins, quintais e uso doméstico.","imagem":"assets/images/produtos/mangueira-jardim.webp","ordem":1,"ativo":true},
-  {"slug":"irrigacao","nome":"Irrigação","descricao":"Soluções resistentes para condução de água em diferentes rotinas de irrigação.","imagem":"assets/images/produtos/mangueira-irrigacao.webp","ordem":2,"ativo":true}
+  {
+    "ativo": true,
+    "slug": "chuveiro_duchas",
+    "nome": "Chuveiros e duchas",
+    "descricao": "Mangueira flexível de 5/16\" desenvolvida especificamente para reposição em chuveiros e duchas manuais. Com parede de 1,00mm, oferece a leveza e a maleabilidade ideais para o uso doméstico, garantindo um encaixe preciso e fácil manuseio.\n\nAplicações: Reposição em chuveiros elétricos, duchas manuais e acessórios sanitários.\n\nDiferenciais: Parede de 1,00mm que garante máxima flexibilidade; espessura ideal para encaixe em bicos de chuveiro padrão; superfície lisa para higienização rápida.",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-213358.jpeg",
+    "ordem": 1
+  },
+  {
+    "ativo": true,
+    "slug": "irrigacao",
+    "nome": "Irrigação",
+    "descricao": "Soluções resistentes para condução de água em diferentes rotinas de irrigação.",
+    "imagem": "assets/images/produtos/mangueira-irrigacao.webp",
+    "ordem": 2
+  },
+  {
+    "ativo": true,
+    "slug": "nivel_agua",
+    "nome": "Mangueira de nivel",
+    "descricao": "\nMangueira cristal transparente de alta qualidade, ideal para aplicações que exigem a visualização do fluxo ou do nível de líquidos. Produzida com **PVC virgem**, oferece excelente flexibilidade, resistência e durabilidade, atendendo às necessidades dos setores da construção civil, residencial e industrial.\n\nAplicações:\nIndicada para nível de água em obras, drenagem de ar-condicionado, condução de líquidos de baixa pressão e usos domésticos em geral.\n\nDiferenciais:\n• Transparência cristalina, facilitando a visualização e o monitoramento do líquido;\n• Alta flexibilidade, proporcionando facilidade no manuseio e na realização de curvas;\n• Boa resistência às intempéries;\n• Fabricada com matéria-prima de alta qualidade.\n",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-213712.jpeg",
+    "ordem": 3
+  }
 ]
