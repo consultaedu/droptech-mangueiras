@@ -135,7 +135,7 @@ content:
           - {name: composicao, label: Material / composição, type: string, description: "Ex.: PVC flexível reforçado com trama de poliéster"}
           - {name: pressaoTrabalho, label: Pressão de trabalho, type: string, description: "Ex.: 250 PSI"}
           - {name: temperaturaTrabalho, label: Temperatura de trabalho, type: string, description: "Ex.: 5 °C a 50 °C"}
-          - {name: coluna1Titulo, label: Título da coluna 1, type: string, default: "Medida / diâmetro"}
+          - {name: coluna1Titulo, label: Título da coluna 1, type: string, default: "Cores / acabamento"}
           - {name: coluna2Titulo, label: Título da coluna 2, type: string, default: "Espessura / parede"}
           - {name: coluna3Titulo, label: Título da coluna 3, type: string, default: "Comprimento / rolo"}
           - name: linhas
