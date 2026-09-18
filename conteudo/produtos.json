@@ -95,7 +95,7 @@
     "ordem": 3
   },
   {
-    "disponivel": true,
+    "disponivel": false,
     "destaque": true,
     "id": "nivel",
     "nome": "Mangueira Cristal 5/16 x 1,50mm - Linha Multiuso e Nível",
