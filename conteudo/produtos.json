@@ -38,20 +38,16 @@
     "disponivel": true,
     "destaque": true,
     "id": "mangueira-irrigacao",
-    "nome": "Mangueira de Irrigação",
+    "nome": "Mangueira Flex Lisa Cores 3/4",
     "categoria": "irrigacao",
     "categoriaNome": "Irrigação",
-    "resumo": "Solução resistente e eficiente para diferentes aplicações de irrigação.",
-    "descricao": "Mangueira indicada para rotinas de irrigação que exigem praticidade e durabilidade. Consulte a equipe comercial para especificações, medidas e condições disponíveis.",
-    "imagem": "assets/images/produtos/mangueira-irrigacao.webp",
-    "galeria": [
-      "assets/images/produtos/mangueira-irrigacao.webp",
-      "assets/images/galeria/producao-01.webp"
-    ],
+    "resumo": "Mangueira de 3/4\", desenvolvida para aplicações que exigem maior vazão de água, resistência e praticidade. Com parede de 2,5 mm, oferece maior robustez para irrigação de áreas amplas, mantendo a flexibilidade necessária para um manuseio eficiente.\n\nProduzida em PVC de alta qualidade, proporciona resistência e durabilidade para o uso diário.",
+    "descricao": "Mangueira de 3/4\", desenvolvida para aplicações que exigem maior vazão de água, resistência e praticidade. Com parede de 2,5 mm, oferece maior robustez para irrigação de áreas amplas, mantendo a flexibilidade necessária para um manuseio eficiente.\n\nProduzida em PVC de alta qualidade, proporciona resistência e durabilidade para o uso diário.\n\nAplicações:\nIndicada para irrigação de grandes gramados, jardins, hortas, pomares e enchimento de reservatórios.\n\nDiferenciais:\n• Diâmetro de 3/4\", proporcionando maior vazão de água;\n• Parede reforçada de 2,5 mm, oferecendo maior resistência e durabilidade;\n• Alta flexibilidade para facilitar o manuseio;\n• Superfície lisa, facilitando o arraste e o deslocamento pelo terreno.",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-220849-1.jpeg",
     "aplicacoes": [
       "Irrigação",
-      "Uso rural",
-      "Condução de água"
+      "Áreas maiores",
+      "grandes gramados, pomares e reservatórios"
     ],
     "caracteristicas": [
       "Indicada para irrigação",
@@ -59,12 +55,17 @@
       "Fabricação própria"
     ],
     "fichaTecnica": {
-      "composicao": "ABS",
-      "pressaoTrabalho": "121",
-      "temperaturaTrabalho": "32",
-      "coluna1Titulo": "Medida / diâmetro",
+      "composicao": "PVC Flexível de alta resistência",
+      "pressaoTrabalho": "Baixa Pressão / Irrigação",
+      "coluna1Titulo": "Cores",
       "coluna2Titulo": "Espessura / parede",
-      "coluna3Titulo": "Comprimento / rolo"
+      "coluna3Titulo": "Comprimento / rolo",
+      "linhas": [
+        {
+          "valor1": "Preto, Azul e Laranja",
+          "valor2": "3/4\" | 2,5mm"
+        }
+      ]
     },
     "ordem": 2
   }
