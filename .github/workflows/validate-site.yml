@@ -42,6 +42,7 @@ jobs:
       - name: Validar sintaxe JavaScript
         run: node --check assets/js/app.js
       - name: Validar configuração do CMS
-        run: ruby -e 'require "yaml"; YAML.safe_load_file(".pages.yml", aliases: true); puts ".pages.yml OK"'
+        run: |
+          ruby -e 'require "yaml"; YAML.safe_load_file(".pages.yml", aliases: true); puts ".pages.yml OK"'
       - name: Validar conteúdo e arquivos
         run: node scripts/validate-content.mjs
