@@ -22,12 +22,12 @@
     "fichaTecnica": {
       "composicao": "PVC Flexível de alta resistência",
       "pressaoTrabalho": "Passagem de água em baixa pressão",
-      "temperaturaTrabalho": "55",
-      "coluna1Titulo": "Medida / diâmetro",
+      "coluna1Titulo": "Cores",
       "coluna2Titulo": "Espessura / parede",
       "coluna3Titulo": "Comprimento / rolo",
       "linhas": [
         {
+          "valor1": "Branco",
           "valor2": "5/16\" - 1,00mm"
         }
       ]
@@ -107,7 +107,7 @@
     "fichaTecnica": {
       "composicao": "PVC Cristal 100% virgem",
       "pressaoTrabalho": "Construção civil, refrigeração e uso geral",
-      "coluna1Titulo": "Medida / diâmetro",
+      "coluna1Titulo": "Cores",
       "coluna2Titulo": "Espessura / parede",
       "coluna3Titulo": "Comprimento / rolo",
       "linhas": [
