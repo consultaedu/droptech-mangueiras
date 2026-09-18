@@ -2,20 +2,16 @@
   {
     "disponivel": true,
     "destaque": true,
-    "id": "mangueira-jardim",
-    "nome": "Mangueira para Jardim",
-    "categoria": "jardinagem",
-    "categoriaNome": "Jardinagem",
-    "resumo": "Mangueira desenvolvida para irrigação de jardins e uso doméstico, com resistência, flexibilidade e praticidade.",
-    "descricao": "Uma solução versátil para tarefas de jardinagem e uso doméstico. Consulte a equipe DropTech para confirmar medidas, composição, cores e disponibilidade adequadas à sua aplicação.",
-    "imagem": "assets/images/produtos/mangueira-jardim.webp",
-    "galeria": [
-      "assets/images/produtos/mangueira-jardim.webp",
-      "assets/images/galeria/fabrica-01.webp"
-    ],
+    "id": "mangueira-ducha",
+    "nome": "Mangueira para chuveiro",
+    "categoria": "chuveiro_duchas",
+    "categoriaNome": "Chuveiros e duchas",
+    "resumo": "Mangueira Flexível 5/16\" para Chuveiros e Duchas\n\nMangueira flexível de 5/16\", desenvolvida especialmente para reposição em chuveiros e duchas manuais. Com parede de 1,00 mm, oferece excelente leveza, flexibilidade e maleabilidade, proporcionando fácil manuseio e instalação.\n\nSeu formato garante encaixe preciso e praticidade no uso doméstico, sendo uma solução funcional e resistente para substituição de mangueiras em sistemas de banho.\n",
+    "descricao": "Mangueira flexível de 5/16\", desenvolvida especialmente para reposição em chuveiros e duchas manuais. Com parede de 1,00 mm, oferece a leveza e a maleabilidade ideais para o uso doméstico, proporcionando fácil manuseio e encaixe preciso.\n\nAplicações:\nIndicada para reposição em chuveiros elétricos, duchas manuais e acessórios sanitários.\n\nDiferenciais:\n• Parede de 1,00 mm, proporcionando alta flexibilidade;\n• Espessura adequada para encaixe em bicos de chuveiro padrão;\n• Superfície lisa, facilitando a limpeza e a higienização;\n• Leve, prática e de fácil instalação.\n",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-213358-1.jpeg",
     "aplicacoes": [
-      "Jardins",
-      "Quintais",
+      "Chuveiros",
+      "Duchas",
       "Uso doméstico"
     ],
     "caracteristicas": [
@@ -24,12 +20,17 @@
       "Fácil manuseio"
     ],
     "fichaTecnica": {
-      "composicao": "pvc",
-      "pressaoTrabalho": "230",
+      "composicao": "PVC Flexível de alta resistência",
+      "pressaoTrabalho": "Passagem de água em baixa pressão",
       "temperaturaTrabalho": "55",
       "coluna1Titulo": "Medida / diâmetro",
       "coluna2Titulo": "Espessura / parede",
-      "coluna3Titulo": "Comprimento / rolo"
+      "coluna3Titulo": "Comprimento / rolo",
+      "linhas": [
+        {
+          "valor2": "5/16\" - 1,00mm"
+        }
+      ]
     },
     "ordem": 1
   },
