@@ -68,5 +68,30 @@
       ]
     },
     "ordem": 2
+  },
+  {
+    "disponivel": true,
+    "destaque": false,
+    "id": "mangueira-irrigacao",
+    "nome": "Mangueira Flex Lisa Cores 1/2",
+    "categoria": "irrigacao",
+    "categoriaNome": "Irrigação",
+    "resumo": "Mangueira de 1/2\", desenvolvida para irrigação doméstica e manutenção de jardins. Combina leveza, facilidade de manuseio e alta flexibilidade, sendo ideal para o uso diário em redes de baixa pressão.\n\nProduzida em PVC de alta qualidade, oferece boa resistência e durabilidade, além de facilitar o uso em diferentes ambientes.\n",
+    "descricao": "Mangueira de 1/2\", desenvolvida para irrigação doméstica e manutenção de jardins. Combina leveza, facilidade de manuseio e alta flexibilidade, sendo ideal para o uso diário em redes de baixa pressão.\n\nProduzida em PVC de alta qualidade, oferece boa resistência e durabilidade, além de facilitar o uso em diferentes ambientes.\n\nAplicações:\nIndicada para irrigação de jardins e hortas, lavagem de áreas externas e usos domésticos em geral.\n\nDiferenciais:\n• Parede de 2,00 mm, proporcionando maior durabilidade;\n• Superfície lisa, facilitando a limpeza;\n• Alta flexibilidade para contornar obstáculos;\n• Leve, prática e de fácil manuseio.\n",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-220226-4.jpeg",
+    "fichaTecnica": {
+      "composicao": "PVC Flexível de alta resistência",
+      "pressaoTrabalho": "Baixa Pressão / Irrigação",
+      "coluna1Titulo": "Cores",
+      "coluna2Titulo": "Espessura / parede",
+      "coluna3Titulo": "Comprimento / rolo",
+      "linhas": [
+        {
+          "valor1": "Preto, Azul e Laranja",
+          "valor2": "1/2\" | 2mm"
+        }
+      ]
+    },
+    "ordem": 3
   }
 ]
