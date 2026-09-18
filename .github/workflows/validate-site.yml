@@ -1,0 +1,47 @@
+name: Validar site e conteúdo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'assets/css/**'
+      - 'assets/js/**'
+      - 'assets/uploads/**'
+      - 'conteudo/**'
+      - '.pages.yml'
+      - 'scripts/validate-content.mjs'
+      - '.github/workflows/validate-site.yml'
+  pull_request:
+    paths:
+      - '**/*.html'
+      - 'assets/css/**'
+      - 'assets/js/**'
+      - 'assets/uploads/**'
+      - 'conteudo/**'
+      - '.pages.yml'
+      - 'scripts/validate-content.mjs'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Preparar Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - name: Validar sintaxe JavaScript
+        run: node --check assets/js/app.js
+      - name: Validar configuração do CMS
+        run: ruby -e 'require "yaml"; YAML.safe_load_file(".pages.yml", aliases: true); puts ".pages.yml OK"'
+      - name: Validar conteúdo e arquivos
+        run: node scripts/validate-content.mjs

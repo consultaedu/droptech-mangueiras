@@ -1,6 +1,6 @@
 GUIA RÁPIDO — PAINEL DROPTECH
 
-Para alimentar o site, use somente a seção CONTENT.
+Para alimentar o site, use a seção CONTENT do Pages CMS.
 
 QUERO...
 - cadastrar ou editar um produto -> Produtos
@@ -11,23 +11,29 @@ QUERO...
 - publicar catálogo PDF -> Catálogos
 - adicionar certificado -> Certificações
 
+PRODUTO NOVO — FLUXO SEGURO
+1. Crie o produto com "Publicado / exibir no site" DESLIGADO.
+2. Preencha nome, identificador, categoria e foto principal.
+3. SALVE.
+4. Continue com descrição, aplicações e ficha técnica e salve novamente quando concluir cada bloco importante.
+5. Confira a página e só então ative "Publicado / exibir no site".
+
+O Pages CMS grava no GitHub somente quando você salva. Salvar em etapas reduz muito o risco de perder trabalho se a conexão cair.
+
+IMPORTANTE SOBRE O IDENTIFICADOR
+Cada produto precisa ter um identificador ÚNICO. Exemplos:
+- mangueira-flex-lisa-3-4
+- mangueira-flex-lisa-1-2
+
+Não use o mesmo identificador em dois produtos. Ele faz parte do link da página individual.
+
 UPLOADS
 Não precisa organizar arquivos manualmente.
 Ao editar um produto, galeria, catálogo etc., use o botão de upload do próprio campo.
 A seção "Arquivos do site" serve apenas como biblioteca geral.
 
-DICA
-Antes de salvar um produto, confira:
-- Exibir no site
-- Nome
-- Categoria
-- Foto principal
-- Resumo/descrição
-- Aplicações e especificações, quando houver
-
 FICHA TÉCNICA DOS PRODUTOS
----------------------------
-Em Produtos > escolha o produto > Ficha técnica, preencha apenas os dados que souber.
+Em Produtos > escolha o produto > Ficha técnica, preencha apenas os dados que souber:
 - Material / composição
 - Pressão de trabalho
 - Temperatura de trabalho
@@ -35,5 +41,4 @@ Em Produtos > escolha o produto > Ficha técnica, preencha apenas os dados que s
 - Linhas da tabela (uma medida/variação por linha)
 - Observações técnicas, se necessário
 
-Os títulos das colunas podem ser alterados em cada produto. Assim, produtos futuros podem usar outros dados sem alterar o código do site. Campos vazios não aparecem para o visitante.
-
+Os títulos das colunas podem ser alterados em cada produto. Campos vazios não aparecem para o visitante.

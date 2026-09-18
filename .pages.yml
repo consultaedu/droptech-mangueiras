@@ -3,11 +3,20 @@ media:
     label: Arquivos do site
     input: assets/uploads
     output: /assets/uploads
-    categories: [image, document]
+    extensions: [jpg, jpeg, png, webp, pdf]
     rename: safe
+
 settings:
   content:
     merge: true
+  commit:
+    identity: app
+    templates:
+      create: "cms(create): {path}"
+      update: "cms(update): {path}"
+      delete: "cms(delete): {path}"
+      rename: "cms(rename): {oldPath} -> {newPath}"
+
 content:
   - name: empresa
     label: Site / informações gerais
@@ -16,9 +25,19 @@ content:
     format: json
     operations: {delete: false}
     fields:
-      - {name: nome, label: Nome da empresa, type: string, required: true}
-      - {name: slogan, label: Slogan, type: string}
-      - {name: descricao, label: Descrição institucional, type: text}
+      - name: nome
+        label: Nome da empresa
+        type: string
+        required: true
+        options: {maxlength: 100}
+      - name: slogan
+        label: Slogan
+        type: string
+        options: {maxlength: 160}
+      - name: descricao
+        label: Descrição institucional
+        type: text
+        options: {maxlength: 800}
       - name: slides
         label: Slides da Home
         type: object
@@ -26,24 +45,31 @@ content:
           collapsible: {collapsed: true, summary: "{titulo}"}
         fields:
           - {name: ativo, label: Exibir, type: boolean, default: true}
-          - {name: etiqueta, label: Etiqueta, type: string}
-          - {name: titulo, label: Título, type: string, required: true}
-          - {name: texto, label: Texto, type: text}
+          - {name: etiqueta, label: Etiqueta, type: string, options: {maxlength: 80}}
+          - {name: titulo, label: Título, type: string, required: true, options: {maxlength: 140}}
+          - {name: texto, label: Texto, type: text, options: {maxlength: 400}}
           - {name: imagem, label: Imagem, type: image, options: {media: arquivos}}
-          - {name: botao, label: Texto do botão, type: string}
-          - {name: link, label: Link do botão, type: string}
+          - {name: botao, label: Texto do botão, type: string, options: {maxlength: 50}}
+          - name: link
+            label: Link do botão
+            type: string
+            description: "Use uma página do site (ex.: produtos.html) ou um endereço HTTPS."
+            pattern:
+              regex: "^(?!\\s*(?:javascript|data|vbscript|file|blob):).*$"
+              message: "Use um link interno ou HTTPS; links executáveis não são permitidos."
+            options: {maxlength: 500}
           - {name: ordem, label: Ordem, type: number, default: 1}
       - name: sobre
         label: Quem somos
         type: object
         fields:
-          - {name: titulo, label: Título, type: string}
-          - {name: resumo, label: Resumo da Home, type: text}
-          - {name: historia, label: História - parágrafo 1, type: text}
-          - {name: historia2, label: História - parágrafo 2, type: text}
+          - {name: titulo, label: Título, type: string, options: {maxlength: 140}}
+          - {name: resumo, label: Resumo da Home, type: text, options: {maxlength: 600}}
+          - {name: historia, label: História - parágrafo 1, type: text, options: {maxlength: 1800}}
+          - {name: historia2, label: História - parágrafo 2, type: text, options: {maxlength: 1800}}
           - {name: imagem, label: Imagem principal, type: image, options: {media: arquivos}}
-          - {name: missao, label: Missão, type: text}
-          - {name: visao, label: Visão, type: text}
+          - {name: missao, label: Missão, type: text, options: {maxlength: 800}}
+          - {name: visao, label: Visão, type: text, options: {maxlength: 800}}
           - {name: valores, label: Valores, type: string, list: true}
       - name: destaques
         label: Destaques institucionais
@@ -51,49 +77,90 @@ content:
         list:
           collapsible: {collapsed: true, summary: "{valor}"}
         fields:
-          - {name: valor, label: Palavra / destaque, type: string}
-          - {name: texto, label: Texto complementar, type: text}
+          - {name: valor, label: Palavra / destaque, type: string, options: {maxlength: 60}}
+          - {name: texto, label: Texto complementar, type: text, options: {maxlength: 220}}
       - name: produtos
         label: Página Produtos
         type: object
         fields:
-          - {name: titulo, label: Título, type: string}
-          - {name: texto, label: Texto, type: text}
+          - {name: titulo, label: Título, type: string, options: {maxlength: 140}}
+          - {name: texto, label: Texto, type: text, options: {maxlength: 700}}
           - {name: imagem, label: Imagem, type: image, options: {media: arquivos}}
       - name: contatoPagina
         label: Página Contato
         type: object
         fields:
-          - {name: etiqueta, label: Etiqueta, type: string}
-          - {name: titulo, label: Título, type: string}
-          - {name: texto, label: Texto, type: text}
+          - {name: etiqueta, label: Etiqueta, type: string, options: {maxlength: 50}}
+          - {name: titulo, label: Título, type: string, options: {maxlength: 140}}
+          - {name: texto, label: Texto, type: text, options: {maxlength: 500}}
           - {name: imagem, label: Imagem, type: image, options: {media: arquivos}}
       - name: contato
         label: Contato
         type: object
         fields:
-          - {name: telefone, label: Telefone, type: string}
-          - {name: whatsapp, label: WhatsApp com DDI e DDD, type: string, description: "Somente números"}
-          - {name: email, label: E-mail, type: string}
-          - {name: horario, label: Horário, type: string}
+          - {name: telefone, label: Telefone, type: string, options: {maxlength: 40}}
+          - name: whatsapp
+            label: WhatsApp com DDI e DDD
+            type: string
+            description: "Somente números. Ex.: 5527999999999"
+            pattern:
+              regex: "^(?:$|\\d{10,15})$"
+              message: "Informe apenas 10 a 15 números, incluindo DDI e DDD."
+            options: {maxlength: 15}
+          - name: email
+            label: E-mail
+            type: string
+            pattern:
+              regex: "^(?:$|[^\\s@]+@[^\\s@]+\\.[^\\s@]+)$"
+              message: "Informe um e-mail válido."
+            options: {maxlength: 254}
+          - {name: horario, label: Horário, type: string, options: {maxlength: 120}}
       - name: endereco
         label: Endereço
         type: object
         fields:
-          - {name: linha1, label: Endereço / bairro, type: string}
-          - {name: cidade, label: Cidade, type: string}
-          - {name: estado, label: Estado, type: string}
-          - {name: cep, label: CEP, type: string}
-          - {name: mapa, label: Link para abrir no Google Maps (opcional), type: string, description: "Cole o link de Compartilhar do Google Maps (inclusive maps.app.goo.gl). Este link é usado no botão Como chegar."}
-          - {name: mapaEmbed, label: Mapa incorporado / iframe (recomendado), type: text, description: "No Google Maps: Compartilhar > Incorporar um mapa > Copiar HTML. Cole aqui o código iframe inteiro ou apenas o endereço src. É este campo que fixa exatamente o ponto exibido no rodapé."}
+          - {name: linha1, label: Endereço / bairro, type: string, options: {maxlength: 220}}
+          - {name: cidade, label: Cidade, type: string, options: {maxlength: 100}}
+          - {name: estado, label: Estado, type: string, options: {maxlength: 80}}
+          - {name: cep, label: CEP, type: string, options: {maxlength: 20}}
+          - name: mapa
+            label: Link para abrir no Google Maps (opcional)
+            type: string
+            description: "Cole o link de Compartilhar do Google Maps. É usado no botão Como chegar."
+            pattern:
+              regex: "^(?:$|https://(?:maps\\.app\\.goo\\.gl|(?:www\\.|maps\\.)google\\.(?:com|com\\.br))/[^\\s]+)$"
+              message: "Use um link HTTPS do Google Maps."
+            options: {maxlength: 1000}
+          - name: mapaEmbed
+            label: Mapa incorporado / iframe (recomendado)
+            type: text
+            description: "Google Maps: Compartilhar > Incorporar um mapa > Copiar HTML. O site valida o domínio antes de exibir."
+            options: {maxlength: 5000}
       - name: redes
         label: Redes sociais
         type: object
         fields:
-          - {name: instagram, label: Instagram, type: string}
-          - {name: facebook, label: Facebook, type: string}
-          - {name: linkedin, label: LinkedIn, type: string}
-          - {name: linktree, label: Linktree, type: string}
+          - name: instagram
+            label: Instagram
+            type: string
+            pattern: "^(?:$|https://[^\\s]+)$"
+            options: {maxlength: 500}
+          - name: facebook
+            label: Facebook
+            type: string
+            pattern: "^(?:$|https://[^\\s]+)$"
+            options: {maxlength: 500}
+          - name: linkedin
+            label: LinkedIn
+            type: string
+            pattern: "^(?:$|https://[^\\s]+)$"
+            options: {maxlength: 500}
+          - name: linktree
+            label: Linktree
+            type: string
+            pattern: "^(?:$|https://[^\\s]+)$"
+            options: {maxlength: 500}
+
   - name: categorias
     label: Categorias
     type: file
@@ -103,11 +170,20 @@ content:
     operations: {delete: false}
     fields:
       - {name: ativo, label: Exibir, type: boolean, default: true}
-      - {name: slug, label: Identificador, type: string, required: true}
-      - {name: nome, label: Nome, type: string, required: true}
-      - {name: descricao, label: Descrição, type: text}
-      - {name: imagem, label: Imagem, type: image, options: {media: arquivos}}
+      - name: slug
+        label: Identificador
+        type: string
+        required: true
+        description: "Único. Use apenas letras minúsculas, números, hífen ou underline. Não repita."
+        pattern:
+          regex: "^[a-z0-9]+(?:[_-][a-z0-9]+)*$"
+          message: "Ex.: irrigacao ou mangueira_nivel. Sem espaços ou acentos."
+        options: {minlength: 2, maxlength: 80}
+      - {name: nome, label: Nome, type: string, required: true, options: {maxlength: 100}}
+      - {name: descricao, label: Descrição, type: text, options: {maxlength: 1600}}
+      - {name: imagem, label: Imagem, type: image, required: true, options: {media: arquivos}}
       - {name: ordem, label: Ordem, type: number, default: 1}
+
   - name: produtos
     label: Produtos
     type: file
@@ -116,15 +192,33 @@ content:
     list: true
     operations: {delete: false}
     fields:
-      - {name: disponivel, label: Exibir no site, type: boolean, default: true}
-      - {name: destaque, label: Destaque, type: boolean, default: false}
-      - {name: id, label: Identificador / slug, type: string, required: true}
-      - {name: nome, label: Nome, type: string, required: true}
-      - {name: categoria, label: Slug da categoria, type: string, required: true}
-      - {name: categoriaNome, label: Nome da categoria, type: string}
-      - {name: resumo, label: Resumo, type: text}
-      - {name: descricao, label: Descrição completa, type: text}
-      - {name: imagem, label: Foto principal, type: image, options: {media: arquivos}}
+      - name: disponivel
+        label: Publicado / exibir no site
+        type: boolean
+        default: false
+        description: "Mantenha desligado enquanto cadastra. Salve em etapas e ative somente quando o produto estiver pronto."
+      - {name: destaque, label: Destaque na Home, type: boolean, default: false}
+      - name: id
+        label: Identificador / slug
+        type: string
+        required: true
+        description: "Precisa ser único entre todos os produtos. Ex.: mangueira-flex-lisa-1-2."
+        pattern:
+          regex: "^[a-z0-9]+(?:[_-][a-z0-9]+)*$"
+          message: "Use somente letras minúsculas, números, hífen ou underline."
+        options: {minlength: 2, maxlength: 100}
+      - {name: nome, label: Nome, type: string, required: true, options: {maxlength: 180}}
+      - name: categoria
+        label: Slug da categoria
+        type: string
+        required: true
+        description: "Use exatamente o Identificador cadastrado em Categorias."
+        pattern: "^[a-z0-9]+(?:[_-][a-z0-9]+)*$"
+        options: {maxlength: 80}
+      - {name: categoriaNome, label: Nome da categoria, type: string, options: {maxlength: 100}}
+      - {name: resumo, label: Resumo, type: text, options: {maxlength: 1200}}
+      - {name: descricao, label: Descrição completa, type: text, options: {maxlength: 6000}}
+      - {name: imagem, label: Foto principal, type: image, required: true, options: {media: arquivos}}
       - {name: galeria, label: Fotos adicionais, type: image, list: true, options: {media: arquivos}}
       - {name: aplicacoes, label: Aplicações, type: string, list: true}
       - {name: caracteristicas, label: Características, type: string, list: true}
@@ -132,23 +226,24 @@ content:
         label: Ficha técnica
         type: object
         fields:
-          - {name: composicao, label: Material / composição, type: string, description: "Ex.: PVC flexível reforçado com trama de poliéster"}
-          - {name: pressaoTrabalho, label: Pressão de trabalho, type: string, description: "Ex.: 250 PSI"}
-          - {name: temperaturaTrabalho, label: Temperatura de trabalho, type: string, description: "Ex.: 5 °C a 50 °C"}
-          - {name: coluna1Titulo, label: Título da coluna 1, type: string, default: "Cores / acabamento"}
-          - {name: coluna2Titulo, label: Título da coluna 2, type: string, default: "Espessura / parede"}
-          - {name: coluna3Titulo, label: Título da coluna 3, type: string, default: "Comprimento / rolo"}
+          - {name: composicao, label: Material / composição, type: string, description: "Ex.: PVC flexível reforçado com trama de poliéster", options: {maxlength: 300}}
+          - {name: pressaoTrabalho, label: Pressão de trabalho, type: string, description: "Ex.: 250 PSI", options: {maxlength: 160}}
+          - {name: temperaturaTrabalho, label: Temperatura de trabalho, type: string, description: "Ex.: 5 °C a 50 °C", options: {maxlength: 160}}
+          - {name: coluna1Titulo, label: Título da coluna 1, type: string, default: "Cores / acabamento", options: {maxlength: 80}}
+          - {name: coluna2Titulo, label: Título da coluna 2, type: string, default: "Espessura / parede", options: {maxlength: 80}}
+          - {name: coluna3Titulo, label: Título da coluna 3, type: string, default: "Comprimento / rolo", options: {maxlength: 80}}
           - name: linhas
             label: Linhas da tabela
             type: object
             list:
               collapsible: {collapsed: true, summary: "{valor1} | {valor2} | {valor3}"}
             fields:
-              - {name: valor1, label: Coluna 1, type: string}
-              - {name: valor2, label: Coluna 2, type: string}
-              - {name: valor3, label: Coluna 3, type: string}
-          - {name: observacoes, label: Observações técnicas, type: text}
+              - {name: valor1, label: Coluna 1, type: string, options: {maxlength: 160}}
+              - {name: valor2, label: Coluna 2, type: string, options: {maxlength: 160}}
+              - {name: valor3, label: Coluna 3, type: string, options: {maxlength: 160}}
+          - {name: observacoes, label: Observações técnicas, type: text, options: {maxlength: 1500}}
       - {name: ordem, label: Ordem, type: number, default: 1}
+
   - name: galeria
     label: Galeria / fotos da empresa
     type: file
@@ -158,9 +253,10 @@ content:
     operations: {delete: false}
     fields:
       - {name: publicado, label: Exibir, type: boolean, default: true}
-      - {name: titulo, label: Título, type: string, required: true}
+      - {name: titulo, label: Título, type: string, required: true, options: {maxlength: 140}}
       - {name: imagem, label: Imagem, type: image, required: true, options: {media: arquivos}}
       - {name: ordem, label: Ordem, type: number, default: 1}
+
   - name: clientes
     label: Clientes / parceiros
     type: file
@@ -170,10 +266,15 @@ content:
     operations: {delete: false}
     fields:
       - {name: ativo, label: Exibir, type: boolean, default: true}
-      - {name: nome, label: Nome, type: string, required: true}
+      - {name: nome, label: Nome, type: string, required: true, options: {maxlength: 140}}
       - {name: logo, label: Logo, type: image, required: true, options: {media: arquivos}}
-      - {name: link, label: Site / link, type: string}
+      - name: link
+        label: Site / link
+        type: string
+        pattern: "^(?:$|https://[^\\s]+)$"
+        options: {maxlength: 500}
       - {name: ordem, label: Ordem, type: number, default: 1}
+
   - name: catalogos
     label: Catálogos
     type: file
@@ -183,8 +284,8 @@ content:
     operations: {delete: false}
     fields:
       - {name: ativo, label: Exibir, type: boolean, default: true}
-      - {name: titulo, label: Título, type: string, required: true}
-      - {name: descricao, label: Descrição, type: text}
+      - {name: titulo, label: Título, type: string, required: true, options: {maxlength: 160}}
+      - {name: descricao, label: Descrição, type: text, options: {maxlength: 2400}}
       - {name: capa, label: Capa, type: image, options: {media: arquivos}}
       - name: arquivo
         label: Arquivo PDF
@@ -192,6 +293,7 @@ content:
         required: true
         options: {media: arquivos, extensions: [pdf]}
       - {name: ordem, label: Ordem, type: number, default: 1}
+
   - name: certificacoes
     label: Certificações
     type: file
@@ -201,7 +303,11 @@ content:
     operations: {delete: false}
     fields:
       - {name: ativo, label: Exibir, type: boolean, default: true}
-      - {name: nome, label: Nome, type: string, required: true}
+      - {name: nome, label: Nome, type: string, required: true, options: {maxlength: 160}}
       - {name: imagem, label: Selo / imagem, type: image, options: {media: arquivos}}
-      - {name: link, label: Link do certificado, type: string}
+      - name: link
+        label: Link do certificado
+        type: string
+        pattern: "^(?:$|https://[^\\s]+)$"
+        options: {maxlength: 500}
       - {name: ordem, label: Ordem, type: number, default: 1}

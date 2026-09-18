@@ -1,0 +1,18 @@
+DROPTECH — PACOTE DE AUDITORIA / SEGURANÇA
+
+Este pacote foi preparado para atualizar o CÓDIGO e a CONFIGURAÇÃO do site sem substituir o conteúdo atual cadastrado no CMS.
+
+IMPORTANTE:
+- NÃO há arquivos conteudo/*.json neste patch final.
+- Portanto, produtos, categorias, textos, fotos cadastradas e dados atuais do CMS não serão sobrescritos ao aplicar somente os arquivos fornecidos.
+
+DEPOIS DE SUBIR:
+1. Abra o Pages CMS e confirme que os campos continuam aparecendo normalmente.
+2. Em Produtos, corrija qualquer Identificador / slug repetido.
+3. Produtos novos passam a iniciar como rascunho (não publicados).
+4. No GitHub, confira a aba Actions > Validar site e conteúdo.
+
+SEGURANÇA OPERACIONAL:
+- Use 2FA no GitHub.
+- Convide editores de conteúdo pelo Pages CMS > Collaborators quando eles não precisarem mexer no código.
+- Não publique senhas, tokens ou credenciais no CMS/repositório.

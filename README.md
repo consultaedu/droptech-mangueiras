@@ -24,3 +24,7 @@ O conteúdo é carregado de `conteudo/*.json` e pode ser gerenciado pelo Pages C
 - Certificações: `conteudo/certificacoes.json`
 
 Se clientes, catálogos ou certificações estiverem vazios, as respectivas seções são ocultadas automaticamente.
+
+
+## Validação e segurança
+O projeto inclui `scripts/validate-content.mjs` e o workflow `.github/workflows/validate-site.yml` para verificar automaticamente conteúdo e referências após alterações. Veja `SEGURANCA-E-VALIDACAO.md`.

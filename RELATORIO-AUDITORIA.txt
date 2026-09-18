@@ -1,0 +1,66 @@
+DROPTECH — RELATÓRIO DE AUDITORIA
+Data: 18/09/2026
+
+ESCOPO VERIFICADO
+- Estrutura atual do repositório consultaedu/droptech-mangueiras (branch main)
+- HTML, CSS e JavaScript
+- Configuração do Pages CMS
+- JSONs de empresa, categorias, produtos, galeria, clientes, catálogos e certificações
+- Referências de imagens/PDFs já cadastradas
+- Mapa do Google
+- Links externos e abertura de novas abas
+- Padrões comuns de credenciais/segredos no código atual
+
+SITUAÇÃO ENCONTRADA
+- 4 produtos publicados e marcados como destaque
+- 3 categorias ativas
+- 3 fotos na galeria
+- 1 catálogo PDF
+- Mapa incorporado configurado
+- Nenhum padrão comum de token/chave privada encontrado na árvore atual pesquisada
+- Imagens e PDF atualmente referenciados existem no repositório
+
+PONTO QUE PRECISA DE CORREÇÃO NO CMS
+Existem dois produtos com o mesmo Identificador / slug:
+  mangueira-irrigacao
+
+Produtos afetados:
+- Mangueira Flex Lisa Cores 3/4
+- Mangueira Flex Lisa Cores 1/2
+
+RECOMENDAÇÃO
+Mantenha o primeiro como "mangueira-irrigacao" para preservar links existentes e altere o segundo para:
+  mangueira-flex-lisa-cores-1-2
+
+O JavaScript deste patch já cria links públicos distintos quando detecta duplicidade, evitando o conflito imediato, mas a correção definitiva deve ser feita no CMS.
+
+CONTATOS
+Os dados atuais ainda parecem dados de exemplo:
+- (27) 99999-9999
+- 5527999999999
+- contato@droptech.com.br
+
+Eles não foram alterados porque os valores reais não foram fornecidos nesta auditoria.
+
+MELHORIAS APLICADAS NESTE PATCH
+- Sanitização de links, caminhos de mídia e mapa
+- Bloqueio de esquemas perigosos de URL
+- Content Security Policy nas páginas
+- Referrer Policy
+- rel="noopener noreferrer" em novas abas
+- Limite de tipos de upload no CMS
+- Validação de slugs, WhatsApp, e-mail e URLs no CMS
+- Produto novo começa como rascunho
+- Formulário com limites de tamanho e melhor acessibilidade
+- Respeito a prefers-reduced-motion
+- Melhor foco de teclado
+- Descrições longas preservam quebras de linha
+- Página Produtos renomeada para "Todos os produtos" na grade completa
+- Validador automático via GitHub Actions
+- Actions oficiais fixadas por SHA e com permissões somente de leitura
+
+IMPORTANTE
+O patch entregue NÃO contém conteudo/*.json. Portanto, ao copiar somente o conteúdo do patch para o repositório, os dados já cadastrados pelo CMS não são substituídos.
+
+OTIMIZAÇÃO OPCIONAL — ARQUIVOS DUPLICADOS
+Também existem alguns uploads com conteúdo idêntico, salvos com nomes diferentes (principalmente as imagens 21:33:58, 21:37:12, 22:02:26 e 22:08:49). Eles não foram apagados automaticamente porque nomes diferentes já são referenciados por produtos/categorias e uma remoção sem migração poderia quebrar imagens. O novo validador avisa sobre duplicatas para que uma limpeza possa ser feita de forma controlada depois.
