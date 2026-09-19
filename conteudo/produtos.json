@@ -70,7 +70,7 @@
     "ordem": 2
   },
   {
-    "disponivel": false,
+    "disponivel": true,
     "destaque": true,
     "id": "mangueira-irrigacao-1-2",
     "nome": "Mangueira Flex Lisa Cores 1/2",
