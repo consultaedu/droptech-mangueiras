@@ -9,8 +9,8 @@
   },
   {
     "ativo": true,
-    "slug": "irrigacao",
-    "nome": "Irrigação",
+    "slug": "trancada",
+    "nome": "Mangueiras Trançadas",
     "descricao": "Soluções resistentes para condução de água em diferentes rotinas de irrigação.",
     "imagem": "assets/images/produtos/mangueira-irrigacao.webp",
     "ordem": 2
