@@ -35,7 +35,7 @@
     "ordem": 1
   },
   {
-    "disponivel": true,
+    "disponivel": false,
     "destaque": true,
     "id": "mangueira-irrigacao-3-4",
     "nome": "Mangueira Flex Lisa Cores 3/4",
@@ -70,7 +70,7 @@
     "ordem": 2
   },
   {
-    "disponivel": true,
+    "disponivel": false,
     "destaque": true,
     "id": "mangueira-irrigacao-1-2",
     "nome": "Mangueira Flex Lisa Cores 1/2",
@@ -95,7 +95,7 @@
     "ordem": 3
   },
   {
-    "disponivel": true,
+    "disponivel": false,
     "destaque": true,
     "id": "nivel",
     "nome": "Mangueira Cristal 5/16 x 1,50mm - Linha Multiuso e Nível",
