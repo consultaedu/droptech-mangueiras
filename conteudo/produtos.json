@@ -37,13 +37,18 @@
   {
     "disponivel": false,
     "destaque": true,
-    "id": "mangueira-irrigacao-3-4",
-    "nome": "Mangueira Flex Lisa Cores 3/4",
+    "id": "mangueira-trancada-3-4",
+    "nome": "Mangueira Trançada Cores 3/4",
     "categoria": "irrigacao",
     "categoriaNome": "Irrigação",
     "resumo": "Mangueira de 3/4\", desenvolvida para aplicações que exigem maior vazão de água, resistência e praticidade. Com parede de 2,5 mm, oferece maior robustez para irrigação de áreas amplas, mantendo a flexibilidade necessária para um manuseio eficiente.\n\nProduzida em PVC de alta qualidade, proporciona resistência e durabilidade para o uso diário.",
     "descricao": "Mangueira de 3/4\", desenvolvida para aplicações que exigem maior vazão de água, resistência e praticidade. Com parede de 2,5 mm, oferece maior robustez para irrigação de áreas amplas, mantendo a flexibilidade necessária para um manuseio eficiente.\n\nProduzida em PVC de alta qualidade, proporciona resistência e durabilidade para o uso diário.\n\nAplicações:\nIndicada para irrigação de grandes gramados, jardins, hortas, pomares e enchimento de reservatórios.\n\nDiferenciais:\n• Diâmetro de 3/4\", proporcionando maior vazão de água;\n• Parede reforçada de 2,5 mm, oferecendo maior resistência e durabilidade;\n• Alta flexibilidade para facilitar o manuseio;\n• Superfície lisa, facilitando o arraste e o deslocamento pelo terreno.",
-    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-220849-1.jpeg",
+    "imagem": "/assets/uploads/FOTOS MANGUEIRAS/3.4 Trançada/3.jpeg",
+    "galeria": [
+      "/assets/uploads/FOTOS MANGUEIRAS/3.4 Trançada/5.jpeg",
+      "/assets/uploads/FOTOS MANGUEIRAS/3.4 Trançada/2.jpeg",
+      "/assets/uploads/FOTOS MANGUEIRAS/3.4 Trançada/4.jpeg"
+    ],
     "aplicacoes": [
       "Irrigação",
       "Áreas maiores",
