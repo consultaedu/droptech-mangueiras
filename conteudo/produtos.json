@@ -35,7 +35,7 @@
     "ordem": 1
   },
   {
-    "disponivel": false,
+    "disponivel": true,
     "destaque": true,
     "id": "mangueira-trancada-3-4",
     "nome": "Mangueira Trançada Cores 3/4",
@@ -75,7 +75,7 @@
     "ordem": 2
   },
   {
-    "disponivel": false,
+    "disponivel": true,
     "destaque": true,
     "id": "mangueira-trancada-1-2",
     "nome": "Mangueira Trançada Cores 1/2",
@@ -105,7 +105,7 @@
     "ordem": 3
   },
   {
-    "disponivel": false,
+    "disponivel": true,
     "destaque": true,
     "id": "nivel",
     "nome": "Mangueira Cristal 5/16 x 1,50mm - Linha Multiuso e Nível",
