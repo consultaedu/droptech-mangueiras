@@ -130,6 +130,56 @@
   {
     "disponivel": true,
     "destaque": true,
+    "id": "flexivel",
+    "nome": "MANGUEIRA FLEXÍVEL LISA CORES 3/4\"",
+    "categoria": "flexlisa",
+    "categoriaNome": "Mangueira Flexível Lisa Cores",
+    "resumo": "Mangueira de 3/4\", desenvolvida para aplicações que exigem maior vazão de água, resistência e praticidade. Com parede de 2,5 mm, oferece maior robustez para irrigação de áreas amplas, mantendo a flexibilidade necessária para um manuseio eficiente.\n\nProduzida em PVC de alta qualidade, proporciona resistência e durabilidade para o uso diário.",
+    "descricao": "Mangueira de 3/4\", desenvolvida para aplicações que exigem maior vazão de água, resistência e praticidade. Com parede de 2,5 mm, oferece maior robustez para irrigação de áreas amplas, mantendo a flexibilidade necessária para um manuseio eficiente.\n\nProduzida em PVC de alta qualidade, proporciona resistência e durabilidade para o uso diário.\n\nAplicações:\nIndicada para irrigação de grandes gramados, jardins, hortas, pomares e enchimento de reservatórios.\n\nDiferenciais:\n• Diâmetro de 3/4\", proporcionando maior vazão de água;\n• Parede reforçada de 2,5 mm, oferecendo maior resistência e durabilidade;\n• Alta flexibilidade para facilitar o manuseio;\n• Superfície lisa, facilitando o arraste e o deslocamento pelo terreno.",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-29-at-213147-1.jpeg",
+    "fichaTecnica": {
+      "composicao": "PVC Flexível de alta resistência",
+      "pressaoTrabalho": "Baixa Pressão / Irrigação",
+      "linhas": [
+        {
+          "cor": "Preto, Azul e Laranja",
+          "diametroInternoPol": "3/4\"",
+          "diametroInternoMm": "19,05 ± 0,2",
+          "espessuraParedeMm": "2,50 ± 0,2",
+          "roloM": "10; 15; 20; 25; 30; 50; 100; 200"
+        }
+      ]
+    },
+    "ordem": 4
+  },
+  {
+    "disponivel": true,
+    "destaque": true,
+    "id": "flexivel12",
+    "nome": "MANGUEIRA FLEXÍVEL LISA CORES 1/2\"",
+    "categoria": "flexlisa",
+    "categoriaNome": "Mangueira Flexível Lisa Cores",
+    "resumo": "Mangueira de 1/2\", desenvolvida para irrigação doméstica e manutenção de jardins. Combina leveza, facilidade de manuseio e alta flexibilidade, sendo ideal para o uso diário em redes de baixa pressão.\n\nProduzida em PVC de alta qualidade, oferece boa resistência e durabilidade, além de facilitar o uso em diferentes ambientes.\n",
+    "descricao": "Mangueira de 1/2\", desenvolvida para irrigação doméstica e manutenção de jardins. Combina leveza, facilidade de manuseio e alta flexibilidade, sendo ideal para o uso diário em redes de baixa pressão.\n\nProduzida em PVC de alta qualidade, oferece boa resistência e durabilidade, além de facilitar o uso em diferentes ambientes.\n\nAplicações:\nIndicada para irrigação de jardins e hortas, lavagem de áreas externas e usos domésticos em geral.\n\nDiferenciais:\n• Parede de 2,00 mm, proporcionando maior durabilidade;\n• Superfície lisa, facilitando a limpeza;\n• Alta flexibilidade para contornar obstáculos;\n• Leve, prática e de fácil manuseio.\n",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-29-at-213147-2.jpeg",
+    "fichaTecnica": {
+      "composicao": "PVC Flexível de alta resistência",
+      "pressaoTrabalho": "Baixa Pressão / Irrigação",
+      "linhas": [
+        {
+          "cor": "Preto, Azul e Laranja",
+          "diametroInternoPol": "1/2\"",
+          "diametroInternoMm": "12,70 ± 0,2",
+          "espessuraParedeMm": "2,00 ± 0,2",
+          "roloM": "10; 15; 20; 25; 30; 50; 100; 200"
+        }
+      ]
+    },
+    "ordem": 5
+  },
+  {
+    "disponivel": true,
+    "destaque": true,
     "id": "mangueira-ducha",
     "nome": "MANGUEIRA PARA CHUVEIRO 5/16 x 1,00mm",
     "categoria": "chuveiro_duchas",
