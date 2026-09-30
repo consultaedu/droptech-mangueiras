@@ -231,7 +231,7 @@ body{background:linear-gradient(180deg,#fff 0%,#fff 74%,#fbfdfb 100%)}
 /* Acessibilidade, resiliência e leitura de conteúdo */
 [hidden]{display:none!important}
 :where(a,button,input,textarea,select,[tabindex]):focus-visible{outline:3px solid rgba(82,181,62,.72);outline-offset:3px}
-.detail-copy .description,.technical-note p,.download-body p{white-space:pre-line}
+.history-paragraphs p,.history-detail p,.detail-copy .description,.technical-note p,.download-body p{white-space:pre-line}
 .gallery-strip [role="button"]:focus-visible,.detail-thumb:focus-visible{outline-offset:4px}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto!important}
