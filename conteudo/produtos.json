@@ -2,37 +2,32 @@
   {
     "disponivel": true,
     "destaque": true,
-    "id": "mangueira-ducha",
-    "nome": "MANGUEIRA PARA CHUVEIRO 5/16 x 1,00mm",
-    "categoria": "chuveiro_duchas",
-    "categoriaNome": "Chuveiros e duchas",
-    "resumo": "Mangueira Flexível 5/16\" para Chuveiros e Duchas\n\nMangueira flexível de 5/16\", desenvolvida especialmente para reposição em chuveiros e duchas manuais. Com parede de 1,00 mm, oferece excelente leveza, flexibilidade e maleabilidade, proporcionando fácil manuseio e instalação.\n\nSeu formato garante encaixe preciso e praticidade no uso doméstico, sendo uma solução funcional e resistente para substituição de mangueiras em sistemas de banho.\n",
-    "descricao": "Mangueira flexível de 5/16\", desenvolvida especialmente para reposição em chuveiros e duchas manuais. Com parede de 1,00 mm, oferece a leveza e a maleabilidade ideais para o uso doméstico, proporcionando fácil manuseio e encaixe preciso.\n\nAplicações:\nIndicada para reposição em chuveiros elétricos, duchas manuais e acessórios sanitários.\n\nDiferenciais:\n• Parede de 1,00 mm, proporcionando alta flexibilidade;\n• Espessura adequada para encaixe em bicos de chuveiro padrão;\n• Superfície lisa, facilitando a limpeza e a higienização;\n• Leve, prática e de fácil instalação.\n",
-    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-213358-1.jpeg",
-    "aplicacoes": [
-      "Chuveiros",
-      "Duchas",
-      "Uso doméstico"
-    ],
-    "caracteristicas": [
-      "Alta flexibilidade",
-      "Boa resistência",
-      "Fácil manuseio"
+    "id": "mangueira-trancada-1-2",
+    "nome": "MANGUEIRA JARDIM TRANÇADA 1/2\"",
+    "categoria": "trancada",
+    "categoriaNome": "Mangueiras Trançadas",
+    "resumo": "Mangueira de 1/2\", desenvolvida para irrigação doméstica e manutenção de jardins. Combina leveza, facilidade de manuseio e alta flexibilidade, sendo ideal para o uso diário em redes de baixa pressão.\n\nProduzida em PVC de alta qualidade, oferece boa resistência e durabilidade, além de facilitar o uso em diferentes ambientes.\n",
+    "descricao": "Mangueira de 1/2\", desenvolvida para irrigação doméstica e manutenção de jardins. Combina leveza, facilidade de manuseio e alta flexibilidade, sendo ideal para o uso diário em redes de baixa pressão.\n\nProduzida em PVC de alta qualidade, oferece boa resistência e durabilidade, além de facilitar o uso em diferentes ambientes.\n\nAplicações:\nIndicada para irrigação de jardins e hortas, lavagem de áreas externas e usos domésticos em geral.\n\nDiferenciais:\n• Parede de 2,00 mm, proporcionando maior durabilidade;\n• Superfície lisa, facilitando a limpeza;\n• Alta flexibilidade para contornar obstáculos;\n• Leve, prática e de fácil manuseio.\n",
+    "imagem": "/assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_141425.jpg",
+    "galeria": [
+      "/assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_142046.jpg",
+      "/assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_142312.jpg",
+      "/assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260829_140134.jpg"
     ],
     "fichaTecnica": {
       "composicao": "PVC Flexível de alta resistência",
-      "pressaoTrabalho": "Passagem de água em baixa pressão",
+      "pressaoTrabalho": "Baixa Pressão / Irrigação",
       "linhas": [
         {
-          "cor": "Branco",
-          "diametroInternoPol": "5/16\"",
-          "diametroInternoMm": "7,94 ± 0,2",
-          "espessuraParedeMm": "1,00 ± 0,2",
-          "roloM": "50; 100"
+          "cor": "Preto, Azul e Verde",
+          "diametroInternoPol": "1/2\"",
+          "diametroInternoMm": "12,70 ± 0,2",
+          "espessuraParedeMm": "2,50 ± 0,2",
+          "roloM": "10; 15; 20; 25; 30; 50; 100; 200m"
         }
       ]
     },
-    "ordem": 6
+    "ordem": 1
   },
   {
     "disponivel": true,
@@ -73,36 +68,6 @@
       ]
     },
     "ordem": 2
-  },
-  {
-    "disponivel": true,
-    "destaque": true,
-    "id": "mangueira-trancada-1-2",
-    "nome": "MANGUEIRA JARDIM TRANÇADA 1/2\"",
-    "categoria": "trancada",
-    "categoriaNome": "Mangueiras Trançadas",
-    "resumo": "Mangueira de 1/2\", desenvolvida para irrigação doméstica e manutenção de jardins. Combina leveza, facilidade de manuseio e alta flexibilidade, sendo ideal para o uso diário em redes de baixa pressão.\n\nProduzida em PVC de alta qualidade, oferece boa resistência e durabilidade, além de facilitar o uso em diferentes ambientes.\n",
-    "descricao": "Mangueira de 1/2\", desenvolvida para irrigação doméstica e manutenção de jardins. Combina leveza, facilidade de manuseio e alta flexibilidade, sendo ideal para o uso diário em redes de baixa pressão.\n\nProduzida em PVC de alta qualidade, oferece boa resistência e durabilidade, além de facilitar o uso em diferentes ambientes.\n\nAplicações:\nIndicada para irrigação de jardins e hortas, lavagem de áreas externas e usos domésticos em geral.\n\nDiferenciais:\n• Parede de 2,00 mm, proporcionando maior durabilidade;\n• Superfície lisa, facilitando a limpeza;\n• Alta flexibilidade para contornar obstáculos;\n• Leve, prática e de fácil manuseio.\n",
-    "imagem": "/assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_141425.jpg",
-    "galeria": [
-      "/assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_142046.jpg",
-      "/assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_142312.jpg",
-      "/assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260829_140134.jpg"
-    ],
-    "fichaTecnica": {
-      "composicao": "PVC Flexível de alta resistência",
-      "pressaoTrabalho": "Baixa Pressão / Irrigação",
-      "linhas": [
-        {
-          "cor": "Preto, Azul e Verde",
-          "diametroInternoPol": "1/2\"",
-          "diametroInternoMm": "12,70 ± 0,2",
-          "espessuraParedeMm": "2,50 ± 0,2",
-          "roloM": "10; 15; 20; 25; 30; 50; 100; 200m"
-        }
-      ]
-    },
-    "ordem": 1
   },
   {
     "disponivel": true,
@@ -161,5 +126,40 @@
       ]
     },
     "ordem": 3
+  },
+  {
+    "disponivel": true,
+    "destaque": true,
+    "id": "mangueira-ducha",
+    "nome": "MANGUEIRA PARA CHUVEIRO 5/16 x 1,00mm",
+    "categoria": "chuveiro_duchas",
+    "categoriaNome": "Chuveiros e duchas",
+    "resumo": "Mangueira Flexível 5/16\" para Chuveiros e Duchas\n\nMangueira flexível de 5/16\", desenvolvida especialmente para reposição em chuveiros e duchas manuais. Com parede de 1,00 mm, oferece excelente leveza, flexibilidade e maleabilidade, proporcionando fácil manuseio e instalação.\n\nSeu formato garante encaixe preciso e praticidade no uso doméstico, sendo uma solução funcional e resistente para substituição de mangueiras em sistemas de banho.\n",
+    "descricao": "Mangueira flexível de 5/16\", desenvolvida especialmente para reposição em chuveiros e duchas manuais. Com parede de 1,00 mm, oferece a leveza e a maleabilidade ideais para o uso doméstico, proporcionando fácil manuseio e encaixe preciso.\n\nAplicações:\nIndicada para reposição em chuveiros elétricos, duchas manuais e acessórios sanitários.\n\nDiferenciais:\n• Parede de 1,00 mm, proporcionando alta flexibilidade;\n• Espessura adequada para encaixe em bicos de chuveiro padrão;\n• Superfície lisa, facilitando a limpeza e a higienização;\n• Leve, prática e de fácil instalação.\n",
+    "imagem": "/assets/uploads/whatsapp-image-2026-09-17-at-213358-1.jpeg",
+    "aplicacoes": [
+      "Chuveiros",
+      "Duchas",
+      "Uso doméstico"
+    ],
+    "caracteristicas": [
+      "Alta flexibilidade",
+      "Boa resistência",
+      "Fácil manuseio"
+    ],
+    "fichaTecnica": {
+      "composicao": "PVC Flexível de alta resistência",
+      "pressaoTrabalho": "Passagem de água em baixa pressão",
+      "linhas": [
+        {
+          "cor": "Branco",
+          "diametroInternoPol": "5/16\"",
+          "diametroInternoMm": "7,94 ± 0,2",
+          "espessuraParedeMm": "1,00 ± 0,2",
+          "roloM": "50; 100"
+        }
+      ]
+    },
+    "ordem": 6
   }
 ]
