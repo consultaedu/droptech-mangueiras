@@ -33,7 +33,7 @@ function checkAsset(value,label,{required=false,extensions=[]}={}){
     error(`${label}: extensão não permitida (${rel})`);
   }
   const absolute=path.join(ROOT,rel);
-  if(!fs.existsSync(absolute))error(`${label}: arquivo não existe no repositório (${rel})`);
+  if(!fs.existsSync(absolute)||!fs.statSync(absolute).isFile())error(`${label}: arquivo não existe no repositório ou não é um arquivo (${rel})`);
 }
 
 function safeHttps(value){
@@ -81,18 +81,49 @@ function scanDangerous(value,label='conteúdo'){
   if(value&&typeof value==='object')for(const [key,item] of Object.entries(value))scanDangerous(item,`${label}.${key}`);
 }
 
-const empresa=readJson('conteudo/empresa.json')||{};
-const produtos=readJson('conteudo/produtos.json')||[];
-const categorias=readJson('conteudo/categorias.json')||[];
-const galeria=readJson('conteudo/galeria.json')||[];
-const clientes=readJson('conteudo/clientes.json')||[];
-const catalogos=readJson('conteudo/catalogos.json')||[];
-const certificacoes=readJson('conteudo/certificacoes.json')||[];
-
-for(const [name,data] of Object.entries({empresa,produtos,categorias,galeria,clientes,catalogos,certificacoes}))scanDangerous(data,`conteudo/${name}.json`);
-
-if(!Array.isArray(produtos))error('conteudo/produtos.json precisa ser uma lista');
-if(!Array.isArray(categorias))error('conteudo/categorias.json precisa ser uma lista');
+function objectValue(value,label){
+  if(!value||typeof value!=='object'||Array.isArray(value)){
+    error(`${label}: precisa ser um objeto`); return {};
+  }
+  return value;
+}
+function listValue(value,label,{optional=false,objects=false}={}){
+  if(optional&&value===undefined)return [];
+  if(!Array.isArray(value)){error(`${label}: precisa ser uma lista`); return []}
+  if(objects)return value.map((item,index)=>objectValue(item,`${label}[${index}]`));
+  return value;
+}
+function content(name,{object=false}={}){
+  const value=readJson(`conteudo/${name}.json`);
+  scanDangerous(value,`conteudo/${name}.json`);
+  return object?objectValue(value,`conteudo/${name}.json`):listValue(value,`conteudo/${name}.json`,{objects:true});
+}
+const empresa=content('empresa',{object:true});
+const produtos=content('produtos');
+const categorias=content('categorias');
+const galeria=content('galeria');
+const clientes=content('clientes');
+const catalogos=content('catalogos');
+const certificacoes=content('certificacoes');
+for(const key of ['sobre','produtos','contatoPagina','catalogoHome','endereco','contato','redes']){
+  if(empresa[key]!==undefined)empresa[key]=objectValue(empresa[key],`empresa.${key}`);
+}
+for(const [index,product] of produtos.entries()){
+  for(const key of ['galeria','aplicacoes','caracteristicas']){
+    if(product[key]!==undefined)product[key]=listValue(product[key],`Produto #${index+1} / ${key}`);
+  }
+  if(product.fichaTecnica!==undefined){
+    product.fichaTecnica=objectValue(product.fichaTecnica,`Produto #${index+1} / fichaTecnica`);
+    for(const key of ['linhas','coresDisponiveis']){
+      if(product.fichaTecnica[key]!==undefined)listValue(product.fichaTecnica[key],`Produto #${index+1} / fichaTecnica.${key}`,{objects:key==='linhas'});
+    }
+  }
+}
+empresa.slides=listValue(empresa.slides,'empresa.slides',{optional:true,objects:true});
+for(const key of ['destaques']){
+  if(empresa[key]!==undefined)listValue(empresa[key],`empresa.${key}`,{objects:true});
+}
+if(empresa.sobre?.valores!==undefined)listValue(empresa.sobre.valores,'empresa.sobre.valores');
 
 const slugRe=/^[a-z0-9]+(?:[_-][a-z0-9]+)*$/;
 const categorySlugs=new Set();
@@ -218,28 +249,88 @@ if(fs.existsSync(cssPath)){
 }
 
 
-const uploadsDir=path.join(ROOT,'assets/uploads');
-if(fs.existsSync(uploadsDir)){
-  const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(entry=>{
-    const full=path.join(dir,entry.name);
-    return entry.isDirectory()?walk(full):[full];
-  });
-  const hashGroups=new Map();
-  for(const file of walk(uploadsDir)){
+// Inspeção limitada ao cabeçalho: sem decodificar imagens nem instalar dependências.
+function mediaInfo(buffer){
+  if(buffer.length>=24&&buffer.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))){
+    return {format:'png',width:buffer.readUInt32BE(16),height:buffer.readUInt32BE(20)};
+  }
+  if(buffer.length>=12&&buffer.toString('ascii',0,4)==='RIFF'&&buffer.toString('ascii',8,12)==='WEBP'){
+    for(let offset=12;offset+8<=buffer.length;){
+      const kind=buffer.toString('ascii',offset,offset+4),length=buffer.readUInt32LE(offset+4),data=offset+8;
+      if(kind==='VP8X'&&length>=10&&data+10<=buffer.length)return {format:'webp',width:1+buffer.readUIntLE(data+4,3),height:1+buffer.readUIntLE(data+7,3)};
+      if(kind==='VP8 '&&length>=10&&data+10<=buffer.length&&buffer.subarray(data+3,data+6).equals(Buffer.from([157,1,42])))return {format:'webp',width:buffer.readUInt16LE(data+6)&16383,height:buffer.readUInt16LE(data+8)&16383};
+      if(kind==='VP8L'&&length>=5&&data+5<=buffer.length&&buffer[data]===47){
+        const bits=buffer.readUInt32LE(data+1);
+        return {format:'webp',width:1+(bits&16383),height:1+((bits>>>14)&16383)};
+      }
+      offset=data+length+(length%2);
+    }
+    return {format:'webp'};
+  }
+  if(buffer.length>=3&&buffer[0]===255&&buffer[1]===216&&buffer[2]===255){
+    let offset=2;
+    while(offset+4<=buffer.length){
+      if(buffer[offset++]!==255)break;
+      while(offset<buffer.length&&buffer[offset]===255)offset++;
+      const marker=buffer[offset++];
+      if(marker===218||marker===217)break;
+      if(marker===1||(marker>=208&&marker<=215))continue;
+      if(offset+2>buffer.length)break;
+      const length=buffer.readUInt16BE(offset);
+      if(length<2||offset+length>buffer.length)break;
+      if([192,193,194,195,197,198,199,201,202,203,205,206,207].includes(marker)&&length>=7){
+        return {format:'jpeg',height:buffer.readUInt16BE(offset+3),width:buffer.readUInt16BE(offset+5)};
+      }
+      offset+=length;
+    }
+    return {format:'jpeg'};
+  }
+  if(buffer.length>=10&&/^GIF8[79]a$/.test(buffer.toString('ascii',0,6)))return {format:'gif',width:buffer.readUInt16LE(6),height:buffer.readUInt16LE(8)};
+  if(buffer.subarray(0,1024).includes(Buffer.from('%PDF-')))return {format:'pdf'};
+  return {format:null};
+}
+const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(entry=>{
+  const full=path.join(dir,entry.name);
+  return entry.isDirectory()?walk(full):entry.isFile()?[full]:[];
+});
+const hashGroups=new Map();
+for(const directory of ['assets','favicon']){
+  const absolute=path.join(ROOT,directory);
+  if(!fs.existsSync(absolute))continue;
+  for(const file of walk(absolute)){
     const size=fs.statSync(file).size;
     const rel=path.relative(ROOT,file).replace(/\\/g,'/');
     const ext=path.extname(file).toLowerCase();
-    if(['.jpg','.jpeg','.png','.webp'].includes(ext)&&size>3*1024*1024)warn(`${rel}: imagem maior que 3 MB; considere comprimir para melhorar o carregamento`);
+    const image=['.jpg','.jpeg','.png','.webp','.gif'].includes(ext);
+    if(image&&size>3*1024*1024)warn(`${rel}: imagem maior que 3 MB; considere comprimir para melhorar o carregamento`);
     if(ext==='.pdf'&&size>20*1024*1024)warn(`${rel}: PDF maior que 20 MB; pode ficar lento em redes móveis`);
-    if(size<=10*1024*1024){
-      const hash=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
-      if(!hashGroups.has(hash))hashGroups.set(hash,[]);
-      hashGroups.get(hash).push(rel);
+    if(!image&&ext!=='.pdf'&&size>20*1024*1024)warn(`${rel}: arquivo maior que 20 MB`);
+    if(image||ext==='.pdf'){
+      const header=Buffer.alloc(Math.min(size,256*1024));
+      const fd=fs.openSync(file,'r');
+      try{fs.readSync(fd,header,0,header.length,0)}finally{fs.closeSync(fd)}
+      const info=mediaInfo(header);
+      const expected=ext==='.jpg'?'jpeg':ext.slice(1);
+      if(!info.format)error(`${rel}: assinatura de mídia não reconhecida; arquivo inválido ou formato não suportado`);
+      else if(info.format!==expected){
+        // Formatos suportados que o navegador reconhece continuam sendo recomendações.
+        if(image&&['jpeg','png','webp','gif'].includes(info.format))warn(`${rel}: extensão ${ext} não corresponde ao formato real ${info.format.toUpperCase()}`);
+        else error(`${rel}: extensão ${ext} incompatível com o formato real ${info.format.toUpperCase()}`);
+      }
+      if(info.width>3000||info.height>3000||info.width*info.height>12000000)warn(`${rel}: imagem muito grande (${info.width} x ${info.height}); revise as dimensões de exibição`);
+    }
+    // Mantém o limite de 10 MB por upload e usa streaming para limitar a memória.
+    if(rel.startsWith('assets/uploads/')&&size<=10*1024*1024){
+      const hash=crypto.createHash('sha256');
+      for await(const chunk of fs.createReadStream(file))hash.update(chunk);
+      const digest=hash.digest('hex');
+      if(!hashGroups.has(digest))hashGroups.set(digest,[]);
+      hashGroups.get(digest).push(rel);
     }
   }
-  for(const group of hashGroups.values()){
-    if(group.length>1)warn(`Arquivos duplicados em uploads: ${group.join(' | ')}`);
-  }
+}
+for(const group of hashGroups.values()){
+  if(group.length>1)warn(`Arquivos duplicados em uploads: ${group.join(' | ')}`);
 }
 
 if(!fs.existsSync(path.join(ROOT,'.pages.yml')))error('.pages.yml ausente');
