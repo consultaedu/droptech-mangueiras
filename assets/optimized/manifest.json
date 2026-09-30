@@ -12,7 +12,8 @@
         "height": 226,
         "bytes": 23764,
         "psnr": 37.25,
-        "lossless": false
+        "lossless": false,
+        "sha256": "cddab9d90a0fa6e355c278259d0288cc057dfd7f0f16b28b8485e06a337635d9"
       },
       {
         "path": "assets/optimized/4cb0bd112ace4b3e-800w.webp",
@@ -20,7 +21,8 @@
         "height": 452,
         "bytes": 76370,
         "psnr": 40.45,
-        "lossless": false
+        "lossless": false,
+        "sha256": "085f15aaf856f9065eaee0c0346b5208c0495aec6097d6b5cd5d45a3cf762158"
       },
       {
         "path": "assets/optimized/4cb0bd112ace4b3e-1200w.webp",
@@ -28,7 +30,35 @@
         "height": 678,
         "bytes": 137468,
         "psnr": 41.88,
-        "lossless": false
+        "lossless": false,
+        "sha256": "c9bd2d11a37fef820f401ca775b9b1e96659d2c903e9ce173e1adf40cc82d9c1"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 1600,
+        "height": 903,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -45,7 +75,8 @@
         "height": 231,
         "bytes": 17746,
         "psnr": 43.12,
-        "lossless": false
+        "lossless": false,
+        "sha256": "de712b7b778b798ac6e169aa42e7d91fd9ece826c1f9eaf0fd7ebce1fa8ad8a7"
       },
       {
         "path": "assets/optimized/3536d7a6eaa4b8ca-800w.webp",
@@ -53,7 +84,8 @@
         "height": 462,
         "bytes": 44814,
         "psnr": 44.22,
-        "lossless": false
+        "lossless": false,
+        "sha256": "c85a96cd7cdaddc5cf01b77c4f6a489462886734c94479d39276cf888f275107"
       },
       {
         "path": "assets/optimized/3536d7a6eaa4b8ca-1200w.webp",
@@ -61,7 +93,35 @@
         "height": 693,
         "bytes": 75248,
         "psnr": 45.15,
-        "lossless": false
+        "lossless": false,
+        "sha256": "e41f21e861e191b6475f5abddc0565eba4e7401e865a78bcf7a561cb44650a04"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 1600,
+        "height": 924,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -78,7 +138,8 @@
         "height": 236,
         "bytes": 15220,
         "psnr": 43.36,
-        "lossless": false
+        "lossless": false,
+        "sha256": "fe662fee6b967d1066656dfcdb67ed44e32d52d67c96cddcdc7e67a1f911f09a"
       },
       {
         "path": "assets/optimized/8b852a5d47498714-800w.webp",
@@ -86,7 +147,8 @@
         "height": 472,
         "bytes": 37846,
         "psnr": 45.03,
-        "lossless": false
+        "lossless": false,
+        "sha256": "c7c2dd8262ebb512498818032095a56e70e5dbece4d9bbbe6fb713696d5e18a6"
       },
       {
         "path": "assets/optimized/8b852a5d47498714-1200w.webp",
@@ -94,7 +156,35 @@
         "height": 708,
         "bytes": 63202,
         "psnr": 46.04,
-        "lossless": false
+        "lossless": false,
+        "sha256": "e1815c340584af9809506053f24523f2ecf4c3b5d651e23b2a6a080e2f6de4b8"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 1600,
+        "height": 943,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -111,7 +201,8 @@
         "height": 399,
         "bytes": 37930,
         "psnr": 42.54,
-        "lossless": false
+        "lossless": false,
+        "sha256": "b5dcdb5a0bf7561f95906408c0fbefaf8482c9e665e07f7d99f1629e41048156"
       },
       {
         "path": "assets/optimized/3a78aaf6ed59cb07-800w.webp",
@@ -119,7 +210,8 @@
         "height": 799,
         "bytes": 105082,
         "psnr": 43.57,
-        "lossless": false
+        "lossless": false,
+        "sha256": "fedfaedc8923a8fb7ec8b266cf438d1a53a140ff488052ce85443dd8cbfd4cb0"
       },
       {
         "path": "assets/optimized/3a78aaf6ed59cb07-1080w.webp",
@@ -127,9 +219,31 @@
         "height": 1078,
         "bytes": 165390,
         "psnr": 44.2,
-        "lossless": false
+        "lossless": false,
+        "sha256": "b70dcfbd31cf4863054c2e674d448d162649f9e5cb972949dea2ae06d5aa4145"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/images/galeria/producao-01.webp": {
     "width": 1080,
@@ -144,7 +258,8 @@
         "height": 384,
         "bytes": 40326,
         "psnr": 42.35,
-        "lossless": false
+        "lossless": false,
+        "sha256": "bf2d401c00f9ae18fc52e787ae17fb2d1c626596b5dfe6fff2ae3895f3cbbc78"
       },
       {
         "path": "assets/optimized/9f4b93677c0dad06-800w.webp",
@@ -152,7 +267,8 @@
         "height": 767,
         "bytes": 110686,
         "psnr": 43.15,
-        "lossless": false
+        "lossless": false,
+        "sha256": "65fcf37ce6a3974b958cfee12605c28195d1e5a55ccf9a6bd09c8983fd1c5abb"
       },
       {
         "path": "assets/optimized/9f4b93677c0dad06-1080w.webp",
@@ -160,9 +276,31 @@
         "height": 1036,
         "bytes": 164722,
         "psnr": 43.89,
-        "lossless": false
+        "lossless": false,
+        "sha256": "9ff8e5299dd4593f0765a1e7e7d1cb5437072932de9bf14af9b14e5da372692c"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/images/galeria/produtos-01.webp": {
     "width": 1920,
@@ -177,7 +315,8 @@
         "height": 236,
         "bytes": 15220,
         "psnr": 43.36,
-        "lossless": false
+        "lossless": false,
+        "sha256": "fe662fee6b967d1066656dfcdb67ed44e32d52d67c96cddcdc7e67a1f911f09a"
       },
       {
         "path": "assets/optimized/8b852a5d47498714-800w.webp",
@@ -185,7 +324,8 @@
         "height": 472,
         "bytes": 37846,
         "psnr": 45.03,
-        "lossless": false
+        "lossless": false,
+        "sha256": "c7c2dd8262ebb512498818032095a56e70e5dbece4d9bbbe6fb713696d5e18a6"
       },
       {
         "path": "assets/optimized/8b852a5d47498714-1200w.webp",
@@ -193,7 +333,35 @@
         "height": 708,
         "bytes": 63202,
         "psnr": 46.04,
-        "lossless": false
+        "lossless": false,
+        "sha256": "e1815c340584af9809506053f24523f2ecf4c3b5d651e23b2a6a080e2f6de4b8"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 1600,
+        "height": 943,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -210,7 +378,8 @@
         "height": 181,
         "bytes": 10740,
         "psnr": null,
-        "lossless": true
+        "lossless": true,
+        "sha256": "70114c9160544841c846195c274a6f4dd41e7d09b310345d63e240d043e918e4"
       },
       {
         "path": "assets/optimized/1b2b428cb193772e-460w.webp",
@@ -218,9 +387,29 @@
         "height": 361,
         "bytes": 20986,
         "psnr": null,
-        "lossless": true
+        "lossless": true,
+        "sha256": "1bd5aa7dd644011ab95f3515f2ca858225c812d847903b67164e518f74744d1b"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": true,
+      "exact": true,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        230,
+        460
+      ],
+      "role": "logo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/images/logo/logo-simbolo.png": {
     "width": 600,
@@ -228,7 +417,28 @@
     "bytes": 70856,
     "sha256": "df6f8dfbfbdf6bfbda59444e9c14599989e311f9280de24035cfa0568cee4da8",
     "format": "PNG",
-    "variants": []
+    "variants": [],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": true,
+      "exact": true,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260829_140134.jpg": {
     "width": 3024,
@@ -243,7 +453,8 @@
         "height": 400,
         "bytes": 62510,
         "psnr": 26.83,
-        "lossless": false
+        "lossless": false,
+        "sha256": "2739e8af98d1d9e3dd9aca966f2772d6c584bfae2bd28b09623f64ab85d8ae1c"
       },
       {
         "path": "assets/optimized/dfe2797a75c4f63c-600w.webp",
@@ -251,7 +462,8 @@
         "height": 800,
         "bytes": 191800,
         "psnr": 31.24,
-        "lossless": false
+        "lossless": false,
+        "sha256": "2550933c316ec7158d5b2b8e8e288275e64cc326af005b6cb02241698db9ae1d"
       },
       {
         "path": "assets/optimized/dfe2797a75c4f63c-900w.webp",
@@ -259,7 +471,8 @@
         "height": 1200,
         "bytes": 336480,
         "psnr": 34.54,
-        "lossless": false
+        "lossless": false,
+        "sha256": "c40fd1def6bcf2604d564020f3384fa36d6454169a66b2e38f2f06f7436defd6"
       },
       {
         "path": "assets/optimized/dfe2797a75c4f63c-1200w.webp",
@@ -267,9 +480,31 @@
         "height": 1600,
         "bytes": 492214,
         "psnr": 36.64,
-        "lossless": false
+        "lossless": false,
+        "sha256": "8a2722e7744731a966f09330ecb62488d37e69b5f88681ec45fa1090248498d0"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_141425.jpg": {
     "width": 2220,
@@ -284,7 +519,8 @@
         "height": 400,
         "bytes": 45150,
         "psnr": 29.7,
-        "lossless": false
+        "lossless": false,
+        "sha256": "38c3eda132c168e09dfed8f372ce37cd66773c4df1126e6a0dbf371cbe966e64"
       },
       {
         "path": "assets/optimized/532b42010747097d-600w.webp",
@@ -292,7 +528,8 @@
         "height": 800,
         "bytes": 172284,
         "psnr": 31.72,
-        "lossless": false
+        "lossless": false,
+        "sha256": "31c19df7116d07a5d1158cc55f27d1a3c4d1b3d328fe7fc6aaa4380e079ac140"
       },
       {
         "path": "assets/optimized/532b42010747097d-900w.webp",
@@ -300,7 +537,8 @@
         "height": 1200,
         "bytes": 352392,
         "psnr": 34.62,
-        "lossless": false
+        "lossless": false,
+        "sha256": "68d7323924e1419efabe382da273734b5097dd09ee1fd731557c4a6c95cf2415"
       },
       {
         "path": "assets/optimized/532b42010747097d-1200w.webp",
@@ -308,9 +546,31 @@
         "height": 1600,
         "bytes": 546688,
         "psnr": 37.01,
-        "lossless": false
+        "lossless": false,
+        "sha256": "d4f0531e0361394b23da903db98305d915a45b9c89c67f9cee7dccfec192309e"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_142046.jpg": {
     "width": 2338,
@@ -325,7 +585,8 @@
         "height": 400,
         "bytes": 43326,
         "psnr": 32.15,
-        "lossless": false
+        "lossless": false,
+        "sha256": "f71c6a2c2904eec793a4dfe3bc0d4a701ae147df9574027468dba59d6464c9c7"
       },
       {
         "path": "assets/optimized/ea9a37569e3e3402-600w.webp",
@@ -333,7 +594,8 @@
         "height": 800,
         "bytes": 166328,
         "psnr": 32.86,
-        "lossless": false
+        "lossless": false,
+        "sha256": "eb44ffb67c308e1c3a0c6f554f1ba124b1a86b049187107050de8e647b8db60d"
       },
       {
         "path": "assets/optimized/ea9a37569e3e3402-900w.webp",
@@ -341,7 +603,8 @@
         "height": 1200,
         "bytes": 343094,
         "psnr": 34.93,
-        "lossless": false
+        "lossless": false,
+        "sha256": "4f4bb566b4cccb2d80b17422e218deaea54e86fa64409b1f778c9050d8e99385"
       },
       {
         "path": "assets/optimized/ea9a37569e3e3402-1200w.webp",
@@ -349,9 +612,31 @@
         "height": 1600,
         "bytes": 542620,
         "psnr": 36.84,
-        "lossless": false
+        "lossless": false,
+        "sha256": "d4dc606bdf8c5b8bc121b63421b0de2ae0c3fa6ab543c4d351b80e254da9fb7f"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_142152.jpg": {
     "width": 2109,
@@ -366,7 +651,8 @@
         "height": 400,
         "bytes": 47698,
         "psnr": 31.39,
-        "lossless": false
+        "lossless": false,
+        "sha256": "10577263ac8dd1d8728dbc2d8fcba1481db1219dbc57645f253aa7f88ed8e89e"
       },
       {
         "path": "assets/optimized/2b14703757358b19-600w.webp",
@@ -374,7 +660,8 @@
         "height": 800,
         "bytes": 185612,
         "psnr": 32.57,
-        "lossless": false
+        "lossless": false,
+        "sha256": "0383ebd20dd4067ba77fbccef37f9a0e015c23eb751073ed5477f15d4fa860a1"
       },
       {
         "path": "assets/optimized/2b14703757358b19-900w.webp",
@@ -382,7 +669,8 @@
         "height": 1200,
         "bytes": 380642,
         "psnr": 35.0,
-        "lossless": false
+        "lossless": false,
+        "sha256": "ddd61d727b8ad9125cb373aa4c9d60abc1af3506d0334f4811a050b82f4423ba"
       },
       {
         "path": "assets/optimized/2b14703757358b19-1200w.webp",
@@ -390,9 +678,31 @@
         "height": 1600,
         "bytes": 614188,
         "psnr": 37.31,
-        "lossless": false
+        "lossless": false,
+        "sha256": "d4cc06d4178e3bdbabf7a6604a9b1a921f3915b47c6308289a4339d7273896b3"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_142312.jpg": {
     "width": 2003,
@@ -407,7 +717,8 @@
         "height": 400,
         "bytes": 51104,
         "psnr": 33.58,
-        "lossless": false
+        "lossless": false,
+        "sha256": "686f544be58f54796fab57685277c75c59be0118dc6a574b0cbf23e731a8db93"
       },
       {
         "path": "assets/optimized/450bd818484b1e25-600w.webp",
@@ -415,7 +726,8 @@
         "height": 800,
         "bytes": 207110,
         "psnr": 35.03,
-        "lossless": false
+        "lossless": false,
+        "sha256": "c239820e779a973cd013e89d3d4cb7fab6bcd6075e20d0115eb1493baa02ceab"
       },
       {
         "path": "assets/optimized/450bd818484b1e25-900w.webp",
@@ -423,7 +735,8 @@
         "height": 1200,
         "bytes": 417840,
         "psnr": 37.22,
-        "lossless": false
+        "lossless": false,
+        "sha256": "fbe4062191d9de53a1af0fdc6fb09b88494b2fdb8eb56b6d01e21afd592e739c"
       },
       {
         "path": "assets/optimized/450bd818484b1e25-1200w.webp",
@@ -431,9 +744,31 @@
         "height": 1600,
         "bytes": 682122,
         "psnr": 38.92,
-        "lossless": false
+        "lossless": false,
+        "sha256": "fc4b228befcf1b87885cc4dfc20bf99ccdc7737cdb0841b695e5f0935cc9f2f7"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/20260624_150543.jpg": {
     "width": 3024,
@@ -448,7 +783,8 @@
         "height": 400,
         "bytes": 23960,
         "psnr": 40.42,
-        "lossless": false
+        "lossless": false,
+        "sha256": "3fff9492e3b8adddf0b18ac331515cce5fe70c650ffa624ffc1bc1171277856c"
       },
       {
         "path": "assets/optimized/44bb7adc9fd34d71-600w.webp",
@@ -456,7 +792,8 @@
         "height": 800,
         "bytes": 75498,
         "psnr": 41.73,
-        "lossless": false
+        "lossless": false,
+        "sha256": "b64c4a8f1b3e0372ce4d4761d7a684154c5ff740ed8f6bd790af0a1a77e15c05"
       },
       {
         "path": "assets/optimized/44bb7adc9fd34d71-900w.webp",
@@ -464,7 +801,8 @@
         "height": 1200,
         "bytes": 150244,
         "psnr": 42.04,
-        "lossless": false
+        "lossless": false,
+        "sha256": "830f1f8248c2b450a2d8c971c2e7258b3810180ffa83e05702b82aa4101925e3"
       },
       {
         "path": "assets/optimized/44bb7adc9fd34d71-1200w.webp",
@@ -472,9 +810,31 @@
         "height": 1600,
         "bytes": 243038,
         "psnr": 41.76,
-        "lossless": false
+        "lossless": false,
+        "sha256": "e5c4116473af579504246daa319c11b7a0fddfeed744d258bb5d061efa873584"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/20260914_135907.jpg": {
     "width": 3024,
@@ -489,7 +849,8 @@
         "height": 400,
         "bytes": 40026,
         "psnr": 36.72,
-        "lossless": false
+        "lossless": false,
+        "sha256": "4452f889b5a39f5bf0f98baa4e39733231897d910118b96570d7f4526f1b731f"
       },
       {
         "path": "assets/optimized/c074ce01d6a015c2-600w.webp",
@@ -497,7 +858,8 @@
         "height": 800,
         "bytes": 152286,
         "psnr": 38.9,
-        "lossless": false
+        "lossless": false,
+        "sha256": "66c64a29fe6a5234cece5d91489e50647b59d99666e2f2e36cce81200aa9bb96"
       },
       {
         "path": "assets/optimized/c074ce01d6a015c2-900w.webp",
@@ -505,7 +867,8 @@
         "height": 1200,
         "bytes": 303104,
         "psnr": 40.01,
-        "lossless": false
+        "lossless": false,
+        "sha256": "5f2f0abb77b8ec5fd9f2690bba239c6951a751028bbf630d7d88a82a8caca1c5"
       },
       {
         "path": "assets/optimized/c074ce01d6a015c2-1200w.webp",
@@ -513,9 +876,31 @@
         "height": 1600,
         "bytes": 479522,
         "psnr": 40.91,
-        "lossless": false
+        "lossless": false,
+        "sha256": "e1fa4252011c164d758bb3954216e4da2006bc9f511f9551f2611bcd00fe1cb7"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/20260914_135911.jpg": {
     "width": 3024,
@@ -530,7 +915,8 @@
         "height": 400,
         "bytes": 40758,
         "psnr": 36.75,
-        "lossless": false
+        "lossless": false,
+        "sha256": "06dc21bd0c3155fdf150b3d534309339cc7b5381a69a2e705a23deb7f9d53fc1"
       },
       {
         "path": "assets/optimized/d60d8bc794a190c5-600w.webp",
@@ -538,7 +924,8 @@
         "height": 800,
         "bytes": 175984,
         "psnr": 38.61,
-        "lossless": false
+        "lossless": false,
+        "sha256": "9c098db2e0a2b84d25dcfbae39cdfc9034df53a2af60bd5ae46b18fea56845fd"
       },
       {
         "path": "assets/optimized/d60d8bc794a190c5-900w.webp",
@@ -546,7 +933,8 @@
         "height": 1200,
         "bytes": 395310,
         "psnr": 39.78,
-        "lossless": false
+        "lossless": false,
+        "sha256": "2ec4f088e02cae5c12e325a423cf98d226a50d5efeadc766987dee6c859fc2d8"
       },
       {
         "path": "assets/optimized/d60d8bc794a190c5-1200w.webp",
@@ -554,9 +942,31 @@
         "height": 1600,
         "bytes": 659324,
         "psnr": 40.51,
-        "lossless": false
+        "lossless": false,
+        "sha256": "33e250ded0d9d1f9e786ae07ce69c1676e483d1e329176714908add01e1a2548"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/20260914_135929.jpg": {
     "width": 3024,
@@ -571,7 +981,8 @@
         "height": 400,
         "bytes": 62918,
         "psnr": 38.97,
-        "lossless": false
+        "lossless": false,
+        "sha256": "3092c8bcd48f32c6c7e62a4315e706ab621d731fed1b7ff6904d0040d97f208d"
       },
       {
         "path": "assets/optimized/b3ed1f27d02ada95-600w.webp",
@@ -579,7 +990,8 @@
         "height": 800,
         "bytes": 234428,
         "psnr": 39.99,
-        "lossless": false
+        "lossless": false,
+        "sha256": "b1292f6ce1b337496bfaca455324dd6ea61286df1175bfb06534e55d666a63f0"
       },
       {
         "path": "assets/optimized/b3ed1f27d02ada95-900w.webp",
@@ -587,7 +999,8 @@
         "height": 1200,
         "bytes": 464116,
         "psnr": 40.32,
-        "lossless": false
+        "lossless": false,
+        "sha256": "63e2026973f64de3eb40eb7c5971abb33c0d4ca9fafdcbdc265fed113d263a69"
       },
       {
         "path": "assets/optimized/b3ed1f27d02ada95-1200w.webp",
@@ -595,9 +1008,31 @@
         "height": 1600,
         "bytes": 738336,
         "psnr": 40.69,
-        "lossless": false
+        "lossless": false,
+        "sha256": "8262816b792a6debe8964023ed6c9bbb01d2b7f41b8085b21ba49b432662fabe"
       }
-    ]
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/3.4 Trançada/2.jpeg": {
     "width": 1200,
@@ -612,7 +1047,8 @@
         "height": 400,
         "bytes": 21992,
         "psnr": 36.77,
-        "lossless": false
+        "lossless": false,
+        "sha256": "7dafdf2d39748d126f08458611eff95eaf1b42cac131203077f472a71b4027d1"
       },
       {
         "path": "assets/optimized/d1854e031a8e7d9f-600w.webp",
@@ -620,7 +1056,8 @@
         "height": 800,
         "bytes": 95302,
         "psnr": 39.41,
-        "lossless": false
+        "lossless": false,
+        "sha256": "b4f26ec857a7bb1c6c6016bf77607b2a796d412b87fcef26daee05e2770bc2f9"
       },
       {
         "path": "assets/optimized/d1854e031a8e7d9f-900w.webp",
@@ -628,7 +1065,35 @@
         "height": 1200,
         "bytes": 187826,
         "psnr": 41.55,
-        "lossless": false
+        "lossless": false,
+        "sha256": "362d1d67f8a430a364c01edb72ef4e8cf1c2af4434692d5576ad74d8738886e4"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 1200,
+        "height": 1600,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -638,7 +1103,28 @@
     "bytes": 185185,
     "sha256": "c9d0de38b223dc6c9dd4268224520ac577680eb5221e4f7d9042b8bda7481fa8",
     "format": "JPEG",
-    "variants": []
+    "variants": [],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/FOTOS MANGUEIRAS/3.4 Trançada/4.jpeg": {
     "width": 1200,
@@ -653,7 +1139,8 @@
         "height": 400,
         "bytes": 41696,
         "psnr": 36.34,
-        "lossless": false
+        "lossless": false,
+        "sha256": "1997271668aa9b99dda37b518945cbbe0e373902f6035f9284258c606a7258d3"
       },
       {
         "path": "assets/optimized/30cc95e22157839e-600w.webp",
@@ -661,7 +1148,40 @@
         "height": 800,
         "bytes": 152600,
         "psnr": 39.21,
-        "lossless": false
+        "lossless": false,
+        "sha256": "27f71fccedefaf3af81821a99f4261cd8e24d2789186ba244485c7701297576a"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 900,
+        "height": 1200,
+        "reason": "not-smaller"
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -678,7 +1198,8 @@
         "height": 400,
         "bytes": 33604,
         "psnr": 34.21,
-        "lossless": false
+        "lossless": false,
+        "sha256": "4fed614993e0da694eadc30513c94caec97714f6fac928d94c57843acb4470a8"
       },
       {
         "path": "assets/optimized/78941e73cf07a6db-600w.webp",
@@ -686,7 +1207,8 @@
         "height": 800,
         "bytes": 96920,
         "psnr": 38.48,
-        "lossless": false
+        "lossless": false,
+        "sha256": "09dd67de444410b4e8dddbfb08514f30d7589a46b232ba3069034069755cefa3"
       },
       {
         "path": "assets/optimized/78941e73cf07a6db-900w.webp",
@@ -694,7 +1216,35 @@
         "height": 1200,
         "bytes": 165044,
         "psnr": 41.13,
-        "lossless": false
+        "lossless": false,
+        "sha256": "b7e80b25374bb5e9ae1471f98567020ed9a61b34ce43db9952733b180519a8ca"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 1200,
+        "height": 1600,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -704,7 +1254,28 @@
     "bytes": 113748,
     "sha256": "94a3d593fee5e97d48289fa40656a112c178e03c6ee4a146649b5ab9a159d605",
     "format": "JPEG",
-    "variants": []
+    "variants": [],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/whatsapp-image-2026-09-17-at-211904.jpeg": {
     "width": 794,
@@ -712,7 +1283,28 @@
     "bytes": 113748,
     "sha256": "94a3d593fee5e97d48289fa40656a112c178e03c6ee4a146649b5ab9a159d605",
     "format": "JPEG",
-    "variants": []
+    "variants": [],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/whatsapp-image-2026-09-17-at-213358-1.jpeg": {
     "width": 537,
@@ -720,7 +1312,28 @@
     "bytes": 49309,
     "sha256": "a0915ccddcc639332a75572fe818fd0d16619ad95c4cb2484cccde4bd7621b09",
     "format": "JPEG",
-    "variants": []
+    "variants": [],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/whatsapp-image-2026-09-17-at-213358.jpeg": {
     "width": 537,
@@ -728,7 +1341,28 @@
     "bytes": 49309,
     "sha256": "a0915ccddcc639332a75572fe818fd0d16619ad95c4cb2484cccde4bd7621b09",
     "format": "JPEG",
-    "variants": []
+    "variants": [],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   },
   "assets/uploads/whatsapp-image-2026-09-28-at-205809-1.jpeg": {
     "width": 1200,
@@ -743,7 +1377,8 @@
         "height": 400,
         "bytes": 23772,
         "psnr": 39.95,
-        "lossless": false
+        "lossless": false,
+        "sha256": "66ff40c9ec5bdc17ba1ec79bf5b6c3b4dd726fd386dce5d9b1cb026bd1614479"
       },
       {
         "path": "assets/optimized/4744f638c08c8e81-600w.webp",
@@ -751,7 +1386,8 @@
         "height": 800,
         "bytes": 72106,
         "psnr": 43.0,
-        "lossless": false
+        "lossless": false,
+        "sha256": "7570dc2bf74a187527efa9cc70a1b39ef0183f979774fa40a891a4fd9a1c3f0a"
       },
       {
         "path": "assets/optimized/4744f638c08c8e81-900w.webp",
@@ -759,7 +1395,35 @@
         "height": 1200,
         "bytes": 122224,
         "psnr": 43.66,
-        "lossless": false
+        "lossless": false,
+        "sha256": "3faeaa34b5e725bd51d8046a2a926535581347f00b09e58eee93aeb2536a92c7"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 1200,
+        "height": 1600,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -776,7 +1440,8 @@
         "height": 400,
         "bytes": 27264,
         "psnr": 37.18,
-        "lossless": false
+        "lossless": false,
+        "sha256": "417e2cf505b45a8dfd47a8e25ae064dff062aea8773b34299db93e87c8b7f81e"
       },
       {
         "path": "assets/optimized/fc84b2c2a83c34a1-480w.webp",
@@ -784,7 +1449,8 @@
         "height": 800,
         "bytes": 88888,
         "psnr": 40.25,
-        "lossless": false
+        "lossless": false,
+        "sha256": "6f40a0eef1cdde647100dd4a688a3509a5fde1575b850ecf49b6e09a563601aa"
       },
       {
         "path": "assets/optimized/fc84b2c2a83c34a1-720w.webp",
@@ -792,7 +1458,35 @@
         "height": 1200,
         "bytes": 162942,
         "psnr": 41.72,
-        "lossless": false
+        "lossless": false,
+        "sha256": "074fd85b01921603a1ec6157457320313b9c0ffb8bf84f59cbc7b5d13792184d"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 940,
+        "height": 1566,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -809,7 +1503,8 @@
         "height": 400,
         "bytes": 24100,
         "psnr": 39.64,
-        "lossless": false
+        "lossless": false,
+        "sha256": "3eaea4daecd531a827e6fafa01aab6630e2d042d8ea737a797886089faadafa0"
       },
       {
         "path": "assets/optimized/210afc25d7e069a1-475w.webp",
@@ -817,7 +1512,40 @@
         "height": 800,
         "bytes": 77090,
         "psnr": 41.99,
-        "lossless": false
+        "lossless": false,
+        "sha256": "540abb6a3ac097589088d4f43b267286fd0319be97f858fafc86a77e1a03620c"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 712,
+        "height": 1200,
+        "reason": "not-smaller"
+      },
+      {
+        "width": 774,
+        "height": 1304,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -834,7 +1562,8 @@
         "height": 400,
         "bytes": 25278,
         "psnr": 40.1,
-        "lossless": false
+        "lossless": false,
+        "sha256": "bdcdbc687bc79db01c7d14b00463b189d9dc21f38d7b945dcea90470a8591fa5"
       },
       {
         "path": "assets/optimized/3411dafcfe9d5d72-600w.webp",
@@ -842,7 +1571,8 @@
         "height": 800,
         "bytes": 77990,
         "psnr": 42.91,
-        "lossless": false
+        "lossless": false,
+        "sha256": "db887ea5c390e6bce0f0ad9dc73453699e79c40e56276afc1c55247333d44495"
       },
       {
         "path": "assets/optimized/3411dafcfe9d5d72-900w.webp",
@@ -850,7 +1580,35 @@
         "height": 1200,
         "bytes": 133102,
         "psnr": 43.67,
-        "lossless": false
+        "lossless": false,
+        "sha256": "4e308a6a7b419d0b2d94809b306daa87e31b372e90f92a412b9e2861591aa7a4"
+      }
+    ],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": [
+      {
+        "width": 1200,
+        "height": 1600,
+        "reason": "not-smaller"
       }
     ]
   },
@@ -860,6 +1618,27 @@
     "bytes": 48554,
     "sha256": "c2e77faffa7d366770577955de58a8ca4d6cb5fc4a1b558d08917b6fd840d8d6",
     "format": "JPEG",
-    "variants": []
+    "variants": [],
+    "parameters": {
+      "version": 1,
+      "quality": 92,
+      "method": 6,
+      "lossless": false,
+      "exact": false,
+      "resampling": "LANCZOS",
+      "orientation": "exif-transpose",
+      "minSide": 1000,
+      "bounds": [
+        400,
+        800,
+        1200,
+        1600
+      ],
+      "role": "photo",
+      "pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "webp": "1.6.0"
+    },
+    "omitted": []
   }
 }

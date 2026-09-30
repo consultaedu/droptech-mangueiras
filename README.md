@@ -28,3 +28,7 @@ Se clientes, catálogos ou certificações estiverem vazios, as respectivas seç
 
 ## Validação e segurança
 O projeto inclui `scripts/validate-content.mjs` e o workflow `.github/workflows/validate-site.yml` para verificar automaticamente conteúdo e referências após alterações. Veja `SEGURANCA-E-VALIDACAO.md`.
+
+
+## Deploy otimizado do Pages
+O workflow prepara um artefato com imagens incrementais e publica somente depois da validação. A ativação manual e o rollback estão em [docs/DEPLOY-GITHUB-PAGES.md](docs/DEPLOY-GITHUB-PAGES.md). Até mudar o Source do Pages, a publicação por branch continua vigente.

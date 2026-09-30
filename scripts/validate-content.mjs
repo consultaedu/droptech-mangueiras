@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 const ROOT=process.cwd();
 let errors=0;
 let warnings=0;
+const strictOptimized=process.argv.includes('--strict-optimized');
 
 const error=(message)=>{errors+=1; console.error(`::error::${message}`)};
 const warn=(message)=>{warnings+=1; console.warn(`::warning::${message}`)};
@@ -349,12 +350,24 @@ if(fs.existsSync(optimizedManifest)){
       if(!Number.isInteger(variant.width)||!Number.isInteger(variant.height)||variant.width<1||variant.height<1||variant.width>info.width||variant.height>info.height){
         error(`${original}: dimensões de variante inválidas ou maiores que o original`);
       }
+      if(strictOptimized&&fs.existsSync(path.join(ROOT,variant.path))&&fs.statSync(path.join(ROOT,variant.path)).isFile()){
+        const data=fs.readFileSync(path.join(ROOT,variant.path));
+        const actual=mediaInfo(data);
+        if(actual.format!=='webp'||actual.width!==variant.width||actual.height!==variant.height||data.length!==variant.bytes){
+          error(`${variant.path}: variante não corresponde ao manifesto`);
+        }
+        if(crypto.createHash('sha256').update(data).digest('hex')!==variant.sha256){
+          error(`${variant.path}: hash da variante diverge do manifesto`);
+        }
+      }
     }
     const rel=localPath(original);
     if(rel&&fs.existsSync(path.join(ROOT,rel))&&fs.statSync(path.join(ROOT,rel)).isFile()){
       const hash=crypto.createHash('sha256');
       for await(const chunk of fs.createReadStream(path.join(ROOT,rel)))hash.update(chunk);
-      if(hash.digest('hex')!==info.sha256)warn(`${original}: original mudou; regenere as variantes para atualizar as imagens responsivas`);
+      if(hash.digest('hex')!==info.sha256){
+        (strictOptimized?error:warn)(`${original}: original mudou; regenere as variantes para atualizar as imagens responsivas`);
+      }
     }
   }
 }

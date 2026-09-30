@@ -1,61 +1,116 @@
-name: Validar site e conteúdo
+name: Construir e publicar site
 
 on:
   push:
     branches: [main]
-    paths:
-      - '**/*.html'
-      - 'assets/css/**'
-      - 'assets/js/**'
-      - 'assets/uploads/**'
-      - 'assets/images/**'
-      - 'assets/optimized/**'
-      - 'favicon/**'
-      - 'conteudo/**'
-      - '.pages.yml'
-      - 'scripts/validate-content.mjs'
-      - 'scripts/optimize-images.py'
-      - '.github/workflows/validate-site.yml'
   pull_request:
-    paths:
-      - '**/*.html'
-      - 'assets/css/**'
-      - 'assets/js/**'
-      - 'assets/uploads/**'
-      - 'assets/images/**'
-      - 'assets/optimized/**'
-      - 'favicon/**'
-      - 'conteudo/**'
-      - '.pages.yml'
-      - 'scripts/validate-content.mjs'
-      - 'scripts/optimize-images.py'
-      - '.github/workflows/validate-site.yml'
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 20
+    concurrency:
+      group: pages-build-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - name: Baixar repositório
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 1
       - name: Preparar Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '22'
-      - name: Validar sintaxe JavaScript
-        run: node --check assets/js/app.js
-      - name: Validar configuração do CMS
+      - name: Preparar Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/image-requirements.txt
+      - name: Instalar dependências de imagens
+        run: python -m pip install --only-binary=":all:" --disable-pip-version-check -r scripts/image-requirements.txt
+      - name: Restaurar cache de variantes
+        id: image-cache
+        continue-on-error: true
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ runner.temp }}/droptech-image-cache
+          key: ${{ runner.os }}-droptech-images-v1-${{ hashFiles('scripts/optimize-images.py', 'scripts/image-requirements.txt') }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-droptech-images-v1-${{ hashFiles('scripts/optimize-images.py', 'scripts/image-requirements.txt') }}-
+      - name: Validar YAML e configuração do CMS
         run: |
-          ruby -e 'require "yaml"; YAML.safe_load_file(".pages.yml", aliases: true); puts ".pages.yml OK"'
-      - name: Validar conteúdo e arquivos
-        run: node scripts/validate-content.mjs
+          ruby -e 'require "yaml"; [".pages.yml", ".github/workflows/validate-site.yml"].each { |file| YAML.safe_load_file(file, aliases: true); puts "#{file} OK" }'
+      - name: Testar geração incremental e bloqueio de conteúdo inválido
+        run: python -B -m unittest discover -s tests -p test_image_pipeline.py
+      - name: Gerar imagens, validar e montar site estático
+        run: python -B scripts/build-site.py --output "$RUNNER_TEMP/droptech-pages" --cache-dir "$RUNNER_TEMP/droptech-image-cache"
+      - name: Salvar cache de variantes
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && steps.image-cache.outputs.cache-hit != 'true'
+        continue-on-error: true
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ runner.temp }}/droptech-image-cache
+          key: ${{ runner.os }}-droptech-images-v1-${{ hashFiles('scripts/optimize-images.py', 'scripts/image-requirements.txt') }}-${{ github.sha }}
+      - name: Enviar artefato validado do Pages
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: ${{ runner.temp }}/droptech-pages
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Conferir configuração manual do Pages
+        id: pages-source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          source=$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.build_type')
+          if [ "$source" = "workflow" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Artefato pronto. Publicação personalizada aguarda Settings → Pages → Source → GitHub Actions."
+          fi
+      - name: Preparar Pages sem alterar Source
+        if: steps.pages-source.outputs.ready == 'true'
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+        with:
+          enablement: false
+      - name: Impedir publicação de commit obsoleto
+        if: steps.pages-source.outputs.ready == 'true'
+        id: latest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          current_sha=$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/main" --jq '.object.sha')
+          if [ "$current_sha" = "$GITHUB_SHA" ]; then
+            echo "current=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "current=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Deploy ignorado: main já possui um commit mais recente."
+          fi
+      - name: Publicar artefato validado
+        if: steps.pages-source.outputs.ready == 'true' && steps.latest.outputs.current == 'true'
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
