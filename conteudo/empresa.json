@@ -81,17 +81,17 @@
         "ativo": true,
         "principal": true,
         "nome": "Atendimento | Comercial",
-        "telefone": "(27) 99822-9494",
-        "whatsapp": "5527998229494",
-        "ordem": 2
+        "telefone": "(27) 99890-6129",
+        "whatsapp": "5527998906129",
+        "ordem": 1
       },
       {
         "ativo": true,
         "principal": true,
         "nome": "Atendimento | Comercial",
-        "telefone": "(27) 99890-6129",
-        "whatsapp": "5527998906129",
-        "ordem": 1
+        "telefone": "(27) 99822-9494",
+        "whatsapp": "5527998229494",
+        "ordem": 2
       }
     ],
     "email": "droptechmangueiras@gmail.com",
