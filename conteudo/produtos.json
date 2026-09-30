@@ -128,35 +128,35 @@
           "diametroInternoPol": "5/16\"",
           "diametroInternoMm": "7,94 ± 0,2",
           "espessuraParedeMm": "1,50 ± 0,2",
-          "roloM": "10; 15; 20; 25; 30; 50; 100; 200"
+          "roloM": "10, 15, 20, 25, 30, 50, 100 e 200m"
         },
         {
           "cor": "PVC Cristal",
           "diametroInternoPol": "3/8\"",
           "diametroInternoMm": "9,52 ± 0,2",
           "espessuraParedeMm": "1,50 ± 0,2",
-          "roloM": "10; 15; 20; 25; 30; 50; 100; 200"
+          "roloM": "10, 15, 20, 25, 30, 50, 100 e 200m"
         },
         {
           "cor": "PVC Cristal",
           "diametroInternoPol": "1/2\"",
           "diametroInternoMm": "12,70 ± 0,2",
           "espessuraParedeMm": "2,00 ± 0,2",
-          "roloM": "10; 15; 20; 25; 30; 50; 100; 200"
+          "roloM": "10, 15, 20, 25, 30, 50, 100 e 200m"
         },
         {
           "cor": "PVC Cristal",
           "diametroInternoPol": "5/8\"",
           "diametroInternoMm": "15,87 ± 0,2",
           "espessuraParedeMm": "2,00 ± 0,2",
-          "roloM": "10; 15; 20; 25; 30; 50; 100; 200"
+          "roloM": "10, 15, 20, 25, 30, 50, 100 e 200m"
         },
         {
           "cor": "PVC Cristal",
           "diametroInternoPol": "3/4\"",
           "diametroInternoMm": "19,05 ± 0,2",
           "espessuraParedeMm": "2,00 ± 0,2",
-          "roloM": "10; 15; 20; 25; 30; 50; 100; 200"
+          "roloM": "10, 15, 20, 25, 30, 50, 100 e 200m"
         }
       ]
     },
