@@ -87,7 +87,7 @@
       },
       {
         "ativo": true,
-        "principal": true,
+        "principal": false,
         "nome": "Atendimento | Comercial",
         "telefone": "(27) 99822-9494",
         "whatsapp": "5527998229494",
