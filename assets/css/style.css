@@ -195,6 +195,8 @@ body{background:linear-gradient(180deg,#fff 0%,#fff 74%,#fbfdfb 100%)}
   .contact-form-wrap{padding:24px 18px;border-radius:18px}
 }
 
+.contact-entries{display:grid;gap:10px}.contact-entry{overflow-wrap:anywhere}
+.tech-table thead th{vertical-align:middle}.tech-table thead th[colspan]{text-align:center;border-bottom:1px solid rgba(255,255,255,.25)}.tech-table thead tr:nth-child(2) th{text-align:center;padding-top:10px;padding-bottom:10px}.tech-table thead th+th{border-left:1px solid rgba(255,255,255,.18)}
 /* Mapa da página de contato */
 .contact-map-band{background:#173717;border-top:4px solid var(--green)}
 .contact-map-wrap{position:relative;height:390px;overflow:hidden;background:#eaf0e8}

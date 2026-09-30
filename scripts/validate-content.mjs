@@ -155,6 +155,27 @@ validateGoogleMapEmbed(empresa?.endereco?.mapaEmbed,'Endereço / mapa incorporad
 
 const phone=String(empresa?.contato?.whatsapp||'').trim();
 if(phone&&!/^\d{10,15}$/.test(phone))error('WhatsApp: use apenas 10 a 15 números, incluindo DDI e DDD');
+const contacts=empresa?.contato?.contatos;
+if(contacts!==undefined&&!Array.isArray(contacts))error('contato.contatos precisa ser uma lista');
+let principals=0;
+for(const [index,contact] of (Array.isArray(contacts)?contacts:[]).entries()){
+  const label=`Contato #${index+1}`;
+  if(!contact||typeof contact!=='object'||Array.isArray(contact)){
+    error(`${label}: precisa ser um objeto`);
+    continue;
+  }
+  for(const key of ['ativo','principal']){
+    if(contact[key]!==undefined&&typeof contact[key]!=='boolean')error(`${label}: ${key} precisa ser booleano`);
+  }
+  const number=String(contact.whatsapp||'').trim();
+  if(number&&!/^\d{10,15}$/.test(number))error(`${label}: WhatsApp deve ter apenas 10 a 15 números, incluindo DDI e DDD`);
+  if(contact.ordem!==undefined&&(typeof contact.ordem!=='number'||!Number.isFinite(contact.ordem)))error(`${label}: ordem precisa ser um número finito`);
+  if(contact.ativo!==false&&contact.principal===true){
+    principals+=1;
+    if(!number)error(`${label}: o contato principal ativo precisa ter WhatsApp`);
+  }
+}
+if(principals>1)warn('Mais de um contato ativo marcado como principal; o site usará o primeiro por ordem');
 const email=String(empresa?.contato?.email||'').trim();
 if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))error('E-mail de contato inválido');
 

@@ -76,6 +76,16 @@
     "imagem": "assets/images/fabrica/fabrica-02.webp"
   },
   "contato": {
+    "contatos": [
+      {
+        "ativo": true,
+        "principal": true,
+        "nome": "Atendimento",
+        "telefone": "(27) 99999-9999",
+        "whatsapp": "5527999999999",
+        "ordem": 1
+      }
+    ],
     "telefone": "(27) 99999-9999",
     "whatsapp": "5527999999999",
     "email": "contato@droptech.com.br",

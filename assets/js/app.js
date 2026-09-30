@@ -138,10 +138,33 @@ async function load(name,fallback){
   }
 }
 
-const phone=config=>{
-  const digits=String(config?.contato?.whatsapp||'').replace(/\D/g,'');
+const whatsappNumber=value=>{
+  const digits=String(value||'').replace(/\D/g,'');
   return /^\d{10,15}$/.test(digits)?digits:'';
 };
+function activeContacts(config){
+  const contact=config?.contato||{};
+  // A lista cadastrada prevalece, inclusive quando todos estão inativos.
+  if(Array.isArray(contact.contatos)&&contact.contatos.length){
+    return contact.contatos.filter(item=>item&&typeof item==='object'&&item.ativo!==false).sort(order);
+  }
+  return contact.telefone||contact.whatsapp?[{...contact,nome:'Atendimento',principal:true}]:[];
+}
+const phone=config=>{
+  const contacts=activeContacts(config);
+  const principal=contacts.find(item=>item.principal===true);
+  return whatsappNumber((principal||contacts.find(item=>whatsappNumber(item.whatsapp)))?.whatsapp);
+};
+function contactsHTML(config){
+  return activeContacts(config).map(item=>{
+    const number=whatsappNumber(item.whatsapp);
+    const telephone=String(item.telefone||'').trim();
+    const digits=telephone.replace(/\D/g,'');
+    const href=number?`https://wa.me/${number}`:(/^\d{8,15}$/.test(digits)?`tel:${digits}`:'');
+    const label=`${item.nome?`${esc(item.nome)}: `:''}${esc(telephone||number||'Contato')}`;
+    return href?`<a class="contact-entry" href="${esc(href)}" ${number?'target="_blank" rel="noopener noreferrer"':''}>${label}</a>`:`<span class="contact-entry">${label}</span>`;
+  }).join('');
+}
 const wa=(config,message='Olá! Gostaria de informações sobre os produtos DropTech.')=>{
   const number=phone(config);
   return number?`https://wa.me/${number}?text=${encodeURIComponent(message)}`:'contato.html';
@@ -209,7 +232,7 @@ function footer(config){
   ].filter(Boolean).join('');
   const addressLine=esc(config.endereco?.linha1||'');
   const cityState=esc([config.endereco?.cidade,config.endereco?.estado].filter(Boolean).join(' - '));
-  element.innerHTML=`<footer class="footer"><div class="container footer-grid"><div class="footer-brand"><img class="footer-logo" src="assets/images/logo/logo-droptech.png" alt="DropTech Mangueiras"><p>${esc(config.descricao||'Soluções em mangueiras com qualidade e resistência.')}</p><div class="socials">${socials}</div></div><div class="footer-col"><h3>Institucional</h3><a href="quem-somos.html">Quem somos</a><a href="produtos.html">Produtos</a><a href="contato.html">Contato</a></div><div class="footer-col"><h3>Contato</h3><a href="${esc(wa(config))}" target="_blank" rel="noopener noreferrer">${esc(config.contato?.telefone||'WhatsApp')}</a><a href="${esc(mail(config))}">${esc(config.contato?.email||'')}</a><span>${addressLine}</span><span>${cityState}</span></div></div><div class="footer-bottom"><div class="container"><span>© ${new Date().getFullYear()} DropTech Mangueiras. Todos os direitos reservados.</span><a href="politica-privacidade.html">Política de Privacidade</a></div></div></footer>`;
+  element.innerHTML=`<footer class="footer"><div class="container footer-grid"><div class="footer-brand"><img class="footer-logo" src="assets/images/logo/logo-droptech.png" alt="DropTech Mangueiras"><p>${esc(config.descricao||'Soluções em mangueiras com qualidade e resistência.')}</p><div class="socials">${socials}</div></div><div class="footer-col"><h3>Institucional</h3><a href="quem-somos.html">Quem somos</a><a href="produtos.html">Produtos</a><a href="contato.html">Contato</a></div><div class="footer-col"><h3>Contato</h3>${contactsHTML(config)}<a href="${esc(mail(config))}">${esc(config.contato?.email||'')}</a><span>${addressLine}</span><span>${cityState}</span></div></div><div class="footer-bottom"><div class="container"><span>© ${new Date().getFullYear()} DropTech Mangueiras. Todos os direitos reservados.</span><a href="politica-privacidade.html">Política de Privacidade</a></div></div></footer>`;
   if(phone(config)&&!$('.whatsapp')){
     const button=document.createElement('a');
     button.className='whatsapp';
@@ -586,15 +609,25 @@ async function detail(config){
     .filter((value,index,array)=>array.indexOf(value)===index);
   if(!images.length)images.push(FALLBACK_IMAGE);
   const technical=product.fichaTecnica||{};
-  const rows=Array.isArray(technical.linhas)?technical.linhas.filter(row=>row&&(row.valor1||row.valor2||row.valor3)):[];
+  const colors=Array.isArray(technical.coresDisponiveis)?technical.coresDisponiveis.filter(Boolean).join(', '):String(technical.coresDisponiveis||'');
+  const rows=Array.isArray(technical.linhas)?technical.linhas
+    .filter(row=>row&&['cor','diametroInternoPol','diametroInternoMm','espessuraParedeMm','roloM','valor1','valor2','valor3'].some(key=>row[key]!==undefined&&row[key]!==null&&row[key]!==''))
+    .map(row=>[
+      row.cor||row.valor1||colors,
+      row.diametroInternoPol,
+      row.diametroInternoMm,
+      row.espessuraParedeMm||row.valor2,
+      row.roloM||row.valor3
+    ]):[];
   const overview=[
+    colors&&['Cores disponíveis',colors],
     (product.aplicacoes||[]).length&&['Aplicação',(product.aplicacoes||[]).join(' · ')],
     technical.composicao&&['Material / composição',technical.composicao],
     technical.pressaoTrabalho&&['Pressão de trabalho',technical.pressaoTrabalho],
     technical.temperaturaTrabalho&&['Temperatura de trabalho',technical.temperaturaTrabalho]
   ].filter(Boolean);
   const showTechnical=overview.length||rows.length||technical.observacoes;
-  const table=rows.length?`<div class="tech-table-wrap"><table class="tech-table"><thead><tr><th>${esc(technical.coluna1Titulo||'Medida / diâmetro')}</th><th>${esc(technical.coluna2Titulo||'Espessura / parede')}</th><th>${esc(technical.coluna3Titulo||'Comprimento / rolo')}</th></tr></thead><tbody>${rows.map(row=>`<tr><td>${esc(row.valor1||'—')}</td><td>${esc(row.valor2||'—')}</td><td>${esc(row.valor3||'—')}</td></tr>`).join('')}</tbody></table></div>`:'';
+  const table=rows.length?`<div class="tech-table-wrap"><table class="tech-table"><thead><tr><th rowspan="2" scope="col">Cores</th><th colspan="2" scope="colgroup">Ø Interno</th><th rowspan="2" scope="col">Espessura da parede (mm)</th><th rowspan="2" scope="col">Rolo (m)</th></tr><tr><th scope="col">Pol</th><th scope="col">mm</th></tr></thead><tbody>${rows.map(row=>`<tr>${row.map(value=>`<td>${esc(value??'—')||'—'}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`:'';
   if($('#productDetail'))$('#productDetail').innerHTML=`<div><div class="detail-main-image"><img id="mainProductImage" src="${esc(images[0])}" alt="${esc(product.nome)}" decoding="async"></div>${images.length>1?`<div class="detail-thumbs">${images.map((image,index)=>`<button type="button" class="detail-thumb ${index===0?'active':''}" data-img="${esc(image)}" aria-label="Ver imagem ${index+1} de ${esc(product.nome)}"><img src="${esc(image)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>`:''}</div><div class="detail-copy"><span class="category-label">${esc(product.categoriaNome||product.categoria||'')}</span><h1>${esc(product.nome||'Produto DropTech')}</h1><p class="description">${esc(product.descricao||product.resumo||'')}</p>${(product.caracteristicas||[]).length?`<ul class="detail-list">${product.caracteristicas.map(item=>`<li><i class="fa-solid fa-check" aria-hidden="true"></i>${esc(item)}</li>`).join('')}</ul>`:''}<div class="detail-actions"><a class="btn btn-green" href="${esc(wa(config,`Olá! Gostaria de informações sobre ${product.nome}.`))}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Solicitar informações</a><a class="btn btn-outline" href="produtos.html">Voltar aos produtos</a></div></div>${showTechnical?`<section class="technical-sheet"><div class="technical-sheet-head"><div><span class="kicker">Ficha do produto</span><h2>Informações técnicas</h2></div><p>Dados essenciais para identificar a opção mais adequada à aplicação.</p></div>${overview.length?`<div class="technical-overview">${overview.map(([key,value])=>`<article><span>${esc(key)}</span><strong>${esc(value)}</strong></article>`).join('')}</div>`:''}${table}${technical.observacoes?`<div class="technical-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><div><strong>Observações</strong><p>${esc(technical.observacoes)}</p></div></div>`:''}</section>`:''}`;
   $$('.detail-thumb').forEach(button=>button.addEventListener('click',()=>{
     $('#mainProductImage').src=safeAsset(button.dataset.img,FALLBACK_IMAGE);
@@ -609,8 +642,7 @@ function contact(config){
   if($('#contactPageTitle'))$('#contactPageTitle').textContent=content.titulo||'Fale conosco';
   if($('#contactPageText'))$('#contactPageText').textContent=content.texto||'';
   if(content.imagem&&$('#contactPhoto'))$('#contactPhoto').src=safeAsset(content.imagem,FALLBACK_IMAGE);
-  if($('#contactPhone'))$('#contactPhone').textContent=config.contato?.telefone||'';
-  if($('#contactPhoneLink'))$('#contactPhoneLink').href=wa(config);
+  if($('#contactPhones'))$('#contactPhones').innerHTML=contactsHTML(config);
   if($('#contactEmail'))$('#contactEmail').textContent=config.contato?.email||'';
   if($('#contactEmailLink'))$('#contactEmailLink').href=mail(config);
   const address=[config.endereco?.linha1,config.endereco?.cidade,config.endereco?.estado,config.endereco?.cep].filter(Boolean).join(', ');
