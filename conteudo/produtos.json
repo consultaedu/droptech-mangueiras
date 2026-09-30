@@ -22,17 +22,17 @@
     "fichaTecnica": {
       "composicao": "PVC Flexível de alta resistência",
       "pressaoTrabalho": "Passagem de água em baixa pressão",
-      "coluna1Titulo": "Cores",
-      "coluna2Titulo": "Espessura / parede",
-      "coluna3Titulo": "Comprimento / rolo",
       "linhas": [
         {
-          "valor1": "Branco",
-          "valor2": "5/16\" - 1,00mm"
+          "cor": "Branco",
+          "diametroInternoPol": "5/16\"",
+          "diametroInternoMm": "7,94 ± 0,2",
+          "espessuraParedeMm": "1,00 ± 0,2",
+          "roloM": "50; 100"
         }
       ]
     },
-    "ordem": 1
+    "ordem": 6
   },
   {
     "disponivel": true,
@@ -62,14 +62,8 @@
     "fichaTecnica": {
       "composicao": "PVC Flexível de alta resistência",
       "pressaoTrabalho": "Baixa Pressão / Irrigação",
-      "coluna1Titulo": "Cores",
-      "coluna2Titulo": "Espessura / parede",
-      "coluna3Titulo": "Comprimento / rolo",
       "linhas": [
-        {
-          "valor1": "Preto, Azul e Laranja",
-          "valor2": "3/4\" | 2,5mm"
-        }
+        {}
       ]
     },
     "ordem": 2
@@ -92,14 +86,8 @@
     "fichaTecnica": {
       "composicao": "PVC Flexível de alta resistência",
       "pressaoTrabalho": "Baixa Pressão / Irrigação",
-      "coluna1Titulo": "Cores",
-      "coluna2Titulo": "Espessura / parede",
-      "coluna3Titulo": "Comprimento / rolo",
       "linhas": [
-        {
-          "valor1": "Preto, Azul e Laranja",
-          "valor2": "1/2\" | 2mm"
-        }
+        {}
       ]
     },
     "ordem": 3
@@ -122,25 +110,12 @@
     "fichaTecnica": {
       "composicao": "PVC Cristal 100% virgem",
       "pressaoTrabalho": "Construção civil, refrigeração e uso geral",
-      "coluna1Titulo": "Cores",
-      "coluna2Titulo": "Espessura / parede",
-      "coluna3Titulo": "Comprimento / rolo",
       "linhas": [
-        {
-          "valor2": "5/16\" x 1,50mm"
-        },
-        {
-          "valor2": "3/8\" x 1,50mm"
-        },
-        {
-          "valor2": "1/2\" x 1,80mm"
-        },
-        {
-          "valor2": "5/8\" x 1,80mm"
-        },
-        {
-          "valor2": "3/4\" x 1,80mm"
-        }
+        {},
+        {},
+        {},
+        {},
+        {}
       ]
     },
     "ordem": 4
