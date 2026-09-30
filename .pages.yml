@@ -118,15 +118,6 @@ content:
                   message: "Informe apenas 10 a 15 números, incluindo DDI e DDD."
                 options: {maxlength: 15}
               - {name: ordem, label: Ordem, type: number, default: 1}
-          - {name: telefone, label: Telefone antigo (compatibilidade), type: string, options: {maxlength: 40}}
-          - name: whatsapp
-            label: WhatsApp antigo (compatibilidade)
-            type: string
-            description: "Somente números. Ex.: 5527999999999"
-            pattern:
-              regex: "^(?:$|\\d{10,15})$"
-              message: "Informe apenas 10 a 15 números, incluindo DDI e DDD."
-            options: {maxlength: 15}
           - name: email
             label: E-mail
             type: string
@@ -250,23 +241,22 @@ content:
           - {name: pressaoTrabalho, label: Pressão de trabalho, type: string, description: "Ex.: 250 PSI", options: {maxlength: 160}}
           - {name: temperaturaTrabalho, label: Temperatura de trabalho, type: string, description: "Ex.: 5 °C a 50 °C", options: {maxlength: 160}}
           - {name: coresDisponiveis, label: Cores disponíveis, type: string, list: true}
-          - {name: coluna1Titulo, label: Título da coluna 1, type: string, default: "Cores / acabamento", options: {maxlength: 80}}
-          - {name: coluna2Titulo, label: Título da coluna 2, type: string, default: "Espessura / parede", options: {maxlength: 80}}
-          - {name: coluna3Titulo, label: Título da coluna 3, type: string, default: "Comprimento / rolo", options: {maxlength: 80}}
           - name: linhas
             label: Linhas da tabela
             type: object
+            description: "Cadastre as especificações uma vez por medida. Para repetir a medida com diferentes metragens, informe vários valores no campo Rolo — m."
             list:
-              collapsible: {collapsed: true, summary: "{cor} | {diametroInternoPol} | {diametroInternoMm}"}
+              collapsible: {collapsed: true, summary: "{cor} | {diametroInternoPol} Pol | {diametroInternoMm} mm | Rolos: {roloM}"}
             fields:
               - {name: cor, label: Cor da medida, type: string, options: {maxlength: 160}}
               - {name: diametroInternoPol, label: Ø interno — Pol, type: string, options: {maxlength: 160}}
               - {name: diametroInternoMm, label: Ø interno — mm, type: string, options: {maxlength: 160}}
               - {name: espessuraParedeMm, label: Espessura da parede — mm, type: string, options: {maxlength: 160}}
-              - {name: roloM, label: Rolo — m, type: string, options: {maxlength: 160}}
-              - {name: valor1, label: Cores antigas (compatibilidade), type: string, options: {maxlength: 160}}
-              - {name: valor2, label: Espessura antiga (compatibilidade), type: string, options: {maxlength: 160}}
-              - {name: valor3, label: Rolo antigo (compatibilidade), type: string, options: {maxlength: 160}}
+              - name: roloM
+                label: Rolo — m
+                type: text
+                description: "Informe uma metragem ou cole várias, uma por linha. Também pode separar por ponto e vírgula: 10; 15; 20; 25; 30; 50; 100; 200. Cada valor gera uma linha da tabela com as mesmas especificações. Use vírgula para decimais (ex.: 12,5)."
+                options: {maxlength: 1000}
           - {name: observacoes, label: Observações técnicas, type: text, options: {maxlength: 1500}}
       - {name: ordem, label: Ordem, type: number, default: 1}
 

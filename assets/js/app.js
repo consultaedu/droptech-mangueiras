@@ -612,13 +612,17 @@ async function detail(config){
   const colors=Array.isArray(technical.coresDisponiveis)?technical.coresDisponiveis.filter(Boolean).join(', '):String(technical.coresDisponiveis||'');
   const rows=Array.isArray(technical.linhas)?technical.linhas
     .filter(row=>row&&['cor','diametroInternoPol','diametroInternoMm','espessuraParedeMm','roloM','valor1','valor2','valor3'].some(key=>row[key]!==undefined&&row[key]!==null&&row[key]!==''))
-    .map(row=>[
-      row.cor||row.valor1||colors,
-      row.diametroInternoPol,
-      row.diametroInternoMm,
-      row.espessuraParedeMm||row.valor2,
-      row.roloM||row.valor3
-    ]):[];
+    .flatMap(row=>{
+      // Uma medida pode gerar várias linhas, alterando apenas a metragem.
+      const lengths=String(row.roloM||row.valor3||'').split(/[;\r\n]+/).map(value=>value.trim()).filter(Boolean);
+      return (lengths.length?lengths:['']).map(length=>[
+        row.cor||row.valor1||colors,
+        row.diametroInternoPol,
+        row.diametroInternoMm,
+        row.espessuraParedeMm||row.valor2,
+        length
+      ]);
+    }):[];
   const overview=[
     colors&&['Cores disponíveis',colors],
     (product.aplicacoes||[]).length&&['Aplicação',(product.aplicacoes||[]).join(' · ')],
