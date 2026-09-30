@@ -333,6 +333,32 @@ for(const group of hashGroups.values()){
   if(group.length>1)warn(`Arquivos duplicados em uploads: ${group.join(' | ')}`);
 }
 
+// Responsive-image manifests must resolve to real originals and derivatives.
+const optimizedManifest=path.join(ROOT,'assets/optimized/manifest.json');
+if(fs.existsSync(optimizedManifest)){
+  const manifest=objectValue(readJson('assets/optimized/manifest.json'),'Manifesto de imagens');
+  for(const [original,rawInfo] of Object.entries(manifest)){
+    checkAsset(original,`Imagem original ${original}`,{required:true});
+    const info=objectValue(rawInfo,`Imagem otimizada ${original}`);
+    const variants=listValue(info.variants,`Variantes de ${original}`,{objects:true});
+    for(const variant of variants){
+      if(typeof variant.path!=='string'||!/^assets\/optimized\/[a-z0-9-]+\.webp$/.test(variant.path)){
+        error(`${original}: caminho de variante inválido`); continue;
+      }
+      checkAsset(variant.path,`Variante de ${original}`,{required:true,extensions:['webp']});
+      if(!Number.isInteger(variant.width)||!Number.isInteger(variant.height)||variant.width<1||variant.height<1||variant.width>info.width||variant.height>info.height){
+        error(`${original}: dimensões de variante inválidas ou maiores que o original`);
+      }
+    }
+    const rel=localPath(original);
+    if(rel&&fs.existsSync(path.join(ROOT,rel))&&fs.statSync(path.join(ROOT,rel)).isFile()){
+      const hash=crypto.createHash('sha256');
+      for await(const chunk of fs.createReadStream(path.join(ROOT,rel)))hash.update(chunk);
+      if(hash.digest('hex')!==info.sha256)warn(`${original}: original mudou; regenere as variantes para atualizar as imagens responsivas`);
+    }
+  }
+}
+
 if(!fs.existsSync(path.join(ROOT,'.pages.yml')))error('.pages.yml ausente');
 
 console.log(`\nValidação concluída: ${errors} erro(s), ${warnings} aviso(s).`);

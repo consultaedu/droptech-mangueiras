@@ -1,0 +1,865 @@
+{
+  "assets/images/banners/banner-principal.webp": {
+    "width": 1920,
+    "height": 1084,
+    "bytes": 179782,
+    "sha256": "4cb0bd112ace4b3e4a44c908879ff456c4b62c0b59da4de74ac8c4872fe15855",
+    "format": "WEBP",
+    "variants": [
+      {
+        "path": "assets/optimized/4cb0bd112ace4b3e-400w.webp",
+        "width": 400,
+        "height": 226,
+        "bytes": 23764,
+        "psnr": 37.25,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/4cb0bd112ace4b3e-800w.webp",
+        "width": 800,
+        "height": 452,
+        "bytes": 76370,
+        "psnr": 40.45,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/4cb0bd112ace4b3e-1200w.webp",
+        "width": 1200,
+        "height": 678,
+        "bytes": 137468,
+        "psnr": 41.88,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/images/fabrica/fabrica-01.webp": {
+    "width": 1920,
+    "height": 1109,
+    "bytes": 90888,
+    "sha256": "3536d7a6eaa4b8ca5d41419ac9a758270c1503c1da4a73f8e43fe243fe493d17",
+    "format": "WEBP",
+    "variants": [
+      {
+        "path": "assets/optimized/3536d7a6eaa4b8ca-400w.webp",
+        "width": 400,
+        "height": 231,
+        "bytes": 17746,
+        "psnr": 43.12,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/3536d7a6eaa4b8ca-800w.webp",
+        "width": 800,
+        "height": 462,
+        "bytes": 44814,
+        "psnr": 44.22,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/3536d7a6eaa4b8ca-1200w.webp",
+        "width": 1200,
+        "height": 693,
+        "bytes": 75248,
+        "psnr": 45.15,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/images/fabrica/fabrica-02.webp": {
+    "width": 1920,
+    "height": 1132,
+    "bytes": 74918,
+    "sha256": "8b852a5d47498714f5eb8131b77bb26f5e49a3f2535d7b42267ea202c64b14a0",
+    "format": "WEBP",
+    "variants": [
+      {
+        "path": "assets/optimized/8b852a5d47498714-400w.webp",
+        "width": 400,
+        "height": 236,
+        "bytes": 15220,
+        "psnr": 43.36,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/8b852a5d47498714-800w.webp",
+        "width": 800,
+        "height": 472,
+        "bytes": 37846,
+        "psnr": 45.03,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/8b852a5d47498714-1200w.webp",
+        "width": 1200,
+        "height": 708,
+        "bytes": 63202,
+        "psnr": 46.04,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/images/galeria/fabrica-01.webp": {
+    "width": 1080,
+    "height": 1078,
+    "bytes": 330792,
+    "sha256": "3a78aaf6ed59cb073a0de179ae11f07c0ff9ec94c7a279edb2928c70c0c2e87e",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/3a78aaf6ed59cb07-400w.webp",
+        "width": 400,
+        "height": 399,
+        "bytes": 37930,
+        "psnr": 42.54,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/3a78aaf6ed59cb07-800w.webp",
+        "width": 800,
+        "height": 799,
+        "bytes": 105082,
+        "psnr": 43.57,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/3a78aaf6ed59cb07-1080w.webp",
+        "width": 1080,
+        "height": 1078,
+        "bytes": 165390,
+        "psnr": 44.2,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/images/galeria/producao-01.webp": {
+    "width": 1080,
+    "height": 1036,
+    "bytes": 336175,
+    "sha256": "9f4b93677c0dad06c20dda585a296e289f70505d41b3ce2089b09c27a571ef53",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/9f4b93677c0dad06-400w.webp",
+        "width": 400,
+        "height": 384,
+        "bytes": 40326,
+        "psnr": 42.35,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/9f4b93677c0dad06-800w.webp",
+        "width": 800,
+        "height": 767,
+        "bytes": 110686,
+        "psnr": 43.15,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/9f4b93677c0dad06-1080w.webp",
+        "width": 1080,
+        "height": 1036,
+        "bytes": 164722,
+        "psnr": 43.89,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/images/galeria/produtos-01.webp": {
+    "width": 1920,
+    "height": 1132,
+    "bytes": 74918,
+    "sha256": "8b852a5d47498714f5eb8131b77bb26f5e49a3f2535d7b42267ea202c64b14a0",
+    "format": "WEBP",
+    "variants": [
+      {
+        "path": "assets/optimized/8b852a5d47498714-400w.webp",
+        "width": 400,
+        "height": 236,
+        "bytes": 15220,
+        "psnr": 43.36,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/8b852a5d47498714-800w.webp",
+        "width": 800,
+        "height": 472,
+        "bytes": 37846,
+        "psnr": 45.03,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/8b852a5d47498714-1200w.webp",
+        "width": 1200,
+        "height": 708,
+        "bytes": 63202,
+        "psnr": 46.04,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/images/logo/logo-droptech.png": {
+    "width": 3000,
+    "height": 2356,
+    "bytes": 342854,
+    "sha256": "1b2b428cb193772ed92b819bedf00d494e39daf7656d414fa0adae1f9b41dca5",
+    "format": "PNG",
+    "variants": [
+      {
+        "path": "assets/optimized/1b2b428cb193772e-230w.webp",
+        "width": 230,
+        "height": 181,
+        "bytes": 10740,
+        "psnr": null,
+        "lossless": true
+      },
+      {
+        "path": "assets/optimized/1b2b428cb193772e-460w.webp",
+        "width": 460,
+        "height": 361,
+        "bytes": 20986,
+        "psnr": null,
+        "lossless": true
+      }
+    ]
+  },
+  "assets/images/logo/logo-simbolo.png": {
+    "width": 600,
+    "height": 600,
+    "bytes": 70856,
+    "sha256": "df6f8dfbfbdf6bfbda59444e9c14599989e311f9280de24035cfa0568cee4da8",
+    "format": "PNG",
+    "variants": []
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260829_140134.jpg": {
+    "width": 3024,
+    "height": 4032,
+    "bytes": 3889241,
+    "sha256": "dfe2797a75c4f63c765d72e523fa6f73576ea2b2af72c786e2857de56beee051",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/dfe2797a75c4f63c-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 62510,
+        "psnr": 26.83,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/dfe2797a75c4f63c-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 191800,
+        "psnr": 31.24,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/dfe2797a75c4f63c-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 336480,
+        "psnr": 34.54,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/dfe2797a75c4f63c-1200w.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 492214,
+        "psnr": 36.64,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_141425.jpg": {
+    "width": 2220,
+    "height": 2961,
+    "bytes": 1522825,
+    "sha256": "532b42010747097d155cfbbeb4edcbcfc243e2900a3d4c8233840064f5ca15b8",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/532b42010747097d-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 45150,
+        "psnr": 29.7,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/532b42010747097d-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 172284,
+        "psnr": 31.72,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/532b42010747097d-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 352392,
+        "psnr": 34.62,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/532b42010747097d-1200w.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 546688,
+        "psnr": 37.01,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_142046.jpg": {
+    "width": 2338,
+    "height": 3117,
+    "bytes": 1615335,
+    "sha256": "ea9a37569e3e3402485cf46aebf8c27706263ea8d48408430fff39f07e4dd257",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/ea9a37569e3e3402-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 43326,
+        "psnr": 32.15,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/ea9a37569e3e3402-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 166328,
+        "psnr": 32.86,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/ea9a37569e3e3402-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 343094,
+        "psnr": 34.93,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/ea9a37569e3e3402-1200w.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 542620,
+        "psnr": 36.84,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_142152.jpg": {
+    "width": 2109,
+    "height": 2812,
+    "bytes": 1466248,
+    "sha256": "2b14703757358b198a423f5bb6a3d6deccec93840b00e7621a1e2d0fed323b42",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/2b14703757358b19-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 47698,
+        "psnr": 31.39,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/2b14703757358b19-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 185612,
+        "psnr": 32.57,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/2b14703757358b19-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 380642,
+        "psnr": 35.0,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/2b14703757358b19-1200w.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 614188,
+        "psnr": 37.31,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/1.2 Trançada/20260914_142312.jpg": {
+    "width": 2003,
+    "height": 2671,
+    "bytes": 1547597,
+    "sha256": "450bd818484b1e253fdcaf6e9cdb2f449cd451f958204e6946f6b2014c8c2da5",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/450bd818484b1e25-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 51104,
+        "psnr": 33.58,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/450bd818484b1e25-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 207110,
+        "psnr": 35.03,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/450bd818484b1e25-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 417840,
+        "psnr": 37.22,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/450bd818484b1e25-1200w.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 682122,
+        "psnr": 38.92,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/20260624_150543.jpg": {
+    "width": 3024,
+    "height": 4032,
+    "bytes": 3080048,
+    "sha256": "44bb7adc9fd34d71166b68e924af0a3bb5eab228f8791b6b688762ff925cac8c",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/44bb7adc9fd34d71-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 23960,
+        "psnr": 40.42,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/44bb7adc9fd34d71-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 75498,
+        "psnr": 41.73,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/44bb7adc9fd34d71-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 150244,
+        "psnr": 42.04,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/44bb7adc9fd34d71-1200w.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 243038,
+        "psnr": 41.76,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/20260914_135907.jpg": {
+    "width": 3024,
+    "height": 4032,
+    "bytes": 3457020,
+    "sha256": "c074ce01d6a015c2d78753bfddabc59bc97acec3b79a248b0d4562f694a58fea",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/c074ce01d6a015c2-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 40026,
+        "psnr": 36.72,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/c074ce01d6a015c2-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 152286,
+        "psnr": 38.9,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/c074ce01d6a015c2-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 303104,
+        "psnr": 40.01,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/c074ce01d6a015c2-1200w.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 479522,
+        "psnr": 40.91,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/20260914_135911.jpg": {
+    "width": 3024,
+    "height": 4032,
+    "bytes": 4412763,
+    "sha256": "d60d8bc794a190c5378ec2a7dc3456195fc4f23e548f8598320d83f791f4b45b",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/d60d8bc794a190c5-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 40758,
+        "psnr": 36.75,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/d60d8bc794a190c5-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 175984,
+        "psnr": 38.61,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/d60d8bc794a190c5-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 395310,
+        "psnr": 39.78,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/d60d8bc794a190c5-1200w.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 659324,
+        "psnr": 40.51,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/20260914_135929.jpg": {
+    "width": 3024,
+    "height": 4032,
+    "bytes": 4423549,
+    "sha256": "b3ed1f27d02ada95b321d6e926ea5e289a4e599c36a11350afe938588d999a1c",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/b3ed1f27d02ada95-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 62918,
+        "psnr": 38.97,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/b3ed1f27d02ada95-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 234428,
+        "psnr": 39.99,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/b3ed1f27d02ada95-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 464116,
+        "psnr": 40.32,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/b3ed1f27d02ada95-1200w.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 738336,
+        "psnr": 40.69,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/3.4 Trançada/2.jpeg": {
+    "width": 1200,
+    "height": 1600,
+    "bytes": 205636,
+    "sha256": "d1854e031a8e7d9f9032d6a22f18c87a697b74886ea8b51ff5f394b312295758",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/d1854e031a8e7d9f-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 21992,
+        "psnr": 36.77,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/d1854e031a8e7d9f-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 95302,
+        "psnr": 39.41,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/d1854e031a8e7d9f-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 187826,
+        "psnr": 41.55,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/3.4 Trançada/3.jpeg": {
+    "width": 679,
+    "height": 906,
+    "bytes": 185185,
+    "sha256": "c9d0de38b223dc6c9dd4268224520ac577680eb5221e4f7d9042b8bda7481fa8",
+    "format": "JPEG",
+    "variants": []
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/3.4 Trançada/4.jpeg": {
+    "width": 1200,
+    "height": 1600,
+    "bytes": 277859,
+    "sha256": "30cc95e22157839e7e7bd22bcda9e3e78ef5ea8132b65eb32a58289939414e7f",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/30cc95e22157839e-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 41696,
+        "psnr": 36.34,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/30cc95e22157839e-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 152600,
+        "psnr": 39.21,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/FOTOS MANGUEIRAS/3.4 Trançada/5.jpeg": {
+    "width": 1200,
+    "height": 1600,
+    "bytes": 194663,
+    "sha256": "78941e73cf07a6db508888960495e334e90c509bf10802ed9abfb11a7bd19d3c",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/78941e73cf07a6db-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 33604,
+        "psnr": 34.21,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/78941e73cf07a6db-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 96920,
+        "psnr": 38.48,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/78941e73cf07a6db-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 165044,
+        "psnr": 41.13,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/whatsapp-image-2026-09-17-at-211904-1.jpeg": {
+    "width": 794,
+    "height": 838,
+    "bytes": 113748,
+    "sha256": "94a3d593fee5e97d48289fa40656a112c178e03c6ee4a146649b5ab9a159d605",
+    "format": "JPEG",
+    "variants": []
+  },
+  "assets/uploads/whatsapp-image-2026-09-17-at-211904.jpeg": {
+    "width": 794,
+    "height": 838,
+    "bytes": 113748,
+    "sha256": "94a3d593fee5e97d48289fa40656a112c178e03c6ee4a146649b5ab9a159d605",
+    "format": "JPEG",
+    "variants": []
+  },
+  "assets/uploads/whatsapp-image-2026-09-17-at-213358-1.jpeg": {
+    "width": 537,
+    "height": 477,
+    "bytes": 49309,
+    "sha256": "a0915ccddcc639332a75572fe818fd0d16619ad95c4cb2484cccde4bd7621b09",
+    "format": "JPEG",
+    "variants": []
+  },
+  "assets/uploads/whatsapp-image-2026-09-17-at-213358.jpeg": {
+    "width": 537,
+    "height": 477,
+    "bytes": 49309,
+    "sha256": "a0915ccddcc639332a75572fe818fd0d16619ad95c4cb2484cccde4bd7621b09",
+    "format": "JPEG",
+    "variants": []
+  },
+  "assets/uploads/whatsapp-image-2026-09-28-at-205809-1.jpeg": {
+    "width": 1200,
+    "height": 1600,
+    "bytes": 156024,
+    "sha256": "4744f638c08c8e818f2c5e2f838b86dcd39317e612c00cc8ba7a9b73e312d6f1",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/4744f638c08c8e81-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 23772,
+        "psnr": 39.95,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/4744f638c08c8e81-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 72106,
+        "psnr": 43.0,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/4744f638c08c8e81-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 122224,
+        "psnr": 43.66,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/whatsapp-image-2026-09-28-at-205809-2.jpeg": {
+    "width": 940,
+    "height": 1566,
+    "bytes": 188223,
+    "sha256": "fc84b2c2a83c34a1a82fde30bc9308e9f14d8c65369babaf56e897e4acb13040",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/fc84b2c2a83c34a1-240w.webp",
+        "width": 240,
+        "height": 400,
+        "bytes": 27264,
+        "psnr": 37.18,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/fc84b2c2a83c34a1-480w.webp",
+        "width": 480,
+        "height": 800,
+        "bytes": 88888,
+        "psnr": 40.25,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/fc84b2c2a83c34a1-720w.webp",
+        "width": 720,
+        "height": 1200,
+        "bytes": 162942,
+        "psnr": 41.72,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/whatsapp-image-2026-09-28-at-205809-3-1.jpeg": {
+    "width": 774,
+    "height": 1304,
+    "bytes": 119246,
+    "sha256": "210afc25d7e069a13cd5ce1275e4a2912fff1eef805ed805ed0f208ac9ea6768",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/210afc25d7e069a1-237w.webp",
+        "width": 237,
+        "height": 400,
+        "bytes": 24100,
+        "psnr": 39.64,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/210afc25d7e069a1-475w.webp",
+        "width": 475,
+        "height": 800,
+        "bytes": 77090,
+        "psnr": 41.99,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/whatsapp-image-2026-09-28-at-205809-4.jpeg": {
+    "width": 1200,
+    "height": 1600,
+    "bytes": 163773,
+    "sha256": "3411dafcfe9d5d72e935195e6dd796ccd60f134515351babf17310acb9b81176",
+    "format": "JPEG",
+    "variants": [
+      {
+        "path": "assets/optimized/3411dafcfe9d5d72-300w.webp",
+        "width": 300,
+        "height": 400,
+        "bytes": 25278,
+        "psnr": 40.1,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/3411dafcfe9d5d72-600w.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 77990,
+        "psnr": 42.91,
+        "lossless": false
+      },
+      {
+        "path": "assets/optimized/3411dafcfe9d5d72-900w.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 133102,
+        "psnr": 43.67,
+        "lossless": false
+      }
+    ]
+  },
+  "assets/uploads/whatsapp-image-2026-09-29-at-213147.jpeg": {
+    "width": 482,
+    "height": 500,
+    "bytes": 48554,
+    "sha256": "c2e77faffa7d366770577955de58a8ca4d6cb5fc4a1b558d08917b6fd840d8d6",
+    "format": "JPEG",
+    "variants": []
+  }
+}

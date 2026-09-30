@@ -9,10 +9,12 @@ on:
       - 'assets/js/**'
       - 'assets/uploads/**'
       - 'assets/images/**'
+      - 'assets/optimized/**'
       - 'favicon/**'
       - 'conteudo/**'
       - '.pages.yml'
       - 'scripts/validate-content.mjs'
+      - 'scripts/optimize-images.py'
       - '.github/workflows/validate-site.yml'
   pull_request:
     paths:
@@ -21,10 +23,12 @@ on:
       - 'assets/js/**'
       - 'assets/uploads/**'
       - 'assets/images/**'
+      - 'assets/optimized/**'
       - 'favicon/**'
       - 'conteudo/**'
       - '.pages.yml'
       - 'scripts/validate-content.mjs'
+      - 'scripts/optimize-images.py'
       - '.github/workflows/validate-site.yml'
 
 concurrency:

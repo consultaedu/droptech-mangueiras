@@ -7,6 +7,65 @@ const $$=(selector,context=document)=>[...context.querySelectorAll(selector)];
 const cache=Object.create(null);
 const reducedMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false;
 const FALLBACK_IMAGE='assets/images/logo/logo-simbolo.png';
+let optimizedImages=Object.create(null);
+const IMAGE_SIZES={
+  card:'(max-width: 680px) calc(100vw - 48px), (max-width: 1050px) calc((100vw - 96px) / 2), 285px',
+  featured:'(max-width: 680px) calc(100vw - 48px), (max-width: 1050px) calc((100vw - 96px) / 2), 390px',
+  category:'(max-width: 680px) calc(100vw - 28px), (max-width: 950px) calc((100vw - 58px) / 2), 400px',
+  frame:'(max-width: 680px) calc(100vw - 64px), (max-width: 1050px) 650px, 550px',
+  detail:'(max-width: 680px) calc((100vw - 96px) / 2), (max-width: 1268px) calc((100vw - 116px) / 2), 576px',
+  gallery:'(max-width: 680px) calc(100vw - 28px), 560px',
+  catalog:'(max-width: 680px) calc(100vw - 28px), 480px'
+};
+
+// A missing manifest or an unknown CMS upload falls back to its original URL.
+async function loadOptimizedImages(){
+  try{
+    const response=await fetch('assets/optimized/manifest.json',{cache:'no-store'});
+    if(response.ok)optimizedImages=await response.json();
+  }catch(error){console.warn('[DropTech] Imagens otimizadas indisponíveis; usando originais.',error)}
+}
+function imageAttributes(value,sizes,{thumbnail=false}={}){
+  const original=safeAsset(value,FALLBACK_IMAGE);
+  const info=optimizedImages[original];
+  if(!info)return '';
+  const variants=thumbnail?info.variants.slice(0,1):info.variants.slice();
+  // Existing lightweight, real WebP files retain a sharp option for large screens.
+  if(!thumbnail&&info.format==='WEBP'&&info.bytes<256*1024&&info.width>(variants[variants.length-1]?.width||0)){
+    variants.push({path:original,width:info.width});
+  }
+  const dimensions=` width="${info.width}" height="${info.height}"`;
+  if(!variants.length)return dimensions;
+  const srcset=variants.map(item=>`${encodeURI(item.path)} ${item.width}w`).join(', ');
+  return `${dimensions} srcset="${esc(srcset)}" sizes="${esc(sizes)}"`;
+}
+function heroImageSizes(value){
+  const info=optimizedImages[safeAsset(value)];
+  const ratio=info?info.width/info.height:16/9;
+  // Cover can require more source pixels than the viewport width on tall phones.
+  return `(max-width: 680px) max(100vw, ${Math.ceil(600*ratio)}px), max(100vw, ${Math.ceil(690*ratio)}px)`;
+}
+function setResponsiveImage(element,value,sizes,options={}){
+  if(!element)return;
+  const original=safeAsset(value,FALLBACK_IMAGE);
+  const attributes=imageAttributes(original,sizes,options);
+  const template=document.createElement('template');
+  template.innerHTML=`<img${attributes}>`;
+  for(const key of ['sizes','srcset','width','height']){
+    const next=template.content.firstChild.getAttribute(key);
+    if(next!==null)element.setAttribute(key,next);
+    else element.removeAttribute(key);
+  }
+  element.src=original;
+}
+document.addEventListener('error',event=>{
+  const image=event.target;
+  if(image instanceof HTMLImageElement&&image.hasAttribute('srcset')){
+    image.removeAttribute('srcset');
+    image.removeAttribute('sizes');
+    image.src=image.getAttribute('src');
+  }
+},true);
 
 const esc=(value='')=>String(value).replace(/[&<>'"]/g,char=>({
   '&':'&amp;',
@@ -175,7 +234,7 @@ const mail=config=>{
 };
 
 function brand(){
-  return '<span class="brand"><img src="assets/images/logo/logo-simbolo.png" alt="" aria-hidden="true"><span class="brand-name"><strong>DropTech</strong><small>Mangueiras</small></span></span>';
+  return '<span class="brand"><img width="600" height="600" src="assets/images/logo/logo-simbolo.png" alt="" aria-hidden="true"><span class="brand-name"><strong>DropTech</strong><small>Mangueiras</small></span></span>';
 }
 
 function searchForm(className='header-search'){
@@ -232,7 +291,7 @@ function footer(config){
   ].filter(Boolean).join('');
   const addressLine=esc(config.endereco?.linha1||'');
   const cityState=esc([config.endereco?.cidade,config.endereco?.estado].filter(Boolean).join(' - '));
-  element.innerHTML=`<footer class="footer"><div class="container footer-grid"><div class="footer-brand"><img class="footer-logo" src="assets/images/logo/logo-droptech.png" alt="DropTech Mangueiras"><p>${esc(config.descricao||'Soluções em mangueiras com qualidade e resistência.')}</p><div class="socials">${socials}</div></div><div class="footer-col"><h3>Institucional</h3><a href="quem-somos.html">Quem somos</a><a href="produtos.html">Produtos</a><a href="contato.html">Contato</a></div><div class="footer-col"><h3>Contato</h3>${contactsHTML(config)}<a href="${esc(mail(config))}">${esc(config.contato?.email||'')}</a><span>${addressLine}</span><span>${cityState}</span></div></div><div class="footer-bottom"><div class="container"><span>© ${new Date().getFullYear()} DropTech Mangueiras. Todos os direitos reservados.</span><a href="politica-privacidade.html">Política de Privacidade</a></div></div></footer>`;
+  element.innerHTML=`<footer class="footer"><div class="container footer-grid"><div class="footer-brand"><img class="footer-logo" src="assets/images/logo/logo-droptech.png"${imageAttributes('assets/images/logo/logo-droptech.png','230px')} loading="lazy" alt="DropTech Mangueiras"><p>${esc(config.descricao||'Soluções em mangueiras com qualidade e resistência.')}</p><div class="socials">${socials}</div></div><div class="footer-col"><h3>Institucional</h3><a href="quem-somos.html">Quem somos</a><a href="produtos.html">Produtos</a><a href="contato.html">Contato</a></div><div class="footer-col"><h3>Contato</h3>${contactsHTML(config)}<a href="${esc(mail(config))}">${esc(config.contato?.email||'')}</a><span>${addressLine}</span><span>${cityState}</span></div></div><div class="footer-bottom"><div class="container"><span>© ${new Date().getFullYear()} DropTech Mangueiras. Todos os direitos reservados.</span><a href="politica-privacidade.html">Política de Privacidade</a></div></div></footer>`;
   if(phone(config)&&!$('.whatsapp')){
     const button=document.createElement('a');
     button.className='whatsapp';
@@ -245,15 +304,15 @@ function footer(config){
   }
 }
 
-function productCard(product){
+function productCard(product,sizes=IMAGE_SIZES.card){
   const id=product._publicId||product.id||slugify(product.nome);
   const image=safeAsset(product.imagem,FALLBACK_IMAGE);
-  return `<article class="product-card reveal"><a class="product-image" href="produto.html?id=${encodeURIComponent(id)}" aria-label="Ver ${esc(product.nome||'produto')}"><img src="${esc(image)}" alt="${esc(product.nome||'Produto DropTech')}" loading="lazy" decoding="async"></a><div class="product-body"><h3>${esc(product.nome||'Produto DropTech')}</h3><p>${esc(product.resumo||'')}</p><a class="text-link" href="produto.html?id=${encodeURIComponent(id)}">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article>`;
+  return `<article class="product-card reveal"><a class="product-image" href="produto.html?id=${encodeURIComponent(id)}" aria-label="Ver ${esc(product.nome||'produto')}"><img src="${esc(image)}"${imageAttributes(image,sizes)} alt="${esc(product.nome||'Produto DropTech')}" loading="lazy" decoding="async"></a><div class="product-body"><h3>${esc(product.nome||'Produto DropTech')}</h3><p>${esc(product.resumo||'')}</p><a class="text-link" href="produto.html?id=${encodeURIComponent(id)}">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article>`;
 }
 
 function categoryCard(category){
   const image=safeAsset(category.imagem,FALLBACK_IMAGE);
-  return `<article class="category-card reveal"><img src="${esc(image)}" alt="${esc(category.nome||'Categoria DropTech')}" loading="lazy" decoding="async"><div class="category-copy"><h3>${esc(category.nome||'Categoria')}</h3><p>${esc(category.descricao||'')}</p><a class="text-link" href="produtos.html?categoria=${encodeURIComponent(category.slug||'')}">Ver produtos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article>`;
+  return `<article class="category-card reveal"><img src="${esc(image)}"${imageAttributes(image,IMAGE_SIZES.category)} alt="${esc(category.nome||'Categoria DropTech')}" loading="lazy" decoding="async"><div class="category-copy"><h3>${esc(category.nome||'Categoria')}</h3><p>${esc(category.descricao||'')}</p><a class="text-link" href="produtos.html?categoria=${encodeURIComponent(category.slug||'')}">Ver produtos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article>`;
 }
 
 const statHTML=stat=>`<article class="feature-stat reveal"><strong>${esc(stat.valor||'')}</strong><span>${esc(stat.texto||'')}</span></article>`;
@@ -332,7 +391,7 @@ function featuredCarousel(items){
   track.setAttribute('role','region');
   track.setAttribute('aria-roledescription','carrossel');
   track.setAttribute('aria-label','Produtos em destaque');
-  track.innerHTML=list.length?list.map(productCard).join(''):'<div class="empty-state"><h3>Nenhum produto em destaque</h3></div>';
+  track.innerHTML=list.length?list.map(item=>productCard(item,IMAGE_SIZES.featured)).join(''):'<div class="empty-state"><h3>Nenhum produto em destaque</h3></div>';
   if(!list.length)return;
   const container=track.parentElement;
   let viewport=container.querySelector('.featured-carousel-viewport');
@@ -409,7 +468,7 @@ function lightbox(){
     const trigger=event.target.closest('[data-lightbox]');
     if(trigger){
       const image=$('img',lightbox);
-      image.src=safeAsset(trigger.dataset.lightbox,FALLBACK_IMAGE);
+      setResponsiveImage(image,trigger.dataset.lightbox,'(max-width: 1156px) calc(100vw - 56px), 1100px');
       image.alt=$('img',trigger)?.alt||'Imagem ampliada';
       lightbox.classList.add('open');
       $('.lightbox-close',lightbox)?.focus();
@@ -423,12 +482,6 @@ function lightbox(){
 }
 
 async function home(config){
-  const [rawProducts,categories,catalogs,clients]=await Promise.all([
-    load('produtos',[]),
-    load('categorias',[]),
-    load('catalogos',[]),
-    load('clientes',[])
-  ]);
   const slides=(Array.isArray(config.slides)?config.slides:[])
     .filter(slide=>slide.ativo!==false&&safeAsset(slide.imagem))
     .sort(order);
@@ -439,20 +492,22 @@ async function home(config){
       track.innerHTML=items.map((slide,position)=>{
         const background=safeAsset(slide.imagem,FALLBACK_IMAGE);
         const link=safeHref(slide.link,'produtos.html');
-        return `<article class="hero-slide ${position===index?'active':''}" data-bg="${esc(background)}" aria-hidden="${position===index?'false':'true'}"><div class="container slide-inner"><div class="slide-copy"><span class="kicker">${esc(slide.etiqueta||'DropTech Mangueiras')}</span><h1>${esc(slide.titulo||'')}</h1><p>${esc(slide.texto||'')}</p><a class="btn btn-green" href="${esc(link)}">${esc(slide.botao||'Saiba mais')} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></article>`;
+        return `<article class="hero-slide ${position===index?'active':''}" aria-hidden="${position===index?'false':'true'}">${position===index?`<img class="hero-image" src="${esc(background)}"${imageAttributes(background,heroImageSizes(background))} alt="" loading="eager" fetchpriority="${index===0?'high':'auto'}">`:''}<div class="container slide-inner"><div class="slide-copy"><span class="kicker">${esc(slide.etiqueta||'DropTech Mangueiras')}</span><h1>${esc(slide.titulo||'')}</h1><p>${esc(slide.texto||'')}</p><a class="btn btn-green" href="${esc(link)}">${esc(slide.botao||'Saiba mais')} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></article>`;
       }).join('');
-      $$('.hero-slide',track).forEach(element=>{
-        const background=safeAsset(element.dataset.bg,FALLBACK_IMAGE).replace(/"/g,'%22');
-        element.style.backgroundImage=`url("${background}")`;
-      });
       dots.innerHTML=items.map((_,position)=>`<button type="button" class="slider-dot ${position===index?'active':''}" data-slide="${position}" aria-label="Ir para o slide ${position+1}" ${position===index?'aria-current="true"':''}></button>`).join('');
     });
   }else if(slider){
     slider.hidden=true;
   }
+  const [rawProducts,categories,catalogs,clients]=await Promise.all([
+    load('produtos',[]),
+    load('categorias',[]),
+    load('catalogos',[]),
+    load('clientes',[])
+  ]);
   if($('#aboutTitle'))$('#aboutTitle').textContent=config.sobre?.titulo||'';
   if($('#aboutSummary'))$('#aboutSummary').textContent=config.sobre?.resumo||'';
-  if(config.sobre?.imagem&&$('#homeAboutImage'))$('#homeAboutImage').src=safeAsset(config.sobre.imagem,FALLBACK_IMAGE);
+  if(config.sobre?.imagem&&$('#homeAboutImage'))setResponsiveImage($('#homeAboutImage'),config.sobre.imagem,IMAGE_SIZES.frame);
   if($('#homeStats'))$('#homeStats').innerHTML=(config.destaques||[]).slice(0,3).map(statHTML).join('');
   if($('#categoryGrid'))$('#categoryGrid').innerHTML=(Array.isArray(categories)?categories:[]).filter(item=>item.ativo!==false).sort(order).map(categoryCard).join('');
   const available=prepareProducts((Array.isArray(rawProducts)?rawProducts:[]).filter(item=>item.disponivel!==false).sort(order));
@@ -468,7 +523,7 @@ async function home(config){
     if(artwork&&image){
       const fallback=artwork.innerHTML;
       artwork.classList.add('has-image');
-      artwork.innerHTML=`<img src="${esc(image)}" alt="${esc(config.catalogoHome?.imagemAlt||'Catálogo DropTech')}" loading="lazy" decoding="async">`;
+      artwork.innerHTML=`<img src="${esc(image)}"${imageAttributes(image,IMAGE_SIZES.catalog)} alt="${esc(config.catalogoHome?.imagemAlt||'Catálogo DropTech')}" loading="lazy" decoding="async">`;
       $('img',artwork).addEventListener('error',()=>{
         artwork.classList.remove('has-image');
         artwork.innerHTML=fallback;
@@ -498,14 +553,14 @@ async function about(config){
     .filter((value,index,array)=>array.indexOf(value)===index);
   if(images.length){
     carousel(images,$('#aboutSlideImage'),$('#aboutDots'),$('#aboutPrev'),$('#aboutNext'),(items,index,image,dots)=>{
-      image.src=items[index];
+      setResponsiveImage(image,items[index],IMAGE_SIZES.frame);
       dots.innerHTML=items.map((_,position)=>`<button type="button" class="mini-dot ${position===index?'active':''}" data-slide="${position}" aria-label="Ir para a imagem ${position+1}" ${position===index?'aria-current="true"':''}></button>`).join('');
     },7000);
   }
   if(gallery.length&&$('#aboutGallery')){
     $('#aboutGallery').innerHTML=gallery.slice(0,5).map(item=>{
       const image=safeAsset(item.imagem,FALLBACK_IMAGE);
-      return `<figure class="reveal" tabindex="0" role="button" aria-label="Ampliar ${esc(item.titulo||'imagem DropTech')}" data-lightbox="${esc(image)}"><img src="${esc(image)}" alt="${esc(item.titulo||'DropTech')}" loading="lazy" decoding="async"></figure>`;
+      return `<figure class="reveal" tabindex="0" role="button" aria-label="Ampliar ${esc(item.titulo||'imagem DropTech')}" data-lightbox="${esc(image)}"><img src="${esc(image)}"${imageAttributes(image,IMAGE_SIZES.gallery)} alt="${esc(item.titulo||'DropTech')}" loading="lazy" decoding="async"></figure>`;
     }).join('');
     lightbox();
     $('#aboutGallery').addEventListener('keydown',event=>{
@@ -532,7 +587,7 @@ async function products(config){
   ]);
   if($('#productsIntroTitle'))$('#productsIntroTitle').textContent=config.produtos?.titulo||'Conheça nossa linha de produtos';
   if($('#productsIntroText'))$('#productsIntroText').textContent=config.produtos?.texto||config.descricao||'';
-  if(config.produtos?.imagem&&$('#productsIntroImage'))$('#productsIntroImage').src=safeAsset(config.produtos.imagem,FALLBACK_IMAGE);
+  if(config.produtos?.imagem&&$('#productsIntroImage'))setResponsiveImage($('#productsIntroImage'),config.produtos.imagem,IMAGE_SIZES.frame);
   const activeCategories=(Array.isArray(categories)?categories:[]).filter(item=>item.ativo!==false).sort(order);
   if($('#categoryGrid'))$('#categoryGrid').innerHTML=activeCategories.map(categoryCard).join('');
   const available=prepareProducts((Array.isArray(rawItems)?rawItems:[]).filter(item=>item.disponivel!==false).sort(order));
@@ -559,7 +614,7 @@ async function products(config){
     if(normalizedQuery){
       list=list.filter(item=>searchable(`${item.nome||''} ${item.resumo||''} ${item.descricao||''} ${item.categoriaNome||''}`).includes(normalizedQuery));
     }
-    if($('#productsGrid'))$('#productsGrid').innerHTML=list.length?list.map(productCard).join(''):'<div class="empty-state"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><h3>Nenhum produto encontrado</h3><p>Tente outro termo ou categoria.</p></div>';
+    if($('#productsGrid'))$('#productsGrid').innerHTML=list.length?list.map(item=>productCard(item)).join(''):'<div class="empty-state"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><h3>Nenhum produto encontrado</h3><p>Tente outro termo ou categoria.</p></div>';
     syncUrl();
     animate();
   };
@@ -581,7 +636,7 @@ async function products(config){
     $('#catalogGrid').innerHTML=availableCatalogs.map(item=>{
       const file=safeAsset(item.arquivo);
       const cover=safeAsset(item.capa);
-      return `<article class="download-card reveal"><div class="download-cover">${cover?`<img src="${esc(cover)}" alt="${esc(item.titulo||'Catálogo DropTech')}" loading="lazy" decoding="async">`:'<i class="fa-regular fa-file-pdf" aria-hidden="true"></i>'}</div><div class="download-body"><h3>${esc(item.titulo||'Catálogo')}</h3><p>${esc(item.descricao||'')}</p><a class="text-link" href="${esc(file)}" target="_blank" rel="noopener noreferrer">Baixar catálogo <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a></div></article>`;
+      return `<article class="download-card reveal"><div class="download-cover">${cover?`<img src="${esc(cover)}"${imageAttributes(cover,IMAGE_SIZES.catalog)} alt="${esc(item.titulo||'Catálogo DropTech')}" loading="lazy" decoding="async">`:'<i class="fa-regular fa-file-pdf" aria-hidden="true"></i>'}</div><div class="download-body"><h3>${esc(item.titulo||'Catálogo')}</h3><p>${esc(item.descricao||'')}</p><a class="text-link" href="${esc(file)}" target="_blank" rel="noopener noreferrer">Baixar catálogo <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a></div></article>`;
     }).join('');
   }else{
     $('#catalogSection')?.remove();
@@ -643,9 +698,9 @@ async function detail(config){
   ].filter(Boolean);
   const showTechnical=overview.length||rows.length||technical.observacoes;
   const table=rows.length?`<div class="tech-table-wrap"><table class="tech-table"><thead><tr><th rowspan="2" scope="col">Cores</th><th colspan="2" scope="colgroup">Ø Interno</th><th rowspan="2" scope="col">Espessura da parede (mm)</th><th rowspan="2" scope="col">Rolo (m)</th></tr><tr><th scope="col">Pol</th><th scope="col">mm</th></tr></thead><tbody>${rows.map(row=>`<tr>${row.map(value=>`<td>${esc(value??'—')||'—'}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`:'';
-  if($('#productDetail'))$('#productDetail').innerHTML=`<div><div class="detail-main-image"><img id="mainProductImage" src="${esc(images[0])}" alt="${esc(product.nome)}" decoding="async"></div>${images.length>1?`<div class="detail-thumbs">${images.map((image,index)=>`<button type="button" class="detail-thumb ${index===0?'active':''}" data-img="${esc(image)}" aria-label="Ver imagem ${index+1} de ${esc(product.nome)}"><img src="${esc(image)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>`:''}</div><div class="detail-copy"><span class="category-label">${esc(product.categoriaNome||product.categoria||'')}</span><h1>${esc(product.nome||'Produto DropTech')}</h1><p class="description">${esc(product.descricao||product.resumo||'')}</p>${(product.caracteristicas||[]).length?`<ul class="detail-list">${product.caracteristicas.map(item=>`<li><i class="fa-solid fa-check" aria-hidden="true"></i>${esc(item)}</li>`).join('')}</ul>`:''}<div class="detail-actions"><a class="btn btn-green" href="${esc(wa(config,`Olá! Gostaria de informações sobre ${product.nome}.`))}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Solicitar informações</a><a class="btn btn-outline" href="produtos.html">Voltar aos produtos</a></div></div>${showTechnical?`<section class="technical-sheet"><div class="technical-sheet-head"><div><span class="kicker">Ficha do produto</span><h2>Informações técnicas</h2></div><p>Dados essenciais para identificar a opção mais adequada à aplicação.</p></div>${overview.length?`<div class="technical-overview">${overview.map(([key,value])=>`<article><span>${esc(key)}</span><strong>${esc(value)}</strong></article>`).join('')}</div>`:''}${table}${technical.observacoes?`<div class="technical-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><div><strong>Observações</strong><p>${esc(technical.observacoes)}</p></div></div>`:''}</section>`:''}`;
+  if($('#productDetail'))$('#productDetail').innerHTML=`<div><div class="detail-main-image"><img id="mainProductImage" src="${esc(images[0])}"${imageAttributes(images[0],IMAGE_SIZES.detail)} loading="eager" fetchpriority="high" alt="${esc(product.nome)}" decoding="async"></div>${images.length>1?`<div class="detail-thumbs">${images.map((image,index)=>`<button type="button" class="detail-thumb ${index===0?'active':''}" data-img="${esc(image)}" aria-label="Ver imagem ${index+1} de ${esc(product.nome)}"><img src="${esc(image)}"${imageAttributes(image,'76px',{thumbnail:true})} alt="" loading="lazy" decoding="async"></button>`).join('')}</div>`:''}</div><div class="detail-copy"><span class="category-label">${esc(product.categoriaNome||product.categoria||'')}</span><h1>${esc(product.nome||'Produto DropTech')}</h1><p class="description">${esc(product.descricao||product.resumo||'')}</p>${(product.caracteristicas||[]).length?`<ul class="detail-list">${product.caracteristicas.map(item=>`<li><i class="fa-solid fa-check" aria-hidden="true"></i>${esc(item)}</li>`).join('')}</ul>`:''}<div class="detail-actions"><a class="btn btn-green" href="${esc(wa(config,`Olá! Gostaria de informações sobre ${product.nome}.`))}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Solicitar informações</a><a class="btn btn-outline" href="produtos.html">Voltar aos produtos</a></div></div>${showTechnical?`<section class="technical-sheet"><div class="technical-sheet-head"><div><span class="kicker">Ficha do produto</span><h2>Informações técnicas</h2></div><p>Dados essenciais para identificar a opção mais adequada à aplicação.</p></div>${overview.length?`<div class="technical-overview">${overview.map(([key,value])=>`<article><span>${esc(key)}</span><strong>${esc(value)}</strong></article>`).join('')}</div>`:''}${table}${technical.observacoes?`<div class="technical-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><div><strong>Observações</strong><p>${esc(technical.observacoes)}</p></div></div>`:''}</section>`:''}`;
   $$('.detail-thumb').forEach(button=>button.addEventListener('click',()=>{
-    $('#mainProductImage').src=safeAsset(button.dataset.img,FALLBACK_IMAGE);
+    setResponsiveImage($('#mainProductImage'),button.dataset.img,IMAGE_SIZES.detail);
     $$('.detail-thumb').forEach(item=>item.classList.remove('active'));
     button.classList.add('active');
   }));
@@ -656,7 +711,7 @@ function contact(config){
   if($('#contactKicker'))$('#contactKicker').textContent=content.etiqueta||'Contato';
   if($('#contactPageTitle'))$('#contactPageTitle').textContent=content.titulo||'Fale conosco';
   if($('#contactPageText'))$('#contactPageText').textContent=content.texto||'';
-  if(content.imagem&&$('#contactPhoto'))$('#contactPhoto').src=safeAsset(content.imagem,FALLBACK_IMAGE);
+  if(content.imagem&&$('#contactPhoto'))setResponsiveImage($('#contactPhoto'),content.imagem,IMAGE_SIZES.frame);
   if($('#contactPhones'))$('#contactPhones').innerHTML=contactsHTML(config);
   if($('#contactEmail'))$('#contactEmail').textContent=config.contato?.email||'';
   if($('#contactEmailLink'))$('#contactEmailLink').href=mail(config);
@@ -692,7 +747,7 @@ function contact(config){
 
 async function init(){
   try{
-    const config=await load('empresa',{});
+    const [config]=await Promise.all([load('empresa',{}),loadOptimizedImages()]);
     header();
     footer(config);
     if(page==='home')await home(config);
