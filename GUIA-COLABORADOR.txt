@@ -16,7 +16,8 @@ PRODUTO NOVO — FLUXO SEGURO
 2. Preencha nome, identificador, categoria e foto principal.
 3. SALVE.
 4. Continue com descrição, aplicações e ficha técnica e salve novamente quando concluir cada bloco importante.
-5. Confira a página e só então ative "Publicado / exibir no site".
+5. Revise os campos no CMS e só então ative "Publicado / exibir no site". Rascunhos não aparecem no site público.
+6. Aguarde Actions > Construir e publicar site concluir com sucesso e confira a página publicada. Em caso de erro, a última versão válida continua no ar.
 
 O Pages CMS grava no GitHub somente quando você salva. Salvar em etapas reduz muito o risco de perder trabalho se a conexão cair.
 
@@ -31,14 +32,18 @@ UPLOADS
 Não precisa organizar arquivos manualmente.
 Ao editar um produto, galeria, catálogo etc., use o botão de upload do próprio campo.
 A seção "Arquivos do site" serve apenas como biblioteca geral.
+Ao salvar uma imagem referenciada, o GitHub Actions gera as versões WebP necessárias para a publicação. Textos sem mudança de imagem reutilizam as variantes.
+Não mova, renomeie ou exclua arquivos já usados: primeiro confira e atualize todos os campos que os referenciam. A URL antiga pode estar em links compartilhados.
+O PDF atual do catálogo também existe na URL antiga para manter os links funcionando; mantenha ambos até uma revisão de compatibilidade.
 
 FICHA TÉCNICA DOS PRODUTOS
 Em Produtos > escolha o produto > Ficha técnica, preencha apenas os dados que souber:
 - Material / composição
 - Pressão de trabalho
 - Temperatura de trabalho
-- Títulos das 3 colunas da tabela
+- Cores disponíveis
 - Linhas da tabela (uma medida/variação por linha)
 - Observações técnicas, se necessário
 
-Os títulos das colunas podem ser alterados em cada produto. Campos vazios não aparecem para o visitante.
+Cada linha contém: cor, diâmetro interno em polegadas, diâmetro interno em mm, espessura da parede em mm e comprimentos dos rolos em metros.
+Separe vários comprimentos de rolo por ponto e vírgula. Os títulos dessas cinco colunas são definidos pelo site. Campos vazios não aparecem para o visitante.

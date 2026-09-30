@@ -50,6 +50,12 @@ jobs:
         run: python -B -m unittest discover -s tests -p test_image_pipeline.py
       - name: Gerar imagens, validar e montar site estático
         run: python -B scripts/build-site.py --output "$RUNNER_TEMP/droptech-pages" --cache-dir "$RUNNER_TEMP/droptech-image-cache"
+      - name: Preparar testes de navegador
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npx --no-install playwright install --with-deps chromium
+      - name: Conferir páginas, catálogo e imagens no artefato
+        run: npm run test:site -- --root "$RUNNER_TEMP/droptech-pages"
       - name: Salvar cache de variantes
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && steps.image-cache.outputs.cache-hit != 'true'
         continue-on-error: true

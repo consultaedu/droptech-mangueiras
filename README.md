@@ -31,4 +31,18 @@ O projeto inclui `scripts/validate-content.mjs` e o workflow `.github/workflows/
 
 
 ## Deploy otimizado do Pages
-O workflow prepara um artefato com imagens incrementais e publica somente depois da validação. A ativação manual e o rollback estão em [docs/DEPLOY-GITHUB-PAGES.md](docs/DEPLOY-GITHUB-PAGES.md). Até mudar o Source do Pages, a publicação por branch continua vigente.
+O GitHub Pages usa Source **GitHub Actions**. O workflow prepara um artefato com imagens incrementais e publica somente depois da validação e dos testes de navegador. Operação e rollback estão em [docs/DEPLOY-GITHUB-PAGES.md](docs/DEPLOY-GITHUB-PAGES.md).
+
+## Conferência local
+
+Use Node 22 ou superior e Python 3.12. Instale as dependências com `python -m pip install -r scripts/image-requirements.txt` e `npm ci --ignore-scripts`. Para testes de navegador, execute `npx --no-install playwright install chromium` (no Linux, acrescente `--with-deps`).
+
+```text
+python -B -m unittest discover -s tests -p test_image_pipeline.py
+node scripts/validate-content.mjs --strict-optimized
+node tests/site-smoke.mjs
+node scripts/checksums.mjs
+git diff --check
+```
+
+Para testar o mesmo pacote publicado, monte-o com `python -B scripts/build-site.py --output CAMINHO_ABSOLUTO_FORA_DO_REPOSITORIO` em uma pasta vazia e execute `node tests/site-smoke.mjs --root CAMINHO_ABSOLUTO_FORA_DO_REPOSITORIO`. No Windows, `PLAYWRIGHT_CHANNEL=msedge` permite usar o Edge instalado em vez do Chromium baixado. Ferramentas e dependências de testes não são incluídas no artefato público.

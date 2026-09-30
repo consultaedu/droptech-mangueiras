@@ -1,0 +1,11 @@
+{
+  "name": "droptech-site-checks",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test:site": "node tests/site-smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

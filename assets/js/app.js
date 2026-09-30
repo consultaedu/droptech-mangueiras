@@ -13,17 +13,29 @@ const IMAGE_SIZES={
   featured:'(max-width: 680px) calc(100vw - 48px), (max-width: 1050px) calc((100vw - 96px) / 2), 390px',
   category:'(max-width: 680px) calc(100vw - 28px), (max-width: 950px) calc((100vw - 58px) / 2), 400px',
   frame:'(max-width: 680px) calc(100vw - 64px), (max-width: 1050px) 650px, 550px',
-  detail:'(max-width: 680px) calc((100vw - 96px) / 2), (max-width: 1268px) calc((100vw - 116px) / 2), 576px',
+  detail:'(max-width: 680px) calc(100vw - 70px), (max-width: 1268px) calc((100vw - 200px) / 2), 534px',
   gallery:'(max-width: 680px) calc(100vw - 28px), 560px',
   catalog:'(max-width: 680px) calc(100vw - 28px), 480px'
 };
 
 // A missing manifest or an unknown CMS upload falls back to its original URL.
 async function loadOptimizedImages(){
+  const controller=new AbortController();
+  const timeout=setTimeout(()=>controller.abort(),4000);
   try{
-    const response=await fetch('assets/optimized/manifest.json',{cache:'no-store'});
-    if(response.ok)optimizedImages=await response.json();
+    const response=await fetch('assets/optimized/manifest.json',{cache:'no-store',signal:controller.signal});
+    if(response.ok){
+      const manifest=await response.json();
+      if(!manifest||typeof manifest!=='object'||Array.isArray(manifest))throw new Error('Manifesto inválido');
+      // Keep malformed entries from preventing the CMS content from rendering.
+      for(const [original,info] of Object.entries(manifest)){
+        if(!info||!Number.isInteger(info.width)||info.width<1||!Number.isInteger(info.height)||info.height<1||!Array.isArray(info.variants))continue;
+        if(info.variants.some(item=>!item||!Number.isInteger(item.width)||item.width<1||typeof item.path!=='string'||safeAsset(item.path)!==item.path))continue;
+        optimizedImages[original]=info;
+      }
+    }
   }catch(error){console.warn('[DropTech] Imagens otimizadas indisponíveis; usando originais.',error)}
+  finally{clearTimeout(timeout)}
 }
 function imageAttributes(value,sizes,{thumbnail=false}={}){
   const original=safeAsset(value,FALLBACK_IMAGE);

@@ -1,1 +1,13 @@
 *.mp4
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+node_modules/
+playwright-report/
+test-results/
+_site/
+.site-build/
+.env
+.env.*
+!.env.example

@@ -1,6 +1,8 @@
 DROPTECH — RELATÓRIO DE AUDITORIA
 Data: 18/09/2026
 
+REGISTRO HISTÓRICO: os dados abaixo correspondem à auditoria dessa data, não ao estado atual. A publicação atual por artefato e as verificações estão descritas em docs/DEPLOY-GITHUB-PAGES.md e SEGURANCA-E-VALIDACAO.md.
+
 ESCOPO VERIFICADO
 - Estrutura atual do repositório consultaedu/droptech-mangueiras (branch main)
 - HTML, CSS e JavaScript
