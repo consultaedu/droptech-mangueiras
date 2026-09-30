@@ -86,6 +86,16 @@ content:
           - {name: titulo, label: Título, type: string, options: {maxlength: 140}}
           - {name: texto, label: Texto, type: text, options: {maxlength: 700}}
           - {name: imagem, label: Imagem, type: image, options: {media: arquivos}}
+      - name: catalogoHome
+        label: Catálogo na Home
+        type: object
+        fields:
+          - name: imagem
+            label: Imagem do quadro
+            type: image
+            description: "Substitui a ilustração verde da Home. A imagem aparece inteira, sem corte. Deixe vazio para usar o quadro padrão. O PDF do botão continua cadastrado em Catálogos."
+            options: {media: arquivos}
+          - {name: imagemAlt, label: Descrição da imagem, type: string, options: {maxlength: 180}}
       - name: contatoPagina
         label: Página Contato
         type: object

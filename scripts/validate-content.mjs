@@ -150,6 +150,7 @@ for(const [index,slide] of (Array.isArray(empresa?.slides)?empresa.slides:[]).en
 checkAsset(empresa?.sobre?.imagem,'Quem somos / imagem',{extensions:['jpg','jpeg','png','webp']});
 checkAsset(empresa?.produtos?.imagem,'Página Produtos / imagem',{extensions:['jpg','jpeg','png','webp']});
 checkAsset(empresa?.contatoPagina?.imagem,'Página Contato / imagem',{extensions:['jpg','jpeg','png','webp']});
+checkAsset(empresa?.catalogoHome?.imagem,'Catálogo na Home / imagem',{extensions:['jpg','jpeg','png','webp']});
 validateGoogleMapLink(empresa?.endereco?.mapa,'Endereço / link do Google Maps');
 validateGoogleMapEmbed(empresa?.endereco?.mapaEmbed,'Endereço / mapa incorporado');
 

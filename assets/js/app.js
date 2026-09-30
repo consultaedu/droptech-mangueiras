@@ -463,6 +463,17 @@ async function home(config){
     $('#homeCatalogLink').href=safeAsset(availableCatalogs[0].arquivo);
     $('#homeCatalogLink').target='_blank';
     $('#homeCatalogLink').rel='noopener noreferrer';
+    const artwork=$('#homeCatalogArt');
+    const image=safeAsset(config.catalogoHome?.imagem);
+    if(artwork&&image){
+      const fallback=artwork.innerHTML;
+      artwork.classList.add('has-image');
+      artwork.innerHTML=`<img src="${esc(image)}" alt="${esc(config.catalogoHome?.imagemAlt||'Catálogo DropTech')}" loading="lazy" decoding="async">`;
+      $('img',artwork).addEventListener('error',()=>{
+        artwork.classList.remove('has-image');
+        artwork.innerHTML=fallback;
+      },{once:true});
+    }
   }else{
     $('#homeCatalog')?.remove();
   }
